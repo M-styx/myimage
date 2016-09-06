@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>button demo 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link type="text/css" rel="stylesheet" href="../style/avalon.doc.css"/>
+        <script src="../../avalon.js"></script>
+        <script src="../style/highlight/shCore.js"></script>
+        <script>
+            avalon.library("aoyou", {
+                $ready: function (a, b) {
+                    avalon.log(a.$id+"控件已经构建完毕")
+                }
+            })
+            require(["./component/button/avalon.button"], function () {
+                avalon.define({
+                    $id: "demo"
+                })
+                avalon.scan()
+            })
+            </script>
+        <style>
+            body {
+                padding-bottom: 200px;
+            }
+            fieldset > div {
+                margin-bottom: 20px;
+            }
+            .inline {
+                display: inline-block;
+                *display: inline;
+                zoom: 1;
+                margin-right: 30px;
+                vertical-align: bottom;
+            }
+        </style>
+    </head>
+    <body ms-controller="demo">
+        <fieldset>
+            <legend>buttonset+button</legend>
+            <div>
+                <aoyou:buttonset class="inline">
+                    <aoyou:button>button 1</aoyou:button>
+                    <aoyou:button>button 2</aoyou:button>
+                    <aoyou:button>button 3</aoyou:button>
+                </aoyou:buttonset>
+                <aoyou:buttonset class="inline">
+                    <aoyou:button type="icon" icon-position="left" icon="\&\#xf04c;"></aoyou:button>
+                    <aoyou:button type="icon" icon-position="left" icon="\&\#xf04b;"></aoyou:button>
+                    <aoyou:button type="icon" icon-position="left" icon="\&\#xf074;"></aoyou:button>
+                </aoyou:buttonset>
+                <aoyou:buttonset class="inline">
+                    <aoyou:button type="labeledIcon" icon-position="left" icon="\&\#xf04c;">暂停</aoyou:button>
+                    <aoyou:button type="labeledIcon" icon-position="left" icon="\&\#xf04b;">播放</aoyou:button>
+                    <aoyou:button type="labeledIcon" icon-position="left" icon="\&\#xf074;">拖曳</aoyou:button>
+                </aoyou:buttonset>
+                <aoyou:buttonset class="inline">
+                    <aoyou:button type="labeledIcon" icon-position="right" icon="\&\#xf04c;">暂停</aoyou:button>
+                    <aoyou:button type="labeledIcon" icon-position="right" icon="\&\#xf04b;">播放</aoyou:button>
+                    <aoyou:button type="labeledIcon" icon-position="right" icon="\&\#xf074;">拖曳</aoyou:button>
+                </aoyou:buttonset>
+            </div>
+            <div>
+                <aoyou:buttonset class="inline">
+                    <aoyou:button color="info" size="small">button 1</aoyou:button>
+                    <aoyou:button color="info" size="small">button 2</aoyou:button>
+                    <aoyou:button color="info" size="small">button 3</aoyou:button>
+                </aoyou:buttonset>
+                <aoyou:buttonset class="inline">
+                    <aoyou:button color="danger" type="icon" icon-position="left" icon="\&\#xf04c;"></aoyou:button>
+                    <aoyou:button color="danger"  type="icon" icon-position="left" icon="\&\#xf04b;"></aoyou:button>
+                    <aoyou:button color="danger"  type="icon" icon-position="left" icon="\&\#xf074;"></aoyou:button>
+                </aoyou:buttonset>
+                <aoyou:buttonset class="inline">
+                    <aoyou:button color="success" size="big" type="labeledIcon" icon-position="left" icon="\&\#xf04c;">暂停</aoyou:button>
+                    <aoyou:button color="success" size="big" type="labeledIcon" icon-position="left" icon="\&\#xf04b;">播放</aoyou:button>
+                    <aoyou:button color="success" size="big" type="labeledIcon" icon-position="left" icon="\&\#xf074;">拖曳</aoyou:button>
+                </aoyou:buttonset>
+                <aoyou:buttonset class="inline">
+                    <aoyou:button color="warning" size="large" type="labeledIcon" icon-position="left" icon="\&\#xf04c;">暂停</aoyou:button>
+                    <aoyou:button color="warning" size="large" type="labeledIcon" icon-position="left" icon="\&\#xf04b;">播放</aoyou:button>
+                    <aoyou:button color="warning" size="large" type="labeledIcon" icon-position="left" icon="\&\#xf074;">拖曳</aoyou:button>
+                </aoyou:buttonset>
+            </div>
+            <div>
+                <aoyou:buttonset direction="vertical" class="inline">
+                    <aoyou:button color="danger">button 1</aoyou:button>
+                    <aoyou:button color="danger">button 2</aoyou:button>
+                    <aoyou:button color="danger">button 3</aoyou:button>
+                </aoyou:buttonset>
+                <aoyou:buttonset class="inline" direction="vertical" width="50">
+                    <aoyou:button color="info" type="icon" icon-position="left" icon="\&\#xf04c;"></aoyou:button>
+                    <aoyou:button color="info"  type="icon" icon-position="left" icon="\&\#xf04b;"></aoyou:button>
+                    <aoyou:button color="info"  type="icon" icon-position="left" icon="\&\#xf074;"></aoyou:button>
+                </aoyou:buttonset>
+                <aoyou:buttonset direction="vertical" class="inline">
+                    <aoyou:button color="warning" type="labeledIcon" icon-position="left" icon="\&\#xf04c;">暂停</aoyou:button>
+                    <aoyou:button color="warning" type="labeledIcon" icon-position="left" icon="\&\#xf04b;">播放</aoyou:button>
+                    <aoyou:button color="warning" type="labeledIcon" icon-position="left" icon="\&\#xf074;">拖曳</aoyou:button>
+                </aoyou:buttonset>
+                <aoyou:buttonset direction="vertical" corner="false" class="inline">
+                    <aoyou:button color="success" size="large" type="labeledIcon" icon-position="right" icon="\&\#xf04c;" id="test">暂停</aoyou:button>
+                    <aoyou:button color="success" size="large" type="labeledIcon" icon-position="right" icon="\&\#xf04b;">播放</aoyou:button>
+                    <aoyou:button color="success" size="large" type="labeledIcon" icon-position="right" icon="\&\#xf074;">拖曳</aoyou:button>
+                </aoyou:buttonset>
+            </div>
+        </fieldset>
+
+        <div ms-skip>
+            <pre class="brush: html: true; gutter: false; toolbar: false">
+
+            </pre>
+        </div>
+    </body>
+</html>

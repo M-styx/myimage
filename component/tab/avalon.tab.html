@@ -1,0 +1,42 @@
+{{menu|html}}
+<div class="aoyou-tab-slider"
+    ms-visible="toggle">
+    <div class="aoyou-tab-slider-ct aoyou-tab-slider-enable"
+         ms-css-margin-left="_computedMarginLeft">
+        <ul class="aoyou-tab-nav aoyou-helper-clearfix aoyou-widget-header aoyou-helper-reset"
+        ms-attr-id="'tabs' + tabs.$id">
+            <li class="aoyou-state-default aoyou-tab-item"
+                data-repeat-rendered="computeSlider" 
+                ms-repeat="tabs"
+                ms-class-1="aoyou-state-active:active==$index && !el.disabled"
+                ms-class-2="aoyou-state-disabled:el.disabled"
+                ms-class-3="aoyou-tab-last:$last"
+                ms-class-4="aoyou-tab-removable:!!_canRemove(el)"
+                ms-hover="aoyou-state-hover:!el.disabled"
+                ms-MS_OPTION_EVENT="activate($event, $index)" 
+                ><span ms-visible="el.iconshow" ms-class-2="{{el.iconclass}}" ms-class-1="tabs-icon"></span><a ms-attr-href="el.href?el.href:'#'" ms-attr-target="el.target||target||'_self'">
+                    {{_tabTitle(el.title, el, _cutCounter(), cutEnd) | sanitize | html}}</a>
+                <span ms-visible="el.removable" ms-click="remove($event,$index)" ms-class="tabs-close"></span>
+            </li>
+        </ul>
+    </div>
+    <a href="#" class="aoyou-tab-slider-button aoyou-tab-slider-button-left aoyou-icon"
+       ms-visible="prevEnable&&tabs.length>1" 
+       ms-click="slider($event,'prev')"></a>
+    <a href="#" class="aoyou-tab-slider-button aoyou-tab-slider-button-right aoyou-icon"
+       ms-visible="nextEnable&&tabs.length>1"
+       ms-click="slider($event,'next')"></a>
+</div>
+MS_OPTION_SPLIT
+<div class="aoyou-tab-panel-container" ms-each-panel="tabpanels"
+	 ms-visible="toggle"
+	 ms-if="tabpanels.size()">
+     <div class="aoyou-tab-panel aoyou-widget-content"
+          ms-visible="_shallPanelAlwaysShow($index)" 
+          ms-if-loop="_isAjax(panel)">{{panel.content | sanitize | html }}</div>
+     <div class="aoyou-tab-panel aoyou-widget-content"
+          ms-visible="_shallPanelAlwaysShow($index)" 
+          ms-include-src="panel.content" 
+          ms-if-loop="!_isAjax(panel)" data-include-rendered="onAjaxCallback">
+     </div>
+</div>

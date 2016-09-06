@@ -1,0 +1,20 @@
+<div class="aoyou-dialog">
+<div class="aoyou-dialog-inner">
+    <div class="aoyou-dialog-header">
+        <div class="aoyou-dialog-close" ms-click="_close" ms-if="showClose">
+            <i class="aoyou-dialog-icon"></i>
+        </div>
+        <div class="aoyou-dialog-title">
+            <div class="aoyou-dialog-tip"></div>
+            {{ title|html }}
+        </div>
+        <div class="aoyou-dialog-content">{{content|html}}</div>
+        <div class="aoyou-dialog-footer aoyou-helper-clearfix">
+            <div class="aoyou-dialog-btns">
+                <aoyou:button color="success" size="big" width="111px" ms-hover="aoyou-state-hover" ms-click="_confirm">{{confirmText}}</aoyou:button>
+                <aoyou:button size="big"  width="111px" ms-if="type =='confirm'" ms-click="_cancel">{{cancelText}}</aoyou:button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,126 @@
+$uiname: "aoyou-dialog";
+
+.#{$uiname} {
+  .#{$uiname}-inner {
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.1);
+    background-color: #f7f7f7;
+    border: 2px solid #128d42;
+    .#{$uiname}-close{
+      display: inline;
+      display: inline;
+      float: right;
+      padding: 1px 10px 1px 9px;
+      margin-top: 5px;
+      cursor: pointer;
+      color: #666666;
+      .#{$uiname}-icon{
+        display: block;
+        cursor: pointer;
+        background: url("../useimg/dialogueclose.png") no-repeat;
+        width: 13px;
+        height: 13px;
+      }
+      .#{$uiname}-icon:hover{
+        border-right: 0;
+      }
+    }
+    .#{$uiname}-title{
+      padding: 7px 10px;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 700;
+      border-bottom: 1px solid #288d41;
+      margin: 7px 10px;
+      color: #288d41;
+      text-indent: 10px;
+      .#{$uiname}-tip{
+        width: 5px;
+        height: 15px;
+        float: left;
+        background: #288d41;
+        margin-top: 2px;
+      }
+    }
+    .#{$uiname}-content{
+      font-size: 14px;
+      padding: 4px 20px;
+      .conlink{
+        position: relative;
+        height: 80px;
+        background: #fff;
+        border: 1px solid #beccc2;
+        margin: 0 10px;
+        border-bottom: 0;
+        img{
+          position: absolute;
+          left: 10px;
+          top: 8px;
+        }
+        span{
+          display: inline-block;
+          left: 62px;
+          position: absolute;
+          width: 200px;
+          top: 8px;
+          line-height: 20px;
+        }
+        p{
+          text-align: center;
+          img{
+            margin-left: 100px;
+            margin-top: 50px;
+          }
+        }
+      }
+    }
+    .#{$uiname}-footer{
+      padding: 8px 5px;
+      background-color: #f8f8f8;
+      .#{$uiname}-btns{
+        display: inline;
+        font-size: 0;
+        margin-left: 35%;
+        .aoyou-button{
+          margin-left: 10px;
+        }
+      }
+      .btnlink{
+        background: #fff;
+        border: 1px solid #beccc2;
+        margin: 0 10px;
+        border-top: 0;
+        margin-bottom: 10px;
+        .#{$uiname}-btns{
+          margin-left: 65px;
+          *margin-left: 55px;
+          .aoyou-ml30{
+            margin-left: 90px;
+          }
+        }
+        .aoyou-button{
+          .aoyou-button-success{
+            background-color: #ebf6ec;
+            border-color: #2e8c44;
+            color: #2e8c44;
+            min-width: 60px;
+            height: 25px;
+          }
+          .aoyou-state-default{
+            background-color: #ebf6ec;
+            border-color: #2e8c44;
+            color: #2e8c44;
+            min-width: 60px;
+            height: 25px;
+          }
+        }
+        .aoyou-button-text{
+          line-height: 20px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
+
+
+

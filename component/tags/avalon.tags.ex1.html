@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tags组件</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="../../avalon.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        })
+        require(["./component/tags/avalon.tags","./component/button/avalon.button"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                adddata:function(){
+                    var ss = avalon.vmodels['dg'];
+                    ss.addData([{name:"name111",value:"vvv"}]);
+                },
+                $gropt:{
+                    data:[{name:'name1',value:'1'},{name:'name2',value:'2'},{name:'name3',value:'3'},{name:'name4',value:'4'},{name:'name4',value:'4'}]
+                }
+            })
+            avalon.scan()
+        })
+    </script>
+</head>
+<body>
+<div ms-controller="test">
+    <div><aoyou:tags  $id="dg" config="$gropt" ></aoyou:tags></div>
+    <div><aoyou:button ms-click="adddata">获取数据</aoyou:button></div>
+    <div><aoyou:tags fontcolor="#fff" closeshow="false" tagswidth="200px" bgcolor="green" config="$gropt" ></aoyou:tags></div>
+</div>
+</body>
+</html>

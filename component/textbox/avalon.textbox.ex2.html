@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>textbox demo 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link type="text/css" rel="stylesheet" href="../style/avalon.doc.css">
+        <script src="../../avalon.js"></script>
+        <script src="../style/highlight/shCore.js"></script>
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/textbox/avalon.textbox", "./component/button/avalon.button"], function () {
+                var demoVM = avalon.define({
+                    $id: "demo",
+                    sss1:"21",
+                    sss2:"",
+                    sss3:"3244"
+                })
+    
+                avalon.scan()
+            })
+        </script>
+    </head>
+    
+    <body ms-controller="demo">
+        <fieldset>
+            <legend>textbox 设置value/placeholder/disabled</legend>
+            <div>
+                <aoyou:textbox value="sss1"></aoyou:textbox>
+            </div>
+            <div>
+                <aoyou:textbox value="sss2" placeholder="my placeholder"></aoyou:textbox>
+            </div>
+            <div>
+                <aoyou:textbox value="sss3" disabled="true"></aoyou:textbox>
+            </div>
+        </fieldset>
+    </body>
+
+</html>

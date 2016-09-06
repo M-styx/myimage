@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>grid组件</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="../../avalon.js"></script>
+    <!--<script src="../highlight/shCore.js"></script>-->
+    <script>
+        //newgrid用
+        var cols = [
+            {name: 'id', display: '编号', width: 100, type: 'text', disabled: true},
+            {name: 'name', display: '名称', width: 150, type: 'text', disabled: true},
+            {name: 'price', display: '价格', width: 120, type: 'text', disabled: true},
+            {name: 'category', display: '类别', width: 150, type: 'select', disabled: true ,option: {
+                'A1': '游戏', 'A2' : '电影', 'A3' : '音乐'
+            }}
+        ];
+        var cols1 = [
+            {name: 'id', display: 'id', width: 0, type: 'text', disabled: false},
+            {name: 'intime', display: '入住时间', width: 80, type: 'text', disabled: true},
+            {name: 'outtime', display: '离店时间', width: 80, type: 'text', disabled: true},
+            {name: 'name', display: '酒店名称', width: 180, type: 'text', disabled: true},
+            {name:'kind',display:'房型',width:100,type:'text', disabled: true}
+        ];
+        var cols2 = [
+            {name: 'id', display: 'id', width: 0, type: 'text', disabled: false,textalign:"left"},
+            {name: 'time', display: '航程', width: 85, type: 'text', disabled: true},
+            {name: 'legs', display: '航段', width: 85, type: 'text', disabled: true},
+            {name: 'airline', display: '参考航空公司/航班号', width: 155, type: 'text', disabled: true},
+            {name: 'type', display: '参考机型', width: 65, type: 'text', disabled: true},
+            {name:'space',display:'舱位',width:58,type:'text', disabled: true},
+            {name:'stops',display:'经停',width:60,type:'text', disabled: true},
+            {name:'airport',display:'参考时间/机场',width:193,type:'text', disabled: true}
+        ];
+        var rows = [
+            {"id": "001", "name": "Eclair11111111111111111111111111111111111111",   "price": "$0.87", "category": "A1", "selected": "false"},
+            {"id": "002", "name": "YuJun",    "price": "$0.57", "category": "A2", "selected": "false"},
+            {"id": "003", "name": "YingYing", "price": "$1.11", "category": "A3", "selected": "true"},
+            {"id": "004", "name": "HaHa",     "price": "$0.89", "category": "A2", "selected": "false"},
+            {"id": "005", "name": "Eclair",   "price": "$0.77", "category": "A3", "selected": "false"}
+        ];
+
+        var rows2 = [
+            {"id": "001","time":"2015-12-26", "legs": "上海 到 暹粒","airline": "春秋航空有限公司 9C8575", "type": "待定", "space":"经济舱","stops":"否","airport":"起飞 21:00 浦东 <br> 到达 00:05 +1 吴哥国际机场","selected": "false"},
+            {"id": "001", "time":"2015-12-30","legs": "暹粒 到 上海","airline": "春秋航空有限公司 9C8575", "type": "待定", "space":"经济舱","stops":"否","airport":"起飞 21:00 浦东 <br> 到达 00:05 +1 吴哥国际机场","selected": "false"}
+        ];
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        });
+        require(["./component/newgrid/avalon.newgrid"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                $gropt:{
+                    title_align:"left",
+                    title:"神之表格 叛逆XYZ おはようございます",
+                    checkbox:true,
+                    singleSelect:false,
+                    editable:true,
+                    autoLoad:true,
+                    pagerbar:true,
+                    limit:2,
+                    //loadUrl: './td.datagrid.json',
+                    //loadParam: {
+                    //    "total":"5","rspcod" :"200","rspmsg":"","rows":'23'
+                    //},
+                    afterAjax:function(){
+                        console.log(111)
+                    },
+                    onrowclicked:function(){
+                        console.log(2222)
+                    },
+                    cols: cols
+                    ,rows: rows
+                }
+            })
+
+            var vvmm = avalon.define({
+                $id:"test1",
+                $gropt:{
+                    title_align:"center",
+                    title:"小倩",
+                    loadUrl:'./td.datagrid.json',
+                    cols:cols1,
+                    checkbox:false,
+                    singleSelect:true,
+                    editable:true,
+                    autoLoad:true,
+                    pagerbar:true,
+                    limit:5,
+                    bar:false
+                },
+                $gropt1:{
+                    title_align:"center",
+                    title:"机票信息",
+                    cols:cols2,
+                    rows:rows2,
+                    checkbox:false,
+                    singleSelect:true,
+                    editable:false,
+                    autoLoad:true,
+                    pagerbar:false,
+                    limit:5,
+                    bar:false
+                }
+            });
+
+            /*  var airticket = avalon.define({
+             $id:"test2",
+             $gropt:{
+             title_align:"center",
+             title:"机票信息",
+             cols:cols2,
+             rows:rows2,
+             checkbox:false,
+             singleSelect:true,
+             editable:false,
+             autoLoad:true,
+             pagerbar:false,
+             limit:5,
+             bar:false
+             }
+             })*/
+
+            var orderdetail = avalon.define({
+                $id:"test3",
+                $gropt:{
+                    title_align:"center",
+                    title:"订单详情",
+                    cols:cols2,
+                    rows:rows2,
+                    checkbox:false,
+                    singleSelect:true,
+                    editable:false,
+                    autoLoad:true,
+                    pagerbar:false,
+                    limit:5,
+                    bar:false
+                }
+            })
+            avalon.scan()
+        })
+    </script>
+</head>
+<body>
+<div ms-controller="test">
+    <aoyou:newgrid  $id="dg" config="$gropt" >
+    </aoyou:newgrid>
+</div>
+
+<div ms-controller="test1" style="margin-top: 20px">
+    <aoyou:newgrid $id="dg1" config="$gropt"></aoyou:newgrid>
+</div>
+
+
+<div ms-controller="test2" style="margin-top: 30px">
+    <aoyou:newgrid $id="dg2" config="$gropt1"></aoyou:newgrid>
+</div>
+
+<div ms-controller="test3" style="margin-top: 30px">
+    <aoyou:newgrid $id="dg3" config="$gropt"></aoyou:newgrid>
+</div>
+</body>
+</html>

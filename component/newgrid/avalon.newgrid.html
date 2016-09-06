@@ -1,0 +1,71 @@
+<div class="aoyou-newgrid-container" ms-css-width="tablewidth">
+	<div class="navbar" ms-if="bar===true" ms-css-text-align="title_align">{{title}}<span class="navbar-refresh" title="刷新" ms-click="refreshData()"></span></div>
+	<div ms-visible="toolbarshow" class="aoyou-newgrid-toolbar">{{content|html}}</div>
+	<div class="aoyou-newgrid-content-div" ms-css-height="tableheight" >
+		<table class="table table-hover aoyou-newgrid-margin_bottom2">
+			<thead class="aoyou-newgrid-tablecontent-thead">
+				<tr>
+					<th class="aoyou-newgrid-cell_check" ms-css-width="45" ms-visible="checkbox">
+						<i ms-if="singleSelect != true" class="aoyou-newgrid-icon" ms-class-1="aoyou-newgrid-checked: _allSelected" ms-class-2="aoyou-newgrid-unchecked: !_allSelected" ms-click="_clickCheckbox($event, -1)"></i>
+					</th>
+                    <th ms-repeat="cols" ms-css-width="{{el.width}}" ms-visible="el.disabled">{{el.display}}</th>
+					<th width="150" ms-visible="editable">操作</th>
+				</tr>
+				<tr ms-visible="filterbar">
+					<th ms-visible="checkbox"></th>
+					<th class="aoyou-newgrid-filter" ms-repeat="cols" ms-visible="el.disabled==true">
+						<input type="text" class="aoyou-newgrid-filter-input" ms-if="el.type == 'text'" ms-attr-name="{{el.name}}" ms-css-width="{{cols[$index].width - 20}}" ms-input="_filterRow($index, el.name)" />
+						<select class="aoyou-newgrid-filter-input" ms-if="el.type == 'select'" ms-attr-name="{{el.name}}" ms-css-width="{{el.width - 20}}" ms-change="_filterRow($index, el.name)">
+							<option value=""></option>
+							<option ms-repeat="el.option" ms-attr-value="{{$key}}">{{$val}}</option>
+						</select>
+					</th>
+					<th ms-visible="editable"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ms-repeat-r="_cells" ms-class-1="aoyou-newgrid-tr_edit: _editIdx==$index" ms-click="_clickRow($event, $index)" ms-hover="aoyou-newgrid-tr_hover">
+					<td ms-visible="checkbox===true" ms-class-1="aoyou-newgrid-cell"  ms-class-2="aoyou-newgrid-cell_check" ms-class-3="aoyou-newgrid-textalign-center" ms-css-width="45">{{r[r.length-1].seleclass}}
+						<i class="aoyou-newgrid-icon" ms-class-1="aoyou-newgrid-checked: r[0]==1" ms-class-2="aoyou-newgrid-unchecked: r[0]==0"></i>
+					</td>
+					<td ms-visible="cols[$index-1].disabled" ms-class-1="aoyou-newgrid-cell" ms-class-2="aoyou-newgrid-textalign-center"  ms-repeat-c="r" ms-css-width="{{cols[$index-1].width}}" ms-attr-title="(cols[$index-1].type == 'select' ? cols[$index-1].option[c] : c)" ms-visible="$index>0">
+						<span ms-if="$index>0" ms-visible="_editIdx!=$outer.$index" ms-click="_clickCell($event, cols[$index-1].fun, $outer.$index, $index-1, c)">
+							{{cols[$index-1].type == 'text' ? (cols[$index-1].render ? cols[$index-1].render(c, r, $outer.$index, $index) : c) : (cols[$index-1].render ? cols[$index-1].render(cols[$index-1].option[c], r, $outer.$index, $index) : cols[$index-1].option[c]) | html}}
+						</span>
+						<div ms-if="$index>0&&editable===true" ms-visible="_editIdx==$outer.$index">
+							<input type="text" ms-if="cols[$index-1].type == 'text'" ms-attr-disabled="!cols[$index-1].editable" ms-duplex="c" ms-css-width="{{cols[$index-1].width - 15}}"/>
+							<select ms-if="cols[$index-1].type == 'select'" ms-attr-disabled="!cols[$index-1].editable" ms-css-width="{{cols[$index-1].width - 15}}" ms-duplex="c">
+								<option ms-repeat="cols[$index-1].option" ms-attr-value="{{$key}}">{{$val}}</option>
+							</select>
+						</div>
+					</td>
+					<td width="150" class="aoyou-newgrid-toolcell" ms-visible="editable">
+						<div class="btn-box">
+							<a href="javascript:void(0)" class="btn btn-edit" title="编辑" ms-click="_editRow($event, $index)"></a>
+							<a href="javascript:void(0)" class="btn btn-submit" title="确定" ms-click="_submitEdit($event, $index)"></a>
+							<a href="javascript:void(0)" class="btn btn-cancel" title="取消" ms-click="_cancelEdit($event, $index)"></a>
+							<a href="javascript:void(0)" class="btn btn-remove" title="删除" ms-click="_removeRow($event, $index)"></a>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="grid_page_bar" ms-visible="pagerbar">
+        <div class="grid_page_bar_pageinfo" ms-if="loadUrl!=''">
+            第<strong>{{_page}}</strong>页<strong>{{_cells.size()}}</strong>条记录&nbsp;&nbsp;共<strong>{{_total}}</strong>条记录&nbsp;&nbsp;{{_loadInfo | html}}
+        </div>
+        <div class="grid_page_bar_pageinfo" ms-if="loadUrl=='' && !pagerbar">
+            共<strong>{{_total}}</strong>条记录&nbsp;&nbsp;{{_loadInfo | html}}
+        </div>
+        <div class="grid_page_bar_pageinfo" ms-if="loadUrl=='' && pagerbar">
+            第<strong>{{_page}}</strong>页<strong>{{_cells.size()}}</strong>条记录&nbsp;&nbsp;共<strong>{{_total}}</strong>条记录&nbsp;&nbsp;{{_loadInfo | html}}
+        </div>
+        <aoyou:pager config="$pager"></aoyou:pager>
+    </div>
+	<div class="loading-mask" ms-visible="_isLoading">
+		<div class="loading-container">
+			<div class="loading-speeding-wheel"></div><strong>数据加载中,请稍后…</strong>
+		</div>
+	</div>
+</div>

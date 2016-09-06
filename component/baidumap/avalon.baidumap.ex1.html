@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>baidumap组件</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="../../avalon.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=K071QaZ0NshgrnNdYxzgaBKqXuRL2B31"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        })
+        require(["./component/baidumap/avalon.baidumap"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                $gropt:{
+                   mapcontrol:true
+                }
+            })
+            avalon.scan()
+        })
+    </script>
+</head>
+<body>
+<div ms-controller="test">
+    <aoyou:baidumap config="$gropt"></aoyou:baidumap>
+</div>
+</body>
+</html>

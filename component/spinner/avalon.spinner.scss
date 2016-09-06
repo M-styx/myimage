@@ -1,0 +1,80 @@
+$uiname: "aoyou-spinner";
+.#{$uiname} {
+    border:1px solid #cccccc;
+    overflow: hidden;
+    height: 26px;
+    display: inline-block;
+    .#{$uiname}-btn-box{
+        float: left;
+        height: 24px;
+        .#{$uiname}-btn-updown-up{
+            background: url(upbtn.png) no-repeat;
+            cursor: pointer;
+        }
+        .#{$uiname}-btn-updown-down{
+            background: url(downbtn.png) no-repeat;
+            cursor: pointer;
+        }
+        .#{$uiname}-btn-updown{
+            height: 13px;
+            width: 26px;
+        }
+    }
+    .aoyou-btn {
+        float: left;
+        height: 26px;
+        overflow: visible;
+        _overflow-y: hidden;
+        padding: 0 10px;
+        outline: 0;
+        vertical-align: middle;
+        cursor: pointer;
+        border: none;
+        background-color:#ebeff0;
+        &:active {
+            background-color: #f0f0f0;
+        }
+        &.aoyou-spinner-btn-left{
+            border-right: 0px;
+        }
+        &.aoyou-spinner-btn-right{
+            border-left: 0px;
+        }
+        &.aoyou-state-disabled, &.aoyou-state-disabled .aoyou-icon {
+            box-shadow: none;
+            background-color: whitesmoke;
+            border-color: #d9d9d9;
+            cursor: default;
+            color: #ccc;
+        }
+        &.aoyou-value-not-valid{
+            border-left-color: red!important;
+        }
+    }
+    .aoyou-textbox {
+        text-align: center;
+        float: left;
+        display: inline-block;
+        width: 45px;
+        padding: 3px 5px;
+        height: 18px;
+        line-height: 18px;
+        border: 0px;
+        font-size: 14px;
+        outline: none;
+        &.aoyou-state-disabled {
+            color: #999;
+            background-color: whitesmoke;
+            border-color: #d9d9d9;
+            cursor: default;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        &.aoyou-value-not-valid {
+            border-color: red;
+        }
+    }
+}
+
+

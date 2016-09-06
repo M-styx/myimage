@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="avalon.slider.css">
+    <script src="../../avalon.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        });
+        require(["./component/slider/avalon.slider"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                value:0,
+                percent:"0",
+                $valueMin:"0",
+                $valueMax:"100",
+                values:[25,50],
+                percent0:'25%',
+                percent1:'50%',
+                percent:"25%",
+                $gropt1:{
+                    $valueMin:'0',
+                    $valueMax:'100',
+                    values:[25,50],
+                    $twohandlebars:true,
+                    range:true,
+                    onDrag:function (o,data) {
+                        vm.value = o.value;
+                        vm.percent = o.percent;
+                        vm.values = o.values;
+                        vm.$valueMin = o.$valueMin;
+                        vm.$valueMax = o.$valueMax;
+                        vm.percent0 = o.percent0;
+                        vm.percent1 = o.percent1;
+                        vm.percent= o.percent;
+                    }
+                }
+            });
+            avalon.scan()
+        })
+    </script>
+</head>
+<body ms-controller="test">
+<aoyou:slider config="$gropt1"></aoyou:slider>
+值为{{value}}，百分比为{{percent}}%; min为{{$valueMin}}, max为{{$valueMax}}
+values:[{{values[0]}},{{values[1]}}]
+percent:{{percent}}  percent0:{{percent0}},percent1:{{percent1}}
+
+
+<div style="color:#868686;margin-top: 20px">
+    $twohandlebars:true,range:true,values:[25,50]
+</div>
+</body>
+</html>

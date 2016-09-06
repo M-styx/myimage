@@ -1,0 +1,47 @@
+$namespace: "aoyou-slider-" !default;
+
+.#{$namespace}horizontal{
+  position: relative;
+  text-align: left;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  width: 100%;
+  background: #e6e6e6
+
+}
+
+.#{$namespace}range{
+  position: absolute;
+  display: block;
+  z-index: 1;
+  line-height: 0px;
+  border: 0 none;
+  font-size: 0px;
+  background: #afd9fc;
+  height: 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.#{$namespace}handle{
+  position: absolute;
+  top: -3px;
+  display: block;
+  cursor: default;
+  height: 14px;
+  width: 14px;
+  line-height: 0px;
+  z-index: 2;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  font-size: 0px;
+  background: #3775c0;
+}

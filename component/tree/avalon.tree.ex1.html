@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tree栏组件</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="../../avalon.js"></script>
+        <script src="../highlight/shCore.js"></script>
+        <script>
+            //tree用
+            var datas = [
+                {text: '菜单01', t_checked:true, expand:true,disabled:false,edit:{add:true,rename:true,remove:true}, children: [
+                    {text: '菜单01-01', t_checked:false, disabled:false,children:[]},
+                    { text: '菜单01-02', expand:true, t_checked:false, disabled:false, children: [
+                        {text: '菜单01-02-01', expand:false, t_checked:false, disabled:false}
+                    ]},
+                    {text: '菜单01-03',edit:{add:true,rename:true},children: [
+                        { text: '菜单01-03-01', expand:false, t_checked:false},
+                        {text: '菜单01-03-02', expand:false, t_checked:true,edit:{add:true,rename:true,remove:true}}
+                    ]}
+                ]},
+                { text: '菜单03', expand:false, t_checked:false, disabled:false,edit:{add:true,rename:true,remove:true}},
+                { text: '菜单04', expand:false, t_checked:false, disabled:true}
+            ];
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/tree/avalon.newTree"], function () {
+                avalon.define({
+                    $id: "test",
+                    $treeOpt:{
+                        //data:datas,
+                        url:'xx.json',
+                        checkbox:true,
+                        checkboxType:"c",
+                        onClicked:function(){
+                            alert(213);
+                        }
+                    }
+                })
+                avalon.scan()
+            })
+        </script>
+    </head>
+    <body ms-controller="test">
+        <aoyou:tree config="$treeOpt"></aoyou:tree>
+    </body>
+</html>

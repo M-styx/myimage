@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>dropdownmenu组件</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="../../avalon.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        })
+        require(["./component/dropdownmenu/avalon.dropdownmenu"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                $gropt1:{
+                        mainiconclass:'user',
+                        outerclass:'top_content_user',
+                        afterClick:function (z) {
+                            console.log(z);
+                        },
+                        data:[{content:"消息查看",href:"#",icontype:"mail"},{content:"修改密码",href:"#",icontype:"key"},{content:"退出",href:"#",icontype:"logout"}]
+                },
+                $gropt2:{
+                    messagenum:90,
+                    mainiconclass:'mail',
+                    outerclass:'top_content_mail',
+                    data:[{content:"系统消息",href:"#",messagenum:'80'},{content:"私信",href:"#",messagenum:'10'}]
+                }
+            })
+            avalon.scan()
+        })
+    </script>
+</head>
+<body ms-controller="test">
+<div style="width: 400px;height:200px;background-color: #ccc;padding-left:100px;">
+    <aoyou:dropdownmenu config="$gropt1" ></aoyou:dropdownmenu>
+</div>
+<div style="width: 400px;height:200px;background-color: darkgoldenrod;padding-left:100px;">
+    <aoyou:dropdownmenu config="$gropt2" ></aoyou:dropdownmenu>
+</div>
+</body>
+</html>

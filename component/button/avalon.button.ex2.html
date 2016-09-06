@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>button demo 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link type="text/css" rel="stylesheet" href="../style/avalon.doc.css"/>
+        <script src="../../avalon.js"></script>
+        <script src="../style/highlight/shCore.js"></script>
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/button/avalon.button"], function () {
+                avalon.define({
+                    $id: "demo"
+
+                })
+                avalon.scan()
+            })
+        </script>
+        <style>
+            body {
+                padding-bottom: 200px;
+            }
+            fieldset > div {
+                margin-bottom: 20px;
+            }
+            .inline {
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body ms-controller="demo">
+        <fieldset>
+            <legend>size 、width 、color and disabled config</legend>
+            <div>
+                <aoyou:button size="small" >size small</aoyou:button>
+                <aoyou:button>size default</aoyou:button>
+                <aoyou:button width="100">custom width</aoyou:button>
+                <aoyou:button size="big">size big</aoyou:button>
+                <aoyou:button size="large">size large</aoyou:button>
+            </div>
+            <div>
+                <aoyou:button type="icon" icon="\&\#xf015;" icon-position="left" size="small" >icon only</aoyou:button>
+                <aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="left">icon left</aoyou:button>
+                <aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="left" width="120">icon left</aoyou:button>
+                <aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="right" size="big">icon right</aoyou:button>
+                <aoyou:button type="labeledIcon" icon="\&\#xf001;-\&\#xf06b;" icon-position="left-right" size="large">icon left right</aoyou:button>
+            </div>
+            <div>
+                <aoyou:button type="icon" icon="\&\#xf015;" icon-position="left" size="small" color="primary">color primary</aoyou:button>
+                <aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="left" color="warning">color warning</aoyou:button>
+                <aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="left" color="inverse">color inverse</aoyou:button>
+                <aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="left" width="120" color="danger">color danger</aoyou:button>
+                <aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="right" size="big" color="success">color success</aoyou:button>
+                <aoyou:button type="labeledIcon" icon="\&\#xf001;-\&\#xf06b;" icon-position="left-right" size="large" color="info">color info</aoyou:button>
+            </div>
+            <div>
+                <aoyou:button disabled="true" type="icon" icon="\&\#xf015;" icon-position="left" size="small" color="primary">color primary</aoyou:button>
+                <aoyou:button disabled="true" type="labeledIcon" icon="\&\#xf015;" icon-position="left" color="warning">color warning</aoyou:button>
+                <aoyou:button disabled="true" type="labeledIcon" icon="\&\#xf015;" icon-position="left" color="inverse">color inverse</aoyou:button>
+                <aoyou:button disabled="true" type="labeledIcon" icon="\&\#xf015;" icon-position="left" width="120" color="danger">color danger</aoyou:button>
+                <aoyou:button disabled="true" type="labeledIcon" icon="\&\#xf015;" icon-position="right" size="big" color="success">color success</aoyou:button>
+                <aoyou:button disabled="true" type="labeledIcon" icon="\&\#xf001;-\&\#xf06b;" icon-position="left-right" size="large" color="info">color info</aoyou:button>
+            </div>
+        </fieldset>
+       
+        <div ms-skip>
+            <pre class="brush: html; gutter: false; toolbar: false">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;button demo 2&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width"&gt;
+        &lt;link type="text/css" rel="stylesheet"  href="../highlight/shCore.css"/&gt;
+        &lt;link type="text/css" rel="stylesheet" href="../style/avalon.doc.css"/&gt;
+        &lt;script src="../../avalon.js"&gt;
+
+        &lt;/script&gt;
+        &lt;script src="./shCore.js"&gt;
+
+        &lt;/script&gt;
+        &lt;script&gt;
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/button/avalon.button"], function () {
+                avalon.define({
+                    $id: "demo"
+
+                })
+                avalon.scan()
+            })
+        &lt;/script&gt;
+        &lt;style&gt;
+            body {
+                padding-bottom: 200px;
+            }
+            fieldset &gt; div {
+                margin-bottom: 20px;
+            }
+            .inline {
+                display: inline-block;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body ms-controller="demo"&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;size 、width 、color and disabled config&lt;/legend&gt;
+            &lt;div&gt;
+                &lt;aoyou:button size="small" &gt;size small&lt;/aoyou:button&gt;
+                &lt;aoyou:button&gt;size default&lt;/aoyou:button&gt;
+                &lt;aoyou:button width="100"&gt;custom width&lt;/aoyou:button&gt;
+                &lt;aoyou:button size="big"&gt;size big&lt;/aoyou:button&gt;
+                &lt;aoyou:button size="large"&gt;size large&lt;/aoyou:button&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;aoyou:button type="icon" icon="\&\#xf015;" icon-position="left" size="small" &gt;icon only&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="left"&gt;icon left&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="left" width="120"&gt;icon left&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="right" size="big"&gt;icon right&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon="\&\#xf001;-\&\#xf06b;" icon-position="left-right" size="large"&gt;icon left right&lt;/aoyou:button&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;aoyou:button type="icon" icon="\&\#xf015;" icon-position="left" size="small" color="primary"&gt;color primary&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="left" color="warning"&gt;color warning&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="left" color="inverse"&gt;color inverse&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="left" width="120" color="danger"&gt;color danger&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon="\&\#xf015;" icon-position="right" size="big" color="success"&gt;color success&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon="\&\#xf001;-\&\#xf06b;" icon-position="left-right" size="large" color="info"&gt;color info&lt;/aoyou:button&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;aoyou:button disabled="true" type="icon" icon="\&\#xf015;" icon-position="left" size="small" color="primary"&gt;color primary&lt;/aoyou:button&gt;
+                &lt;aoyou:button disabled="true" type="labeledIcon" icon="\&\#xf015;" icon-position="left" color="warning"&gt;color warning&lt;/aoyou:button&gt;
+                &lt;aoyou:button disabled="true" type="labeledIcon" icon="\&\#xf015;" icon-position="left" color="inverse"&gt;color inverse&lt;/aoyou:button&gt;
+                &lt;aoyou:button disabled="true" type="labeledIcon" icon="\&\#xf015;" icon-position="left" width="120" color="danger"&gt;color danger&lt;/aoyou:button&gt;
+                &lt;aoyou:button disabled="true" type="labeledIcon" icon="\&\#xf015;" icon-position="right" size="big" color="success"&gt;color success&lt;/aoyou:button&gt;
+                &lt;aoyou:button disabled="true" type="labeledIcon" icon="\&\#xf001;-\&\#xf06b;" icon-position="left-right" size="large" color="info"&gt;color info&lt;/aoyou:button&gt;
+            &lt;/div&gt;
+        &lt;/fieldset&gt;
+       
+  
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </div>
+    </body>
+</html>

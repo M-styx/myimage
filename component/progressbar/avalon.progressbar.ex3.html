@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>progressbar组件3</title>
+    <link rel="stylesheet" href="avalon.progressbar.css">
+    <script src="../../avalon.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        });
+        require(["./component/progressbar/avalon.progressbar"], function () {
+            var vm = avalon.define({
+                $id: "test",
+
+                $gropt3:{
+                    onComplete:function () {
+                      alert("complete");
+                    },
+                    onInit:function () {
+                        alert("Init");
+                    }
+                }
+            });
+
+            var v= 0;
+            setTimeout(function() {
+                timer = setInterval(function() {
+                    v++
+                    if(v > 100) return clearInterval(timer)
+                    avalon.vmodels.bar3.value = v;
+                }, 50)
+            }, 1000)
+            avalon.scan()
+        })
+    </script>
+</head>
+<body ms-controller="test" style="margin-top: 40px">
+
+<div style="font-size: 18px;margin: 10px">
+    外部设置进度值,带label
+</div>
+
+<div style="width: 1200px">
+    <aoyou:progressbar $id="bar3" config="$gropt3"></aoyou:progressbar>
+</div>
+
+
+
+</body>
+</html>

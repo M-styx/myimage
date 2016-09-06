@@ -1,0 +1,25 @@
+$namespace: "aoyou-newswitch-" !default;
+
+.#{$namespace}icon{
+  cursor: pointer;
+  .#{$namespace}icon-switch-true{
+    background: url("../../component/useimg/ico.png") no-repeat;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    margin: 0 4px;
+    vertical-align: middle;
+    background-position: -129px -269px;
+  }
+  .#{$namespace}icon-switch-false {
+    background: url("../../component/useimg/ico.png") no-repeat;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    margin: 0 4px;
+    vertical-align: middle;
+    background-position: -129px -232px;
+  }
+}
+
+

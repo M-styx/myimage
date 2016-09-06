@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>双日历组件</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="../../avalon.js"></script>
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/smartdatepicker/avalon.smartdatepicker"], function () {
+                avalon.define({
+                    $id: "test"
+                })
+                avalon.scan()
+            })
+            function adddates(){
+                var ss = avalon.vmodels['testdatepicker'];
+                ss._addDatesInfo(['2016-4-14','2016-3-28','2016-5-1']);
+            }
+            function getckdates(){
+                var ss = avalon.vmodels['testdatepicker'];
+                console.log(ss.selectedDates.$model);
+            }
+        </script>
+    </head>
+    <body ms-controller="test">
+        <aoyou:smartdatepicker $id="testdatepicker" config="$sdpk"></aoyou:smartdatepicker>
+        <div style="background-color:red;width:100px;height:30px;" onclick="adddates();">add dates</div>
+        <div style="background-color:lightblue;width:100px;height:30px;" onclick="getckdates();">getcked dates</div>
+    </body>
+</html>

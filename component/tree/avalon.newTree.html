@@ -1,0 +1,48 @@
+<div class="aoyou_tree_container">
+    <i class="td_tree_icon td_tree_loading margin_left" ms-if="_isLoading"></i>
+    <span class="td_tree_loadInfo">{{_loadInfo}}</span>
+    <ul ms-each-el="data">
+        <li ms-attr-tabindex="el.index" hidefocus="true" treenode=""  ms-include="'aoyou_tpl'"></li>
+    </ul>
+    <script type="avalon" class="hide" id="aoyou_tpl">
+        <span ms-class-1="switch button" ms-class-2="center_open:(el.expand===true||el.expand==='true')&&!!el.children.length>0" ms-class-3="center_close:(el.expand===false||el.expand==='false'||el.expand==undefined)&&!!el.children.length>0" ms-class-4="center_docu:!el.children.length>0" ms-click="_clickNode($event, $index, el, 'oper')"></span>
+        <span ms-visible="checkbox" ms-class-1="button chk" ms-class-2="checkbox_true_{{el.disabled==true?'disable':'full'}}:(el.t_checked==true)" ms-class-3="checkbox_false_{{el.disabled==true?'disable':'full'}}:(!el.t_checked==true)" ms-click="_clickNode($event, $index, el, 'checkbox')"></span>
+        <a target="_blank" style="">
+            <span title="el.text" ms-class-1="button" ms-class-2="ico_open:(el.expand===true||el.expand==='true')&&!!el.children.length>0" ms-class-3="ico_close:(el.expand===false||el.expand==='false'||el.expand==undefined)&&!!el.children.length>0" ms-class-4="ico_docu:!el.children.length>0" style=""></span>
+            {{el.rename}}<span ms-visible="!el.renameShow" class="node_name" ms-click="_clickNode($event, $index, el, 'node')">{{el.text}}</span>
+            <input ms-click="_inputClick($event,$index,el)" type="text" class="rename" ms-duplex-string="el.text" ms-visible="el.renameShow" />
+            <span ms-visible="bt_add||el.edit.add" class="button add" title="add node" onfocus="this.blur();" ms-click="_editNode($event,$index,el,'add')"></span>
+            <span ms-visible="bt_remove||el.edit.remove" class="button remove" title="remove" ms-click="_editNode($event,$index,el,'remove')"></span>
+            <span ms-visible="bt_rename||el.edit.rename" class="button edit" title="rename" ms-click="_editNode($event,$index,el,'rename')"></span>
+        </a>
+		<ul ms-each-el="el.children" ms-visible="el.expand">
+			<li ms-include="'aoyou_tpl2'"></li>
+		</ul>
+    </script>
+    <script type="avalon" class="hide" id="aoyou_tpl2">
+    <span ms-class-1="switch button" ms-class-2="center_open:(el.expand===true||el.expand==='true')&&!!el.children.length>0" ms-class-3="center_close:(el.expand===false||el.expand==='false'||el.expand==undefined)&&!!el.children.length>0" ms-class-4="center_docu:!el.children.length>0" ms-click="_clickNode($event, $index, el, 'oper')"></span>
+        <span ms-visible="checkbox" ms-class-1="button chk" ms-class-2="checkbox_true_{{el.disabled==true?'disable':'full'}}:(el.t_checked==true)" ms-class-3="checkbox_false_{{el.disabled==true?'disable':'full'}}:(!el.t_checked==true)" ms-click="_clickNode($event, $index, el, 'checkbox')"></span>
+        <a target="_blank" style="">
+        <span title="el.text" ms-class-1="button" ms-class-2="ico_open:(el.expand===true||el.expand==='true')&&!!el.children.length>0" ms-class-3="ico_close:(el.expand===false||el.expand==='false'||el.expand==undefined)&&!!el.children.length>0" ms-class-4="ico_docu:!el.children.length>0" style=""></span>
+        <span ms-visible="!el.renameShow" class="node_name" ms-click="_clickNode($event, $index, el, 'node')">{{el.text}}</span>
+        <input ms-click="_inputClick($event,$index,el)" type="text" class="rename" ms-duplex-string="el.text" ms-visible="el.renameShow" />
+        <span ms-visible="el.edit.add" class="button add" title="add node" onfocus="this.blur();" ms-click="_editNode($event,$index,el,'add')"></span>
+        <span ms-visible="el.edit.remove" class="button remove" title="remove" ms-click="_editNode($event,$index,el,'remove')"></span>
+        <span ms-visible="el.edit.rename" class="button edit" title="rename" ms-click="_editNode($event,$index,el,'rename')"></span>
+        </a>              
+		<ul ms-each-el="el.children" ms-visible="el.expand">
+			<li>
+                <span ms-class-1="switch button" ms-class-2="center_docu"></span>
+                <span ms-visible="checkbox" ms-class-1="button chk" ms-class-2="checkbox_true_{{el.disabled==true?'disable':'full'}}:(el.t_checked==true)" ms-class-3="checkbox_false_{{el.disabled==true?'disable':'full'}}:(!el.t_checked==true)" ms-click="_clickNode($event, $index, el, 'checkbox')"></span>
+                <a target="_blank" style="">
+                <span title="el.text" class="button ico_docu" style=""></span>
+                <span ms-visible="!el.renameShow" class="node_name" ms-click="_clickNode($event, $index, el, 'node')">{{el.text}}</span>
+                <input ms-click="_inputClick($event,$index,el)" type="text" class="rename" ms-duplex-string="el.text" ms-visible="renameShow" />
+                <span ms-visible="el.edit.add" class="button add" title="add node" onfocus="this.blur();" ms-click="_editNode($event,$index,el,'add')"></span>
+            <span ms-visible="el.edit.remove" class="button remove" title="remove" ms-click="_editNode($event,$index,el,'remove')"></span>
+            <span ms-visible="el.edit.rename" class="button edit" title="rename" ms-click="_editNode($event,$index,el,'rename')"></span>
+                </a>
+			</li>
+		</ul>
+    </script>
+</div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>spinner demo 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link type="text/css" rel="stylesheet" href="../style/avalon.doc.css">
+        <script src="../../avalon.js"></script>
+        <script src="../style/highlight/shCore.js"></script>
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/spinner/avalon.spinner"], function () {
+                var demoVM = avalon.define({
+                    $id: "demo"
+                })
+    
+                avalon.scan()
+            })
+        </script>
+    </head>
+    
+    <body ms-controller="demo">
+    <aoyou:spinner></aoyou:spinner>
+    <aoyou:spinner side="right"></aoyou:spinner>
+    <aoyou:spinner side="left"></aoyou:spinner>
+    </body>
+
+</html>

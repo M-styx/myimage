@@ -1,0 +1,12 @@
+<div class="aoyou-checkboxlist">
+<ul class="aoyou-checkboxlist-ul" ms-css-width="width" ms-css-height="height">
+    <li class="aoyou-checkboxlist-item aoyou-checkboxlist-all"
+        ms-if="!!alltext" ms-click="_clickAll($event)">
+        <span ms-if="data.size()">{{alltext|html}}</span>
+        <i ms-visible="all" class="aoyou-checkboxlist-yes"></i>
+    </li>
+    <li ms-if="typeof data !== 'undefined'" ms-repeat="data" class="aoyou-checkboxlist-item" ms-click="_clickOne($event, $index)">
+        <span>{{el.text|html}}</span><i ms-visible="el.check" class="aoyou-checkboxlist-yes"></i>
+    </li>
+</ul>
+</div>

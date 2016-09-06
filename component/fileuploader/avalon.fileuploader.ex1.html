@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>fileuploader demo 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="../../avalon.js"></script>
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/fileuploader/avalon.fileuploader"], function () {
+                var demoVM = avalon.define({
+                    $id: "demo",
+                    $opt:{
+                        addButtonText: "添加文件",
+                        uploadButtonText: "开始上传",
+                        acceptFileTypes: "image.*,*.txt,*.js",
+//                        serverConfig: {
+//                            url: "../../Handler1.ashx",
+//                            userName: undefined,
+//                            password: undefined,
+//                            keyGenUrl: "../../getFileKey.ashx"
+//                        },
+                        onFileOverSize: function (fileObj) {
+                            alert(fileObj.name+"超出了文件尺寸限制")
+                        },
+                        onFilePoolOverSize: function (fileObj, poolSize) {
+                            alert("文件缓存池达已满，不能继续添加文件。")
+                        },
+                        onSameFileAdded: function () {
+                            alert("不能添加相同的文件");
+                        },
+
+                        enableDragDrop: true,
+                        enableRemoteKeyGen: false,
+                        chunked: true,
+                        chunkSize: 1024*1024
+                    }
+                })
+
+                avalon.scan()
+            })
+        </script>
+    </head>
+    
+    <body ms-controller="demo">
+    <aoyou:fileuploader config="$opt"></aoyou:fileuploader>
+    </body>
+
+</html>

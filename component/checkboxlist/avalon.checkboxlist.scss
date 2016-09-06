@@ -1,0 +1,47 @@
+$uiname: "aoyou-checkboxlist";
+$inputMargin: 0;
+.#{$uiname}{
+    z-index: 1;
+    position: relative;
+}
+.#{$uiname}-ul{
+    top:0px;
+    left:0px;
+    position: absolute;
+    font-size: 12px;
+    list-style: none;
+    padding: 0;
+    border-bottom:1px solid #dddddd;
+    border-right:1px solid #dddddd;
+    border-left:1px solid #dddddd
+}
+.#{$uiname}-item {
+    line-height: 24px;
+    background-color: #f7f7f7;
+    border-top:1px solid #dddddd;
+    height: 24px;
+    position: relative;
+    &.fl {
+        padding-right: 10px;
+    }
+    span{
+        margin-left: 12px;
+    }
+
+    .#{$uiname}-yes{
+        position: absolute;
+        display: block;
+        right: 0px;
+        top:0px;
+        height: 9px;
+        width:12px;
+        background: url('yes.png') no-repeat;
+        margin-right: 7px;
+        margin-top: 7px;
+    }
+}
+.#{$uiname}-all {
+    &.fl {
+        padding-right: 20px;
+    }
+}

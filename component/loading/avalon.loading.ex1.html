@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loading组件</title>
+    <script src="../../avalon.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        });
+        require(["./component/loading/avalon.loading"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                loaderthis1:function(){
+                    avalon.Loading.init({
+                        target: document.getElementById('loading1')
+                    });
+                    avalon.Loading.start();
+                    setTimeout(function() {
+                        avalon.Loading.stop();
+                    }, 3000)
+                },
+                loaderthis2:function(){
+                    avalon.Loading.init({
+                        target: document.getElementById('loading2')
+                    });
+                    avalon.Loading.start();
+                    setTimeout(function() {
+                        avalon.Loading.stop();
+                    }, 3000)
+                },
+                loaderthis3:function(){
+                    avalon.Loading.init();
+                    avalon.Loading.start();
+                    setTimeout(function() {
+                        avalon.Loading.stop();
+                    }, 3000)
+                }
+            });
+            avalon.scan()
+        })
+
+    </script>
+</head>
+<body ms-controller="test" id="body">
+<button ms-click="loaderthis1">Loading那个div</button>
+<div id="loading1" style="width: 600px;height: 200px;text-align: center;vertical-align: middle">4234</div>
+<br>
+<button style="background-color: #1a5092;color:#fff;" id="loading2" ms-click="loaderthis2">Loading这个button</button>
+<br>
+<button ms-click="loaderthis3">Loading整个页面</button>
+</body>
+</html>

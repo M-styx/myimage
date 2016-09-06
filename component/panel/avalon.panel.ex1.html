@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../avalon.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        });
+        require(["./component/panel/avalon.panel","./component/button/avalon.button"], function () {
+            var demoVM = avalon.define({
+                $id: "demo",
+                checkedInputs: [],
+                checkedIndex: "",
+                $opts: {
+                   content:"<span>hello word</span>"
+                }
+            });
+            avalon.scan()
+        })
+    </script>
+</head>
+<body>
+<div ms-controller="demo" style="margin: 100px; width: 580px;">
+    <aoyou:panel config="$opts">
+    </aoyou:panel>
+</div>
+
+</body>
+</html>

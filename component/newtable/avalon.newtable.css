@@ -1,0 +1,124 @@
+.aoyou-newtable-container {
+  border: 1px solid #eee; }
+  .aoyou-newtable-container .navbar {
+    background-color: #2e8c44;
+    color: #fff !important;
+    line-height: 30px;
+    font-size: 20px;
+    height: 30px;
+    padding-left: 10px; }
+  .aoyou-newtable-container .handload {
+    background-color: #1d5eac;
+    color: #fff !important; }
+  .aoyou-newtable-container table {
+    width: 100%;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0px 0px;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 14px;
+    line-height: 40px;
+    min-width: 847px;
+    table-layout: fixed; }
+    .aoyou-newtable-container table th {
+      border: 1px solid #dddddd; }
+    .aoyou-newtable-container table .aoyou-newtable-evenrowcolor {
+      background: #f9f9f9; }
+      .aoyou-newtable-container table .aoyou-newtable-evenrowcolor:hover {
+        background: #dddddd; }
+    .aoyou-newtable-container table .aoyou-newtable-oddrowcolor {
+      background: #efefef; }
+      .aoyou-newtable-container table .aoyou-newtable-oddrowcolor:hover {
+        background: #dddddd; }
+    .aoyou-newtable-container table .aoyou-newtable-textalign-center {
+      text-align: center; }
+    .aoyou-newtable-container table .aoyou-newtable-textalign-left {
+      text-align: left;
+      padding-left: 10px; }
+    .aoyou-newtable-container table .aoyou-newtable-textalign-right {
+      text-align: right;
+      padding-right: 10px; }
+    .aoyou-newtable-container table .aoyou-newtable-cell_check {
+      padding-left: 5px; }
+    .aoyou-newtable-container table .aoyou-newtable-cell {
+      /*border-top:1px solid #d6d6d6;
+      border-collapse: collapse;
+      border-spacing: 0px 0px;
+      border-top-color: #d6d6d6;
+      border-top-style: solid;
+      border-top-width: 1px;*/
+      box-sizing: border-box;
+      color: #333;
+      cursor: default;
+      font-size: 14px;
+      font-weight: 300;
+      height: 30px;
+      line-height: 20px;
+      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      text-overflow: ellipsis;
+      transition-delay: 0s;
+      transition-duration: 0.3s;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+      vertical-aligntopwhite-space: nowrap; }
+      .aoyou-newtable-container table .aoyou-newtable-cell span {
+        border-collapse: collapse;
+        border-spacing: 0px 0px;
+        box-sizing: border-box;
+        color: #333;
+        cursor: default;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+        white-space: nowrap; }
+      .aoyou-newtable-container table .aoyou-newtable-cell .aoyou-newtable-unchecked {
+        background-image: url("../useimg/unchecked.png"); }
+      .aoyou-newtable-container table .aoyou-newtable-cell .aoyou-newtable-checked {
+        background-image: url("../useimg/checked.png"); }
+    .aoyou-newtable-container table .aoyou-newtable-cell_check .aoyou-newtable-unchecked {
+      background-image: url("../useimg/unchecked.png"); }
+    .aoyou-newtable-container table .aoyou-newtable-cell_check .aoyou-newtable-checked {
+      background-image: url("../useimg/checked.png"); }
+  .aoyou-newtable-container .aoyou-newtable-icon {
+    display: inline-block;
+    margin-top: 2px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    vertical-align: text-top;
+    background-repeat: no-repeat; }
+  .aoyou-newtable-container .btn {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../useimg/ico.png"); }
+  .aoyou-newtable-container .btn-edit {
+    background-position: -218px -178px; }
+  .aoyou-newtable-container .btn-cancel {
+    background-position: -93px -17px;
+    margin-left: 15px; }
+  .aoyou-newtable-container .btn-submit {
+    background-position: -188px -295px;
+    margin-left: 15px; }
+  .aoyou-newtable-container .btn-remove {
+    background-position: -218px -71px;
+    margin-left: 15px; }
+  .aoyou-newtable-container .btn-box {
+    text-align: center; }
+    .aoyou-newtable-container .btn-box a {
+      vertical-align: middle; }
+  .aoyou-newtable-container .aoyou-newtable-toolcell {
+    border-collapse: collapse;
+    border-spacing: 0px 0px;
+    /*border-top-color: #d6d6d6;
+    border-top-style: solid;
+    border-top-width: 1px;*/
+    border: 1px solid #dddddd; }
+  .aoyou-newtable-container .borderall {
+    border: 1px solid #dddddd; }
+  .aoyou-newtable-container .borderbottom {
+    border-bottom: 1px inset; }

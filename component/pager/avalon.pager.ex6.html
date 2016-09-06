@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>分页栏组件</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+       <link type="text/css" rel="stylesheet" href="../style/avalon.doc.css">
+        <script src="../../avalon.js">
+
+        </script>
+        <script src="../highlight/shCore.js">
+
+        </script>
+        <script>
+            avalon.library("aoyou", {
+                $ready: function (vm) {
+                    if (vm.$id.indexOf("pager") >= 0) {
+                        vm.currentPage = 4
+                        setTimeout(function () {
+                            vm.currentPage = 3
+                        }, 2000)
+                    }
+                }
+            })
+
+
+            require(["./component/pager/avalon.pager"], function () {
+                avalon.define({
+                    $id: "test",
+                    $pager: {
+                        alwaysShowNext: true,
+                        alwaysShowPrev: true,
+                        onJump: function (e, data) {
+                            location.href = "#page=" + data.currentPage
+                        }
+                    }
+                })
+                avalon.scan()
+            })
+
+        </script>
+
+
+    </head>
+    <body ms-controller="test">
+    <h1>总是显示上一页与下一页按钮(与例2对照看),并使用ms-attr-identifier重新指定组件VM的$id</h1>
+    <aoyou:pager ms-attr-identifier="'pager'" config="$pager"></aoyou:pager>
+    <pre class="brush:html;gutter:false;toolbar:false">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;分页栏组件&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width"&gt;
+        &lt;link type="text/css" rel="stylesheet" href="../style/avalon.doc.css"&gt;
+        &lt;script src="../../avalon.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+            avalon.library("aoyou", {
+                $ready: function (vm) {
+                    if (vm.$id.indexOf("pager") &gt;= 0) {
+                        vm.currentPage = 4
+                        setTimeout(function () {
+                            vm.currentPage = 3
+                        }, 2000)
+                    }
+                }
+            })
+
+            require(["./component/pager/avalon.pager"], function () {
+                avalon.define({
+                    $id: "test",
+                    $pager: {
+                        alwaysShowNext: true,
+                        alwaysShowPrev: true,
+                        onJump: function (e, data) {
+                            location.href = "#page=" + data.currentPage
+                        }
+                    }
+                })
+                avalon.scan()
+            })
+
+        &lt;/script&gt;
+
+
+    &lt;/head&gt;
+    &lt;body ms-controller="test"&gt;
+    &lt;h1&gt;总是显示上一页与下一页按钮(与例2对照看),并使用ms-attr-identifier重新指定组件VM的$id&lt;/h1&gt;
+    &lt;aoyou:pager ms-attr-identifier="'pager'" config="$pager"&gt;&lt;/aoyou:pager&gt;&lt;br/&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt
+           
+    </pre>
+</body>
+</html>

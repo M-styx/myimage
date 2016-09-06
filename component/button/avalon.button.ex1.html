@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>button demo 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link type="text/css" rel="stylesheet" href="../style/avalon.doc.css"/>
+        <script src="../../avalon.js"></script>
+        <script src="../style/highlight/shCore.js"></script>
+
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/button/avalon.button"], function () {
+                avalon.define({
+                    $id: "demo"
+                })
+                avalon.scan()
+            })
+        </script>
+        <style>
+            body {
+                padding-bottom: 200px;
+            }
+            fieldset > div {
+                margin-bottom: 20px;
+            }
+            .inline {
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body ms-controller="demo">
+        <fieldset>
+            <legend>button type and iconPosition 、 icon 、corner、label config</legend>
+            <div>
+                <aoyou:button>input元素</aoyou:button>
+                <aoyou:button type="icon" icon-position="left" icon="\&\#xf015;">button元素</aoyou:button>
+                <aoyou:button type="icon" icon-position="left-right" icon="\&\#xf001;-\&\#xf06b;">button元素</aoyou:button>
+                <aoyou:button type="labeledIcon" icon-position="left" icon="\&\#xf001;">a元素</aoyou:button>
+                <aoyou:button type="labeledIcon" icon-position="right" icon="\&\#xf06b;">div元素</aoyou:button>
+                <aoyou:button type="labeledIcon" icon-position="left-right" icon="\&\#xf001;-\&\#xf06b;">a元素</aoyou:button>
+            </div>
+            <div>
+
+                <aoyou:button corner="4"/>input元素</aoyou:button>
+                <aoyou:button type="icon" icon-position="left" icon="\&\#xf015;" corner="4">button元素</aoyou:button>
+                <aoyou:button type="icon" icon-position="left-right" icon="\&\#xf001;-\&\#xf06b;" corner="4">button元素</aoyou:button>
+                <aoyou:button type="labeledIcon" icon-position="left" icon="\&\#xf001;" corner="4">a元素</aoyou:button>
+                <aoyou:button type="labeledIcon" icon-position="right" icon="\&\#xf06b;" corner="4" label="icon right">div元素</aoyou:button>
+                <aoyou:button type="labeledIcon" icon-position="left-right" icon="\&\#xf001;-\&\#xf06b;" corner="4">a元素</aoyou:button>
+
+            </div>
+        </fieldset>
+
+        <div ms-skip>
+            <pre class="brush: html; gutter: false; toolbar: false">
+ &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;button demo 1&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width"&gt;
+        &lt;link type="text/css" rel="stylesheet"  href="../highlight/shCore.css"/&gt;
+        &lt;link type="text/css" rel="stylesheet" href="../style/avalon.doc.css"/&gt;
+        &lt;script src="../../avalon.js"&gt;
+
+        &lt;/script&gt;
+        &lt;script src="./shCore.js"&gt;
+
+        &lt;/script&gt;
+        &lt;script&gt;
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/button/avalon.button"], function () {
+                avalon.define({
+                    $id: "demo"
+
+                })
+                avalon.scan()
+            })
+        &lt;/script&gt;
+        &lt;style&gt;
+            body {
+                padding-bottom: 200px;
+            }
+            fieldset &gt; div {
+                margin-bottom: 20px;
+            }
+            .inline {
+                display: inline-block;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body ms-controller="demo"&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;button type and iconPosition 、 icon 、corner、label config&lt;/legend&gt;
+            &lt;div&gt;
+                &lt;aoyou:button&gt;input元素&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="icon" icon-position="left" icon="\&\#xf015;"&gt;button元素&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="icon" icon-position="left-right" icon="\&\#xf001;-\&\#xf06b;"&gt;button元素&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon-position="left" icon="\&\#xf001;"&gt;a元素&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon-position="right" icon="\&\#xf06b;"&gt;div元素&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon-position="left-right" icon="\&\#xf001;-\&\#xf06b;"&gt;a元素&lt;/aoyou:button&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+
+                &lt;aoyou:button corner="4"/&gt;input元素&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="icon" icon-position="left" icon="\&\#xf015;" corner="4"&gt;button元素&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="icon" icon-position="left-right" icon="\&\#xf001;-\&\#xf06b;" corner="4"&gt;button元素&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon-position="left" icon="\&\#xf001;" corner="4"&gt;a元素&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon-position="right" icon="\&\#xf06b;" corner="4" label="icon right"&gt;div元素&lt;/aoyou:button&gt;
+                &lt;aoyou:button type="labeledIcon" icon-position="left-right" icon="\&\#xf001;-\&\#xf06b;" corner="4"&gt;a元素&lt;/aoyou:button&gt;
+
+            &lt;/div&gt;
+        &lt;/fieldset&gt;
+
+      
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </div>
+    </body>
+</html>

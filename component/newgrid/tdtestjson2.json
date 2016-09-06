@@ -1,0 +1,7 @@
+{"rows": [
+	{"id": "001", "intime": "2015-12-26", "outtime": "2015-12-30", "name": "ss1","kind":"标准房","price":10,"category":"A1", "selected": "false"},
+	{"id": "002", "intime": "2015-12-26", "outtime": "2015-12-30", "name": "ss2","kind":"标准房","price":11,"category":"A1", "selected": "true"},
+    {"id": "003", "intime": "2015-12-11", "outtime": "2015-12-22", "name": "ss3","price":12,"category":"A1", "selected": "true"}
+], "total": "3", "rspcod" : "200", "rspmsg": "数据加载成功"}
+
+

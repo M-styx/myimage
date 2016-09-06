@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dropdowncheckbox组件</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="../../avalon.js"></script>
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            });
+            require(["./component/dropdowncheckbox/avalon.dropdowncheckbox"], function () {
+                avalon.define({
+                    $id: "test",
+                    $dropdownOpt:{
+                        height:'80px',
+                        singleselect:true,
+                        //alltext:"all",//只有多选的时候才会生效
+                        sourceFlag:{value:"id",text:"name"},
+                        dataSource:[{name:'购物',id:1},{name:'游轮',id:2},{name:'newone',id:3}]
+                        //,checkFunc:function(){
+                            //alert(123);
+                        //}
+                    },
+                    $dropdownOpt2:{
+                        height:'80px',
+                        singleselect:false,//默认
+                        alltext:"全选",//只有多选的时候才会生效
+                        sourceFlag:{value:"id",text:"name"},
+                        dataSource:[{name:'购物',id:1},{name:'游轮',id:2},{name:'newone',id:3}]
+                        //,checkFunc:function(){
+                        //alert(123);
+                        //}
+                    }
+                })
+                avalon.scan()
+            })
+        </script>
+    </head>
+    <body ms-controller="test">
+    <table>
+        <tr>
+            <td><aoyou:dropdowncheckbox config="$dropdownOpt"></aoyou:dropdowncheckbox></td>
+            <td><aoyou:dropdowncheckbox config="$dropdownOpt2"></aoyou:dropdowncheckbox></td>
+        </tr>
+        </table>
+    </body>
+</html>
+
+
+

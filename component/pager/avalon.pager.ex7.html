@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>分页栏组件 lang支持</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link type="text/css" rel="stylesheet" href="../style/avalon.doc.css">
+        <script src="../../avalon.js">
+
+        </script>
+        <script src="../highlight/shCore.js">
+
+        </script>
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/pager/avalon.pager", ], function () {
+                require(["./component/i18n/avalon.pager.lang-en"], function () {
+                    avalon.define({
+                        $id: "test",
+                        $pager: {
+                            currentPage: 8,
+                            totalItems: 1436,
+                            showJumper: true
+                        }
+                    })
+                    avalon.scan()
+                })
+            })
+        </script>
+    </head>
+    <body ms-controller="test">
+        <h1>使用en语言包</h1>
+    <aoyou:pager config="$pager"></aoyou:pager>
+    <pre class="brush:html;gutter:false;toolbar:false">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;分页栏组件 lang支持&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width"&gt;
+        &lt;link type="text/css" rel="stylesheet" href="../style/avalon.doc.css"&gt;
+        &lt;script src="../../avalon.js"&gt;&lt;/script&gt;
+        &lt;script src="./shCore.js"&gt;&lt;/script&gt;
+    &lt;/script&gt;
+    &lt;script&gt;
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        })
+        require(["./component/pager/avalon.pager", ], function () {
+            require(["./component/i18n/avalon.pager.lang-en"], function () {
+                avalon.define({
+                    $id: "test",
+                    $pager: {
+                        currentPage: 8,
+                        totalItems: 1436,
+                        showJumper: true
+                    }
+                })
+                avalon.scan()
+            })
+        })
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body ms-controller="test"&gt;
+    &lt;h1&gt;使用en语言包&lt;/h1&gt;
+    &lt;aoyou:pager config="$pager"&gt;&lt;/aoyou:pager&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+    </pre>
+</body>
+</html>

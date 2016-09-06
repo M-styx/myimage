@@ -1,0 +1,100 @@
+.aoyou-dropdownmenu {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 10px; }
+  .aoyou-dropdownmenu li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px; }
+  .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild {
+    z-index: 10;
+    position: relative;
+    display: block;
+    top: -1px; }
+    .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu-mainicon {
+      width: 22px;
+      height: 22px;
+      line-height: 22px;
+      display: inline-block; }
+    .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu-circle {
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 12px;
+      top: -15px;
+      font-size: 12px;
+      text-align: center;
+      line-height: 20px;
+      background: url("../../src/images/menutopicons.png") 0px 0px no-repeat; }
+    .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu-mainicon-user {
+      background: url("../../src/images/menutopicons.png") 0px -74px no-repeat; }
+    .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu-mainicon-mail {
+      background: url("../../src/images/menutopicons.png") 0px -40px no-repeat; }
+    .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu-updown-down {
+      border-top: 4px dashed #fff;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+      display: inline-block;
+      width: 0px;
+      height: 0px;
+      margin-left: 20px;
+      margin-top: -20px;
+      vertical-align: middle; }
+    .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu-updown-up {
+      border-bottom: 4px dashed #fff;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+      display: inline-block;
+      width: 0px;
+      height: 0px;
+      margin-left: 20px;
+      margin-top: -20px;
+      vertical-align: middle; }
+    .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu_ul {
+      background-color: #F7F7F7;
+      width: 110px;
+      position: absolute;
+      top: 28px;
+      right: 0px;
+      margin: 2px 0px 0px;
+      padding: 0px;
+      text-align: left;
+      border: 1px solid rgba(0, 0, 0, 0.15); }
+      .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu_ul .aoyou-dropdown_bor-b {
+        border-bottom: 1px solid #C8D1D4; }
+      .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu_ul li {
+        position: relative;
+        display: block; }
+        .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu_ul li a {
+          padding: 0px 0px 0px 5px;
+          color: #717D87;
+          display: block;
+          text-decoration: none;
+          font-size: 12px;
+          font-family: "Microsoft YaHei";
+          color: #717d87;
+          line-height: 3.333; }
+          .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu_ul li a .icon-fx {
+            width: 22px;
+            height: 17px;
+            display: inline-block;
+            margin-right: 10px; }
+            .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu_ul li a .icon-fx.key {
+              background: url("../../src/images/menudropdownicons.jpg") 0px -21px no-repeat; }
+            .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu_ul li a .icon-fx.logout {
+              background: url("../../src/images/menudropdownicons.jpg") 0px -42px no-repeat; }
+            .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu_ul li a .icon-fx.mail {
+              background: url("../../src/images/menudropdownicons.jpg") 0px 2px no-repeat; }
+          .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu_ul li a .icon-num {
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            top: 13px;
+            right: 5px;
+            color: red;
+            text-align: center;
+            line-height: 18px; }
+      .aoyou-dropdownmenu .aoyou-dropdownmenu_firstchild .aoyou-dropdownmenu_ul li:hover {
+        background-color: #eee; }

@@ -1,0 +1,135 @@
+.aoyou-simpledropdownpager{
+    position: relative;
+
+}
+.aoyou-simpledropdownpager-div {
+    float: left;
+    position: relative;
+    font: normal 12px/1.5 tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif; }
+.aoyou-simpledropdownpager-fronttitle{
+    float: left;
+    line-height: 28px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+.aoyou-simpledropdownpager-maincontent{
+    float: left;
+}
+.aoyou-simpledropdownpager-input{
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    padding: 3px 5px;
+    border: 1px solid #d3d3d3;
+    margin-bottom: 5px;
+}
+.fuzzypart{
+    position: absolute;
+    top:0px;
+    min-width: 250px;
+}
+.fuzinputdiv {
+    width: 100%;
+    text-align: center;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+}
+/*
+这是每个都组件都应该引用的部分
+*/
+.aoyou-simpledropdownpager-ul {
+    border: 1px solid #ddd;
+    margin: 0px 0 0 0;
+    padding: 0;
+    background: #f7f7f7;
+    height: 180px;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 9;
+}
+.aoyou-simpledropdownpager-ul .oyou-selcity-sort{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #868688;
+    border-bottom: 1px solid #ddd;
+}
+
+.aoyou-simpledropdownpager-ul li{
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.aoyou-simpledropdownpager-ul li:hover{
+    background-color: #eeeeee;
+}
+
+.wg-aoyou-selcity-page{
+    z-index: 9;
+    width: 100%;
+    height: 34px;
+    line-height: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+
+.wg-aoyou-selcity-page .dpprevimg {
+    position: absolute;
+    left: 6px;
+    top:11px;
+    display: block;
+    width: 13px;
+    height: 12px;
+    background: url("prevyear.png") no-repeat; cursor: pointer;
+}
+
+.wg-aoyou-selcity-page .dpnextimg {
+    position: absolute;
+    right: 6px;
+    top:11px;
+    width: 13px;
+    height: 12px;
+    background: url("nextyear.png") no-repeat; cursor: pointer;
+}
+
+.wg-aoyou-selcity-page .currentshowspan,.fcurrentshowspan {
+    width: 10px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.wg-aoyou-selcity-page .hiddenspan,.fhiddenspan {
+    display: none;
+}
+.wg-aoyou-selcity-page span:hover{
+    color:#ff8888;
+}
+
+.wg-aoyou-selcity-page .currentpagespan,.fcurrentpagespan {
+    font-size: large;
+    color: #288d41;
+}
+
+.pagerdiv {
+    display: block;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.aoyou-selcity-sort{text-align: center;color:#000;height: 18px;position: relative;}
+.aoyou-dropdown-title-hrdiv{
+    border-top:1px dashed #000;height: 1px;overflow:hidden;margin-top: 10px;
+}
+.aoyou-dropdown-title-span{
+    position: absolute;
+    top:12px;
+    *top:18px;
+    left: 50%;
+    background-color: #f7f7f7;
+    margin-left: -25px;
+    margin-top: -20px;
+}

@@ -1,0 +1,32 @@
+<div ms-repeat-pos="_position" class="aoyou-scrollbar aoyou-helper-reset aoyou-helper-clearfix aoyou-widget"
+     ms-visible="!disabled"
+	 ms-class-100="aoyou-scrollbar-{{pos}}"
+	 ms-class-101="aoyou-scrollbar-{{size}} aoyou-scrollbar-{{pos}}-{{size}}"
+	 ms-class-102="aoyou-state-disabled:disabled"
+	 ms-mouseenter="_show($event, 'always', $index)" 
+	 ms-visible="toggle">
+	<div ms-if="showBarHeader" class="aoyou-scrollbar-arrow aoyou-scrollbar-arrow-up"
+	 ms-click="_arrClick($event, 'up', pos, $index)" 
+	 ms-mousedown="_arrDown($event,'up', pos, $index)" 
+	 ms-class-100="aoyou-state-disabled:disabled"
+	 ms-mouseup="_arrDown($event,'up', pos, $index,'release')" 
+	 ms-hover="aoyou-state-hover aoyou-scrollbar-arrow-hover"><b class="aoyou-scrollbar-trangle  aoyou-scrollbar-trangle-up"></b></div>
+	<div class="aoyou-scrollbar-draggerpar" ms-click="_barClick($event, pos, $index)">
+		<div class="aoyou-scrollbar-dragger"
+		ms-attr-data-draggable-axis="pos == 'left' || pos == 'right' ? 'y' : 'x'" 
+		ms-click="_stopPropagation($event)" 
+		ms-class-100="aoyou-state-disabled:disabled"
+		ms-mouseover="_show($event,'always',$index)" 
+		ms-mousedown="_draggerDown($event, true)" 
+		ms-mouseup="_draggerDown($event, false)" 
+		ms-mouseout="_draggerDown($event, false)" 
+		ms-hover="aoyou-state-hover"
+		>{{draggerHTML | html}}</div>
+	</div>
+	<div ms-if="showBarHeader" class="aoyou-scrollbar-arrow aoyou-scrollbar-arrow-down"
+	 ms-click="_arrClick($event, 'down', pos, $index)"
+	 ms-mousedown="_arrDown($event,'down', pos, $index)" 
+	 ms-mouseup="_arrDown($event,'down', pos, $index,'release')" 
+	 ms-class-100="aoyou-state-disabled:disabled"
+	 ms-hover="aoyou-state-hover"><b class="aoyou-scrollbar-trangle aoyou-scrollbar-trangle-down"></b></div>
+</div>

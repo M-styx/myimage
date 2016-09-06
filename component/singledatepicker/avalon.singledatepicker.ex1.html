@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>分页栏组件</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="../../avalon.js"></script>
+        <!--<script src="../highlight/shCore.js"></script>-->
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/singledatepicker/avalon.singledatepicker"], function () {
+                avalon.define({
+                    $id: "test",
+                    $singledatepicker1:{
+                        cpwidth:'700px',
+                        upperlimitday:'2016-5-10',
+                        lowerlimitday:'2016-5-12',
+                        singleSelect:true,
+                        //checkedDates:['2016-4-22'],
+                        aftercheckfunc:function(){
+                             var ss = avalon.vmodels['sgr1'];
+                             //ss._closepicker();
+                             var ss2 = avalon.vmodels['sgr2'];
+                             ss2.upperlimitday = ss.selectedDates[0];
+                                ss2.checkedDates = ss2.selectedDates;
+                             ss2.$init(ss2);
+                             //ss2._openpicker();
+                        },
+                        datesinfor:{
+                            '2016-4-4':{'price':'150','festival':'清明节'},
+                            '2016-4-11':{'price':'150'},
+                            '2014-5-1':{'price':'160','festival':'劳动节'}
+                        }
+                    },
+                    $singledatepicker2:{
+                        cpwidth:'400px',
+                        showpk:true,
+                        //upperlimitday:'2016-5-10',
+                        singleSelect:true,
+                        //checkedDates:['2016-4-22'],
+                        aftercheckfunc:function(){
+                            var ss2 = avalon.vmodels['sgr2'];
+                            //ss2._closepicker();
+                        },
+                        datesinfor:{
+                            '2016-4-4':{'price':'150','festival':'清明节'},
+                            '2016-4-11':{'price':'150'},
+                            '2014-5-1':{'price':'160','festival':'劳动节'}
+                        }
+                    },
+                    outerclose:function(e){
+                        var ss1 = avalon.vmodels['sgr1'];
+                        ss1._togglepicker();
+                        e.stopPropagation();
+                    }
+                    ,
+                    outerclose2:function(e){
+                        var ss2 = avalon.vmodels['sgr2'];
+                        ss2._togglepicker();
+                        e.stopPropagation();
+                    }
+                })
+                avalon.scan()
+            })
+        </script>
+    </head>
+    <body ms-controller="test">
+    <span ms-on-click="outerclose($event)">showORhide1</span>
+    <span ms-on-click="outerclose2($event)">showORhide2</span>
+        <table style="width:100%;">
+            <tr>
+                <td width="50%">限制可选取范围<aoyou:singledatepicker $id="sgr1" config="$singledatepicker1"></aoyou:singledatepicker></td>
+                <td width="50%">可选取范围联动<aoyou:singledatepicker $id="sgr2" config="$singledatepicker2"></aoyou:singledatepicker></td>
+            </tr>
+        </table>
+    </body>
+</html>

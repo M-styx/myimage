@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calendar组件</title>
+    <script src="../../avalon.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        });
+        require(["./component/calendar/avalon.calendar"], function () {
+            var demoVM = avalon.define({
+                $id: "demo",
+                checkedInputs: [],
+                $opts: {
+                    textbox:{
+                        fronttitle:"开始日期:"
+                    },
+                    datepicker:{
+                        cpwidth:'276px',
+                        showpk:false,
+                        singleSelect:true,
+                        //checkedDates:['2016-4-22'],
+                        aftercheckfunc:function(arr){
+                            alert(arr[0]);
+                        }
+                    }
+                }
+            });
+            avalon.scan()
+        })
+    </script>
+</head>
+<body>
+<div ms-controller="demo">
+    <aoyou:calendar config="$opts"></aoyou:calendar>
+</div>
+
+</body>
+</html>

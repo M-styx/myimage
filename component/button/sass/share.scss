@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+$share-spacing: 5px;
+
+
+$share-layout:vertical;
+
+$setting-sprite-dimensions: true;
+
+@import "compass/utilities/sprites";    // 加载compass sprites模块
+@import "share/*.png";                    // 导入share目录下所有png图片
+@include all-share-sprites;               // 输出所有的雪碧图css

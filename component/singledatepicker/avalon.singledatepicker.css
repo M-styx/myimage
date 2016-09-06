@@ -1,0 +1,52 @@
+.singledatepicker{background: #fff;position: absolute;z-index: 1;}
+.singledatepicker .trangle{display: block;width:12px;height:6px;position:absolute;top: 2px;left: 14px;z-index: 1;background: url("trangle.png") no-repeat}
+.singledatepicker ul, .singledatepicker li { margin: 0; padding: 0; }
+.singledatepicker .singledatepicker-tt { height: 33px; line-height: 33px;  border-top: 1px solid #dddddd;border-right: 1px solid #dddddd;border-left: 1px solid #dddddd; text-align: center;position: relative;overflow: hidden;}
+.singledatepicker .singledatepicker-tt .icon-arr-center{display: block;background: #ccc;height: 28px;margin: 3px 70px;}
+.singledatepicker .singledatepicker-tt label {width: 180px; margin: 0 auto;position: relative; display: block; height: 33px; line-height: 33px; font-size: 14px;  padding: 0px 20px; }
+.singledatepicker{ width: 100%; *width: 197px; box-sizing: border-box;padding: 7px;}
+.singledatepicker .singledatepicker-table{ width: 100%; height: 188px;  line-height: 24px; border-spacing: 1px; border-collapse:collapse;border-left:1px solid #dddddd;border-right:1px solid #dddddd;border-bottom:1px solid #dddddd; }
+.singledatepicker .singledatepicker-table thead{border-left:1px solid #e6e6e6;border-right:1px solid #e6e6e6; }
+.singledatepicker .singledatepicker-table th{font-family: "microsoft yahei"; font-weight: normal}
+.singledatepicker .singledatepicker-table td{ font-family: "microsoft yahei"; box-sizing: border-box; position: relative;}
+.singledatepicker .singledatepicker-table td a{ color:#000;width:100%;text-decoration: none;height: 30px;display: block;position: relative;text-align: center;}
+.singledatepicker .singledatepicker-table td b{position: absolute;width: 100%;height: 30px;top: 0px;left: -1px;display: block;}
+.singledatepicker .singledatepicker-table td.borderb b{border: 1px solid #ff0000;}
+.singledatepicker .singledatepicker-table td a span{ border-collapse: collapse;cursor: pointer;display: block;font-family: "microsoft yahei";line-height: 18px;width:30px;}
+
+.singledatepicker .singledatepicker-buttons td{text-align: center;}
+.singledatepicker .singledatepicker-buttons table{width: 100%;margin: 0;padding: 0;}
+.singledatepicker .singledatepicker-buttons table td{border:0px;height: 33px;}
+.singledatepicker .singledatepicker-buttons table td span{width: 44px;background-color: #fff;padding-left: 7px;padding-right: 7px;padding-top: 5px;
+padding-bottom: 5px;cursor: pointer;}
+.singledatepicker .singledatepicker-buttons table td span:hover{background-color: #eeeeee;}
+.singledatepicker-buttons-content{border-top:1px solid #dddddd !important;}
+
+.singledatepicker .singledatepicker-table td a span.basetxt{font-size: 12px;margin-top:2px;display: inline-block;}
+.singledatepicker .singledatepicker-table td a span.orangetxt{ color: #ff6600;font-size: 9px;text-align: center;position: absolute; top:40%;left:0;  width: 100%; text-align: center}
+.singledatepicker .selected{background: #fffbe6 !important; }
+.singledatepicker .selected .basetxt{color:#000 !important; }
+.singledatepicker .selected b{border: 1px solid #ff0000;}
+.singledatepicker .select{ border: 1px solid #fd8a25; }
+.singledatepicker .out{ background-color: #fff;}
+.singledatepicker .out .basetxt{color:#ccc}
+.singledatepicker .lived .basetxt{ color: #aecfb6}
+.singledatepicker .live .basetxt{ color: #288d41}
+.singledatepicker .today{background-color:#288d41; }
+.singledatepicker .today .basetxt{ color: #fff; }
+
+.singledatepicker .icon-arr-left.year{background:#ccc  url("./prevyear.png")  no-repeat center center; cursor: pointer;left: 5px; }
+.singledatepicker .icon-arr-left.month{ background:#ccc  url("./prevmonth.png")  no-repeat 10px 7px; cursor: pointer; left: 38px;}
+.singledatepicker .icon-arr-right.year{background:#ccc  url("./nextyear.png")  no-repeat center center; cursor: pointer; right: 5px; }
+.singledatepicker .icon-arr-right.month{background:#ccc  url("./nextmonth.png")  no-repeat center center; cursor: pointer;right: 38px;}
+
+.singledatepicker .icon-arr-left { display: inline-block; width: 28px; height: 28px;position: absolute; vertical-align: middle; background-position: 0px 0px; top: 3px;}
+.singledatepicker .icon-arr-right { display: inline-block; width: 28px; height: 28px;    position: absolute;vertical-align: middle; background-position: 0px 0px; top: 3px;}
+.singledatepicker .pointerspan{background:#fff;display: block;position: absolute;top:3px;right: 0; height: 15px;width: 20px;border-left: 2px solid #e6e6e6;overflow: hidden;}
+.singledatepicker .pointerspan i{display: block;width: 20px;height:7px;overflow:hidden;background-repeat: no-repeat;background-position: top center;}
+.singledatepicker .iconup{background-image: url('up.png');cursor: pointer;margin-bottom: 2px;background-repeat: no-repeat;}
+.singledatepicker .icondown{background-image: url('down.png');cursor: pointer;margin-top: 2px;background-repeat: no-repeat;}
+.singledatepicker .yeartitlespan{position: relative;background-color: #fff;display:inline-block;width: 120px;height: 20px;text-align: center;line-height: 20px;overflow: hidden;padding: 0;outline: 0;  border:0;margin-top: 6px;}
+.singledatepicker .yeartitleinput{position: absolute; top:0;left:0;background-color: #fff;display:inline-block;width: 120px;height: 20px;text-align: center;line-height: 20px;overflow: hidden;padding: 0;outline: 0;  border:0;}
+.singledatepicker .monthtitletext{display:inline-block;color:#fff;margin-left: 12px;width: 36px;height: 33px;line-height:22px;vertical-align: middle;overflow: hidden;}
+.singledatepicker .festival{background-image: url('jie.png');width: 14px;height: 15px;position: absolute;display: block;background-image: url('jie.png');background-repeat: no-repeat;width: 14px;height: 15px;right: 0px;bottom: 0px;}

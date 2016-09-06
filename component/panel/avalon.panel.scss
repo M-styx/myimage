@@ -1,0 +1,82 @@
+$namespace: "aoyou-panel-" !default;
+
+.clearfix{
+  zoom:1;
+}
+
+
+.#{$namespace}container {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+
+  .#{$namespace}top{
+    background-color: #efefef;
+    height: 35px;
+    border-bottom: 1px #dddddd solid;
+
+    .#{$namespace}top-tool-icon{
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      float: right;
+      margin-top: 8px;
+      margin-right: 8px;
+      cursor: pointer;
+    }
+   .#{$namespace}top-tool-up{
+      background: url("../useimg/icon-up.png") no-repeat;
+    }
+
+    .#{$namespace}top-tool-down{
+      background: url("../useimg/icon-down.png") no-repeat;
+    }
+
+    .#{$namespace}top-icon{
+      width: 14px;
+      display: inline-block;
+      float: left;
+      margin: 12px 0px 0 10px;
+    }
+
+    .#{$namespace}top-iconbody{
+      display: inline-block;
+      float: left;
+      width: 35px;
+      height: inherit;
+      border-right:1px #dddddd solid;
+    }
+
+    .#{$namespace}top-button{
+      width: auto;
+      height: inherit;
+      display: inline-block;
+      float: right;
+      padding-right: 8px;
+    }
+
+    .#{$namespace}top-title{
+      zoom:1;
+      display: inline-block;
+      font-size: 14px;
+      font-weight:bold;
+      font-family:Microsoft YaHei,arial,sans-serif;
+      line-height:35px;
+      padding-left: 10px;
+      float: left
+    }
+
+    .#{$namespace}top-redtitle{
+      color: red;
+      line-height: 35px;
+      padding-left: 6px;
+    }
+
+
+  }
+
+  .#{$namespace}content{
+    background-color: #f9f9f9;
+    overflow: hidden;
+    display: block;
+  }
+}

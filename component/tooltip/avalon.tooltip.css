@@ -1,0 +1,7 @@
+.aoyou-tooltip {
+  padding: 10px;
+  position: absolute;
+  max-width: 300px;
+  overflow: visible;
+  font-size: 12px;
+  border-radius: 5px;  }

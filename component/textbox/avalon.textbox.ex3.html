@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>textbox demo 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link type="text/css" rel="stylesheet" href="../style/avalon.doc.css">
+        <script src="../../avalon.js"></script>
+        <!--<script src="../style/highlight/shCore.js"></script>-->
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/textbox/avalon.textbox"], function () {
+                var demoVM = avalon.define({
+                    $id: "demo",
+                    sss1:"21",
+                    sss2:"1919.1.1"
+                })
+    
+                avalon.scan()
+            })
+        </script>
+    </head>
+    
+    <body ms-controller="demo">
+        <fieldset>
+            <legend>textbox 设置type为textarea</legend>
+            <aoyou:textbox value="sss1" type="textarea"></aoyou:textbox>
+            <aoyou:textbox value="sss2" icontype="calendar"></aoyou:textbox>
+        </fieldset>
+    </body>
+
+</html>

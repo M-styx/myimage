@@ -1,0 +1,64 @@
+$namespace: "aoyou-" !default;
+
+.#{$namespace}dropdowncheckbox{
+  display: inline-block;
+  .#{$namespace}dropdowncheckbox-dropdownpart{
+    display: inline-block;
+  }
+}
+.#{$namespace}dropdowncheckbox-fronttitle {
+  margin-right: 5px;
+}
+.#{$namespace}dropdowncheckbox-div {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  outline: none;
+  line-height: 26px;
+}
+
+.#{$namespace}dropdowncheckbox-div-content{
+  height: 26px;
+  border: 1px solid #eeeeee;
+  display: inline-block;
+  vertical-align: middle;
+  outline: medium none;
+  position: relative;
+  text-indent: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  i{
+    display: block;
+    width:26px;
+    height: 26px;
+    position: absolute;
+    right: 0px;
+    top:0px;
+    cursor: pointer;
+  }
+  .#{$namespace}dropdowncheckbox-upbtn{
+    background: url('upbigbtn.png') no-repeat;
+  }
+  .#{$namespace}dropdowncheckbox-downbtn{
+    background: url('downbigbtn.png') no-repeat;
+  }
+}
+
+.#{$namespace}checkboxlist-ul{
+  padding: 0px;
+  list-style: none;
+  width: 200px;
+  background-color: #fefefe;
+  margin: 0px;
+  li{
+    list-style: none;
+  }
+  li:hover{
+    background-color: #eeeeee;
+  }
+  overflow-x: hidden;
+  overflow-y: auto;
+}

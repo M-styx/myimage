@@ -1,0 +1,53 @@
+.aoyou-dropdowncheckbox {
+  display: inline-block; }
+  .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-dropdownpart {
+    display: inline-block; }
+
+.aoyou-dropdowncheckbox-fronttitle {
+  margin-right: 5px; }
+
+.aoyou-dropdowncheckbox-div {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  outline: none;
+  line-height: 26px; }
+
+.aoyou-dropdowncheckbox-div-content {
+  height: 26px;
+  border: 1px solid #eeeeee;
+  display: inline-block;
+  vertical-align: middle;
+  outline: medium none;
+  position: relative;
+  text-indent: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+  .aoyou-dropdowncheckbox-div-content i {
+    display: block;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    cursor: pointer; }
+  .aoyou-dropdowncheckbox-div-content .aoyou-dropdowncheckbox-upbtn {
+    background: url("upbigbtn.png") no-repeat; }
+  .aoyou-dropdowncheckbox-div-content .aoyou-dropdowncheckbox-downbtn {
+    background: url("downbigbtn.png") no-repeat; }
+
+.aoyou-checkboxlist-ul {
+  padding: 0px;
+  list-style: none;
+  width: 200px;
+  background-color: #fefefe;
+  margin: 0px;
+  overflow-x: hidden;
+  overflow-y: auto; }
+  .aoyou-checkboxlist-ul li {
+    list-style: none; }
+  .aoyou-checkboxlist-ul li:hover {
+    background-color: #eeeeee; }

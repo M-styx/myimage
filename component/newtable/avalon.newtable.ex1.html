@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../avalon.js"></script>
+    <script>
+        //newgrid用
+        var cols = [
+            {name: 'id', display: '编号', width: "100%", type: 'text', disabled: false},
+            {name: 'name', display: '名称', width: 150, type: 'text', disabled: true},
+            {name: 'price', display: '价格', width: 120, type: 'text', disabled: true},
+            {name: 'category', display: '类别', width: 150, disabled: true, type: 'select', option: {
+                'A1': '游戏', 'A2' : '电影', 'A3' : '音乐'
+            }}
+        ];
+
+        var cols1 = [
+            {name: 'id', display: 'id', width: 0, type: 'text', disabled: false,text_align:"left"},
+            {name: 'intime', display: '入住时间', width: 80, type: 'text', disabled: true,text_align:"left"},
+            {name: 'outtime', display: '离店时间', width: 80, type: 'text', disabled: true,text_align:"left"},
+            {name: 'name', display: '酒店名称', width: 180, type: 'text', disabled: true,text_align:"center"},
+            {name:'kind',display:'房型',width:100,type:'text', disabled: true,text_align:"left"}
+        ];
+        var cols3 = [
+            {name: 'id', display: 'id', width: 0, disabled: false},
+            {name: 'pricetype', display: '价格类型', width: '25%',  disabled: true},
+            {name: 'unitprice', display: '单价(元)', width: '25%', disabled: true},
+            {name: 'count', display: '人数/份数', width: '25%', disabled: true},
+            {name:'money',display:'金额(元)',width:'25%',disabled: true}
+        ];
+        var rows = [
+            {"id": "001", "name": "Eclair11111111111111111111111111111111111111",   "price": "$0.87", "category": "A1", "selected": "false"},
+            {"id": "002", "name": "YuJun",    "price": "$0.57", "category": "A2", "selected": "false"},
+            {"id": "003", "name": "YingYing", "price": "$1.11", "category": "A3", "selected": "true"},
+            {"id": "004", "name": "HaHa",     "price": "$0.89", "category": "A2", "selected": "false"},
+            {"id": "005", "name": "Eclair",   "price": "$0.77", "category": "A3", "selected": "false"}
+        ];
+
+        var rows1 = [
+            {"id": "006", "name": "E",   "price": "$0.87", "category": "A1", "selected": "false"},
+            {"id": "007", "name": "Yun",    "price": "$0.57", "category": "A2", "selected": "false"},
+            {"id": "008", "name": "Yingg", "price": "$1.11", "category": "A3", "selected": "true"},
+            {"id": "009", "name": "Ha",     "price": "$0.89", "category": "A2", "selected": "false"},
+            {"id": "010", "name": "Eclr",   "price": "$0.77", "category": "A3", "selected": "false"}
+        ];
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        });
+        require(["./component/newtable/avalon.newtable","./component/button/avalon.button"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                $gropt:{
+                    title_align:"left",
+                    title:"神之表格 叛逆XYZ おはようございます",
+                    cols: cols1,
+                    loadUrl:"./td.grid1.json",
+                    footerheight:"33px",
+                    bar:true,
+                    text_align:'left'
+                },
+                $gropt1:{
+                    title_align:"left",
+                    title:"神之表格",
+                    cols: cols3,
+                    loadUrl:"./td.grid2.json"
+                }
+            });
+            avalon.scan()
+        })
+    </script>
+</head>
+<body ms-controller="test">
+<aoyou:newtable  $id="dg" config="$gropt" >
+    <div slot="footer" style="margin: 5px 5px">
+        <aoyou:button>人数变更</aoyou:button>
+        <div style="width: 100px;float: right;text-align:center">合计1000</div>
+    </div>
+</aoyou:newtable>
+
+</body>
+</html>

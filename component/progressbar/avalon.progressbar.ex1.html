@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>progressbar组件</title>
+        <link rel="stylesheet" href="avalon.progressbar.css">
+        <script src="../../avalon.js"></script>
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            });
+            require(["./component/progressbar/avalon.progressbar"], function () {
+                var vm = avalon.define({
+                    $id: "test",
+                    start:function(){
+                        avalon.vmodels.bar1.start();
+                    },
+                    end:function(){
+                        avalon.vmodels.bar1.end();
+                    },
+                    complete:function () {
+                        avalon.vmodels.bar1.end(100);
+                    },
+                    reset:function () {
+                        avalon.vmodels.bar1.reset();
+                    },
+                    $gropt1:{
+                        simulate:100,
+                        label:true,
+                        indeterminate:false
+                    }
+                });
+                avalon.scan()
+            })
+        </script>
+    </head>
+    <body ms-controller="test" style="margin-top: 40px">
+    <div style="width: 1200px">
+        <aoyou:progressbar $id="bar1" config="$gropt1"></aoyou:progressbar>
+
+
+        <br><br>
+        <input value="开始/继续" type="button" ms-click="start">&nbsp;&nbsp;
+        <input value="终止" type="button" ms-click="end">&nbsp;&nbsp;
+        <input value="成功" type="button" ms-click="complete">&nbsp;&nbsp;
+        <input value="重置" type="button" ms-click="reset">&nbsp;&nbsp;
+    </div>
+
+
+    </body>
+</html>

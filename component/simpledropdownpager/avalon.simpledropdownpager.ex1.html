@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>下拉分页栏组件</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="../../avalon.js"></script>
+    <script src="../highlight/shCore.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        })
+        require(["./component/base/normalThings","./component/simpledropdownpager/avalon.simpledropdownpager"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                ssss1:"aaaaa",
+                $dropdowncfg:{
+                    datas:usedata,
+                    //pullDataFuncUrl:"testDropdownjson.json",
+                    data:usedata,
+                    serverside:false,
+                    dropdownshow:true,
+                    wgwidth:"400px",
+                    fuzzysourceflag:{name: "cName", value: "value"},
+                    fuzzyServerside:true,
+                    fuzzypullDataFuncUrl:"testDropdownjson.json",
+                    showsize:3,
+                    fronttitle:"test:",
+                    duplexValue:"ssss1",
+                    sourceFlag:{name: "cName", value: "value"},
+                    optionClickFunc:function(obj){
+                        console.log(obj);
+                    }
+                }
+            })
+            avalon.scan()
+        });
+        var usedata = [
+            {
+                "cName": "天津1",
+                "value": "6"
+            },
+            {
+                "cName": "南京2",
+                "value": "7"
+            },
+            {
+                "cName": "西安3",
+                "value": "8"
+            },
+            {
+                "cName": "天津4",
+                "value": "6"
+            },
+            {
+                "cName": "南京5",
+                "value": "7"
+            },
+            {
+                "cName": "西安6",
+                "value": "8"
+            },
+            {
+                "cName": "天津7",
+                "value": "6"
+            },
+            {
+                "cName": "南京8",
+                "value": "7"
+            },
+            {
+                "cName": "西安9",
+                "value": "8"
+            },
+            {
+                "cName": "天津10",
+                "value": "6"
+            },
+            {
+                "cName": "南京11",
+                "value": "7"
+            },
+            {
+                "cName": "西安12",
+                "value": "8"
+            },
+            {
+                "cName": "天津13",
+                "value": "6"
+            },
+            {
+                "cName": "南京14",
+                "value": "7"
+            },
+            {
+                "cName": "西安15",
+                "value": "8"
+            },
+            {
+                "cName": "天津16",
+                "value": "6"
+            },
+            {
+                "cName": "南京17",
+                "value": "7"
+            },
+            {
+                "cName": "西安18",
+                "value": "8"
+            },
+            {
+                "cName": "天津19",
+                "value": "6"
+            },
+            {
+                "cName": "南京20",
+                "value": "7"
+            },
+            {
+                "cName": "西安21",
+                "value": "8"
+            },
+            {
+                "cName": "北京",
+                "value": "16"
+            }
+        ];
+    </script>
+</head>
+<body>
+<div ms-controller="test">
+    <div style="position: absolute;left:300px;top:200px;">
+        <aoyou:simpledropdownpager  $id="dr" config="$dropdowncfg" ></aoyou:simpledropdownpager>
+    </div>
+</div>
+</body>
+</html>

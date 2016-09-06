@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>rate组件</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="../../avalon.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        })
+        require(["./component/rate/avalon.rate","./component/button/avalon.button"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                rt:"",
+                vl:"",
+                getdata:function(){
+                    var ss = avalon.vmodels['dg'];
+                    vm.rt = ss.getData();
+                    vm.vl = ss.getValue();
+                },
+                $gropt:{
+                    half:true,
+                    horizontal:true,
+                    labelCol:4
+                }
+            })
+            avalon.scan()
+        })
+    </script>
+</head>
+<body>
+<div ms-controller="test">
+    <aoyou:rate  $id="dg" config="$gropt" ></aoyou:rate>
+    <aoyou:button ms-click="getdata">获取数据</aoyou:button>
+    <p><span>rate的值是{{rt}}</span></p>
+    <p><span>value的值是{{vl}}</span></p>
+</div>
+</body>
+</html>

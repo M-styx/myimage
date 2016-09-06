@@ -1,0 +1,38 @@
+.aoyou-checkboxlist {
+  z-index: 1;
+  position: relative; }
+
+.aoyou-checkboxlist-ul {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  font-size: 12px;
+  list-style: none;
+  padding: 0;
+  border-bottom: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-left: 1px solid #dddddd; }
+
+.aoyou-checkboxlist-item {
+  line-height: 24px;
+  background-color: #f7f7f7;
+  border-top: 1px solid #dddddd;
+  height: 24px;
+  position: relative; }
+  .aoyou-checkboxlist-item.fl {
+    padding-right: 10px; }
+  .aoyou-checkboxlist-item span {
+    margin-left: 12px; }
+  .aoyou-checkboxlist-item .aoyou-checkboxlist-yes {
+    position: absolute;
+    display: block;
+    right: 0px;
+    top: 0px;
+    height: 9px;
+    width: 12px;
+    background: url("yes.png") no-repeat;
+    margin-right: 7px;
+    margin-top: 7px; }
+
+.aoyou-checkboxlist-all.fl {
+  padding-right: 20px; }

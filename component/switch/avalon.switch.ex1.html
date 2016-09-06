@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../avalon.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        });
+        require(["./component/switch/avalon.switch"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                SetStatus:function (val) {
+                    var aa = avalon.vmodels['yy'].setStatus(val);
+                },
+                $gropt:{
+
+                }
+            });
+            avalon.scan()
+        })
+    </script>
+    <title>Title</title>
+</head>
+<body>
+<div ms-controller="test">
+    <aoyou:switch $id="yy" config="$gropt"></aoyou:switch>
+
+<button ms-click="SetStatus(true)">val=true</button>
+    <button ms-click="SetStatus(false)">val=false</button>
+</div>
+
+</body>
+</html>

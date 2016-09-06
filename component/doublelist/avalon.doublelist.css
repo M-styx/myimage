@@ -1,0 +1,91 @@
+
+/*
+这是每个都组件都应该引用的部分
+*/
+div.aoyou-doublelist {
+  font-size: 12px; }
+
+.aoyou-doublelist-menu {
+  width: 180px;
+  height: 190px;
+  border: 1px solid #d4d4d4;
+  background: white;
+  float: left;
+  display: inline; }
+.aoyou-doublelist ul {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;}
+.aoyou-doublelist-option {
+  width: 58px;
+  height: 62px;
+  padding: 10px;
+  vertical-align: middle;
+  float: left;
+  display: inline;
+  margin-top: 40px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+.aoyou-doublelist li {
+  list-style: none;
+  padding: 5px 6px;
+  cursor: pointer;
+  color: black; }
+.aoyou-doublelist li.aoyou-state-hover {
+  background-color: #f8f8f8; }
+.aoyou-doublelist li.aoyou-state-active {
+  background-color: #288d41;
+  color: white; }
+.aoyou-doublelist li.aoyou-state-disabled {
+  cursor: default;
+  color: #999999;
+  background: white; }
+.aoyou-doublelist .aoyou-dbl-button {
+  height: 24px;
+  *height: auto;
+  line-height: 24px;
+  padding: 0;
+  background-color: #f8f8f8;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  color: black;
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer; }
+.aoyou-doublelist-option div.aoyou-state-disabled {
+  border-color: #dedede;
+  color: #ccc; }
+
+.aoyou-moveup-button{
+  background: url(../useimg/icon-up2.png) no-repeat 6px 6px;
+  height: 24px;
+  width: 24px;
+  border: 1px solid #d4d4d4;
+  background-color: white;
+  cursor: pointer;
+}
+
+.aoyou-moveup-button:hover,.aoyou-movedown-button:hover{
+  background-color: #F5F5F5;
+}
+
+.aoyou-movedown-button{
+  background: url(../useimg/icon-down2.png) no-repeat 6px 6px;
+  height: 24px;
+  width: 24px;
+  border: 1px solid #d4d4d4;
+  margin-top: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.aoyou-doublelist-move{
+  float: left;
+  margin-left: 10px;
+}
+
+
+

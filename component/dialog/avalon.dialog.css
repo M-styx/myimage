@@ -1,0 +1,96 @@
+.aoyou-dialog .aoyou-dialog-inner {
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.1);
+  background-color: #f7f7f7;
+  border: 2px solid #128d42; }
+  .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-close {
+    display: inline;
+    display: inline;
+    float: right;
+    padding: 1px 10px 1px 9px;
+    margin-top: 5px;
+    cursor: pointer;
+    color: #666666; }
+    .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-close .aoyou-dialog-icon {
+      display: block;
+      cursor: pointer;
+      background: url("../useimg/dialogueclose.png") no-repeat;
+      width: 13px;
+      height: 13px; }
+    .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-close .aoyou-dialog-icon:hover {
+      border-right: 0; }
+  .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-title {
+    padding: 7px 10px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid #288d41;
+    margin: 7px 10px;
+    color: #288d41;
+    text-indent: 10px; }
+    .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-title .aoyou-dialog-tip {
+      width: 5px;
+      height: 15px;
+      float: left;
+      background: #288d41;
+      margin-top: 2px; }
+  .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-content {
+    font-size: 14px;
+    padding: 4px 20px; }
+    .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-content .conlink {
+      position: relative;
+      height: 80px;
+      background: #fff;
+      border: 1px solid #beccc2;
+      margin: 0 10px;
+      border-bottom: 0; }
+      .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-content .conlink img {
+        position: absolute;
+        left: 10px;
+        top: 8px; }
+      .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-content .conlink span {
+        display: inline-block;
+        left: 62px;
+        position: absolute;
+        width: 200px;
+        top: 8px;
+        line-height: 20px; }
+      .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-content .conlink p {
+        text-align: center; }
+        .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-content .conlink p img {
+          margin-left: 100px;
+          margin-top: 50px; }
+  .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer {
+    padding: 8px 5px;
+    background-color: #f8f8f8; }
+    .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer .aoyou-dialog-btns {
+      display: inline;
+      font-size: 0;
+      margin-left: 35%; }
+      .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer .aoyou-dialog-btns .aoyou-button {
+        margin-left: 10px; }
+    .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer .btnlink {
+      background: #fff;
+      border: 1px solid #beccc2;
+      margin: 0 10px;
+      border-top: 0;
+      margin-bottom: 10px; }
+      .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer .btnlink .aoyou-dialog-btns {
+        margin-left: 65px;
+        *margin-left: 55px; }
+        .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer .btnlink .aoyou-dialog-btns .aoyou-ml30 {
+          margin-left: 90px; }
+      .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer .btnlink .aoyou-button .aoyou-button-success {
+        background-color: #ebf6ec;
+        border-color: #2e8c44;
+        color: #2e8c44;
+        min-width: 60px;
+        height: 25px; }
+      .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer .btnlink .aoyou-button .aoyou-state-default {
+        background-color: #ebf6ec;
+        border-color: #2e8c44;
+        color: #2e8c44;
+        min-width: 60px;
+        height: 25px; }
+      .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer .btnlink .aoyou-button-text {
+        line-height: 20px;
+        height: 24px; }

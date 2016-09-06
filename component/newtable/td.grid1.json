@@ -1,0 +1,8 @@
+{"rows": [
+  {"id": "001", "intime": "aaa", "outtime": "2015-12-30", "name": "PRINCE D’ ANGKOR HOTEL 吴哥王子","kind":"标准房", "selected": "false"},
+  {"id": "002", "intime": "2015-12-26", "outtime": "2015-12-30", "name": "PRINCE D’ ANGKOR HOTEL 吴哥王子","kind":"标准房", "selected": "false"},
+  {"id": "001", "intime": "2015-12-26", "outtime": "2015-12-30", "name": "PRINCE D’ ANGKOR HOTEL 吴哥王子","kind":"标准房", "selected": "false"},
+  {"id": "002", "intime": "2015-12-26", "outtime": "2015-12-30", "name": "PRINCE D’ ANGKOR HOTEL 吴哥王子","kind":"标准房", "selected": "false"}
+], "total": "4", "rspcod" : "200", "rspmsg": "数据加载成功"}
+
+

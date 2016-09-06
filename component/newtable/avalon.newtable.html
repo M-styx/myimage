@@ -1,0 +1,29 @@
+<div class="aoyou-newtable-container">
+    <nav class="navbar" ms-if="bar===true" ms-css-text-align="title_align">
+        {{title}}
+    </nav>
+    <div style="overflow:auto;" ms-css-height="height">
+        <table class="table table-hover">
+            <thead style="background-color: white" ms-if="th_display===true">
+            <tr>
+                <th ms-repeat="cols" ms-css-width="{{el.width}}" ms-visible="el.disabled" ms-class="aoyou-newtable-textalign-{{th_align}}">{{el.display}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ms-repeat-r="_cells"  ms-class="{{(alternatecolor && $index%2==0)?'aoyou-newtable-oddrowcolor':'aoyou-newtable-evenrowcolor'}}" >
+                <td ms-visible="cols[$index-1].disabled" ms-class-1="aoyou-newtable-cell" ms-class-2="aoyou-newtable-textalign-{{cols[$index-1].textalign}}" ms-class-3="borderbottom" ms-repeat-c="r" ms-css-width="{{cols[$index-1].width}}" ms-attr-title="(cols[$index-1].type == 'select' ? cols[$index-1].option[c] : c)" ms-visible="$index>0">
+                    <span ms-if="$index>0">
+                        {{(cols[$index-1].render ? cols[$index-1].render(c, r, $outer.$index, $index) : c)|html}}
+                    </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ms-css-height="{{footerheight}}">
+        {{footer|html}}
+    </div>
+    <div class="grid_page_bar" ms-visible="pagerbar">
+        <aoyou:pager $id="$initpager" config="$pager"></aoyou:pager>
+    </div>
+</div>

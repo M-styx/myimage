@@ -1,0 +1,56 @@
+.clearfix {
+  zoom: 1; }
+
+.aoyou-panel-container {
+  border: 1px solid #ddd;
+  margin-bottom: 10px; }
+  .aoyou-panel-container .aoyou-panel-top {
+    background-color: #efefef;
+    height: 35px;
+    border-bottom: 1px #dddddd solid; }
+    .aoyou-panel-container .aoyou-panel-top .aoyou-panel-top-tool-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      float: right;
+      margin-top: 8px;
+      margin-right: 8px;
+      cursor: pointer; }
+    .aoyou-panel-container .aoyou-panel-top .aoyou-panel-top-tool-up {
+      background: url("../useimg/icon-up.png") no-repeat; }
+    .aoyou-panel-container .aoyou-panel-top .aoyou-panel-top-tool-down {
+      background: url("../useimg/icon-down.png") no-repeat; }
+    .aoyou-panel-container .aoyou-panel-top .aoyou-panel-top-icon {
+      width: 14px;
+      display: inline-block;
+      float: left;
+      margin: 12px 0px 0 10px; }
+    .aoyou-panel-container .aoyou-panel-top .aoyou-panel-top-iconbody {
+      display: inline-block;
+      float: left;
+      width: 35px;
+      height: inherit;
+      border-right: 1px #dddddd solid; }
+    .aoyou-panel-container .aoyou-panel-top .aoyou-panel-top-button {
+      width: auto;
+      height: inherit;
+      display: inline-block;
+      float: right;
+      padding-right: 8px; }
+    .aoyou-panel-container .aoyou-panel-top .aoyou-panel-top-title {
+      zoom: 1;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      font-family: Microsoft YaHei,arial,sans-serif;
+      line-height: 35px;
+      padding-left: 10px;
+      float: left; }
+    .aoyou-panel-container .aoyou-panel-top .aoyou-panel-top-redtitle {
+      color: red;
+      line-height: 35px;
+      padding-left: 6px; }
+  .aoyou-panel-container .aoyou-panel-content {
+    background-color: #f9f9f9;
+    overflow: hidden;
+    display: block; }

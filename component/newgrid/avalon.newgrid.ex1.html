@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>grid组件</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="../../avalon.js"></script>
+    <script>
+        //newgrid用
+        var cols = [
+            {name: 'id', display: '编号', width: 120, type: 'text', disabled: true},
+            {name: 'name', display: '名称', width: 150, type: 'text', disabled: false},
+            {name: 'price', display: '价格', width: 120, type: 'text', disabled: true},
+            {name: 'category', display: '类别', width: 150, disabled: true,editable:true, type: 'select', option: {
+                'A1': '游戏', 'A2' : '电影', 'A3' : '音乐'
+            }}
+        ];
+        var rows = [
+            {"id": "001", "name": "Eclair11111111111111111111111111111111111111",   "price": "$0.87", "category": "A1", "selected": "false"},
+            {"id": "002", "name": "YuJun",    "price": "$0.157", "category": "A2", "selected": "false"},
+            {"id": "003", "name": "YingYing", "price": "$1.11", "category": "A3", "selected": "true"},
+            {"id": "004", "name": "HaHa",     "price": "$0.189", "category": "A2", "selected": "false"},
+            {"id": "005", "name": "Eclair",   "price": "$0.77", "category": "A3", "selected": "false"}
+        ]
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        })
+        require(["./component/newgrid/avalon.newgrid","./component/textbox/avalon.textbox","./component/dropdowncheckbox/avalon.dropdowncheckbox","./component/button/avalon.button"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                $dropdownOpt:{
+                    singleselect:true,
+                    sourceFlag:{value:"id",text:"name"},
+                    dataSource:[{name:'购物',id:1},{name:'游轮',id:2},{name:'newone',id:3}]
+                },
+                searchfunc:function(){
+                    var aa = avalon.vmodels['testdrop1'].checkedNames;
+                    avalon.vmodels['dg2'].searchData({name:vm.language,b:aa})
+                },
+                searchname:'',
+                $gropt1:{
+                    title_align:"left",
+                    title:"NewGrid组件",
+                    checkbox:false,
+                    singleSelect:false,
+                    editable:false,
+                    autoLoad:true,
+                    pagerbar:true,
+                    filterbar:false,
+                    loading:false,
+                    limit:2,
+                    afterAjax:function(){
+                        console.log(111)
+                    },
+                    onrowclicked:function(){
+                        console.log(2222)
+                    },
+                    cols: cols
+                    ,rows: rows
+                },
+                $gropt2:{
+                    content:'<div><a href="#" class="newgrid-linkbutton icon-add" ms-click="addBUtton()"></a><a href="#" class="newgrid-linkbutton icon-delete"></a><a href="#" class="newgrid-linkbutton icon-edit"></a><a href="#" class="newgrid-linkbutton icon-search"></a><a href="#" class="newgrid-linkbutton icon-save"></a><a href="#" class="newgrid-linkbutton icon-lock"></a></div>' +
+                    '<div><aoyou:textbox fronttitle="name:" value="searchname"></aoyou:textbox><aoyou:dropdowncheckbox fronttitle="&nbsp;语言:" $id="testdrop1" config="$dropdownOpt"></aoyou:dropdowncheckbox>&nbsp;<aoyou:button ms-click="searchfunc">查询</aoyou:button></div>',
+                    title_align:"center",
+                    title:"NewGrid组件,数据基于ajax,适用于带有编辑功能的表格,带分页,数据过滤",
+                    checkbox:true,
+                    singleSelect:false,
+                    editable:true,
+                    autoLoad:false,
+                    pagerbar:true,
+                    filterbar:true,
+                    limit:2,
+                    loadUrl: './td.datagrid.json',
+                    //filterUrl:'./tdtestjson2.json',//默认和loadUrl一致
+                    //loadParam: {
+                    //    "total":"5","rspcod" :"200","rspmsg":"","rows":'23'
+                    //},
+                    afterAjax:function(v){
+                        console.log(v.$checkedRows)
+                    },
+                    onrowclicked:function(e,v){
+                        //console.log(v.$selectedRows)
+                        console.log(v.$checkedRows)
+                    },
+                    cols: cols
+                },
+                addBUtton:function(){
+                    alert('增加按钮?')
+                }
+            })
+            avalon.scan()
+        })
+    </script>
+</head>
+<body>
+<div ms-controller="test">
+    <aoyou:newgrid  $id="dg1" config="$gropt1" >
+    </aoyou:newgrid>
+    <br>
+    <aoyou:newgrid  $id="dg2" config="$gropt2" >
+    </aoyou:newgrid>
+</div>
+</body>
+</html>

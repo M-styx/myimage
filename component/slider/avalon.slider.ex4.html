@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="avalon.slider.css">
+    <script src="../../avalon.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        });
+        require(["./component/slider/avalon.slider"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                value:20,
+                percent:"20",
+                value1:20,
+                percent1:"20",
+                $valueMin:"0",
+                $valueMax:"100",
+                $gropt1:{
+                    $valueMin:'0',
+                    $valueMax:'100',
+                    value:20,
+                    range:'min',
+                    onDrag:function (o,data) {
+                        vm.value = o.value;
+                        vm.percent = o.percent;
+                        vm.$valueMin = o.$valueMin;
+                        vm.$valueMax = o.$valueMax;
+                    }
+                },
+                $gropt2:{
+                    $valueMin:'0',
+                    $valueMax:'100',
+                    value:20,
+                    $twohandlebars:true,
+                    range:'max',
+                    onDrag:function (o,data) {
+                        vm.value1 = o.value;
+                        vm.percent1 = o.percent;
+                        vm.$valueMin = o.$valueMin;
+                        vm.$valueMax = o.$valueMax;
+                    }
+                }
+            });
+            avalon.scan()
+        })
+    </script>
+</head>
+<body ms-controller="test">
+<div style="width: 600px">
+    <aoyou:slider config="$gropt1"></aoyou:slider>
+    值为{{value}}，百分比为{{percent}}%; min为{{$valueMin}}, max为{{$valueMax}}
+</div>
+
+<div style="width: 600px">
+    <aoyou:slider config="$gropt2"></aoyou:slider>
+    值为{{value1}}，百分比为{{percent1}}%; min为{{$valueMin}}, max为{{$valueMax}}
+</div>
+
+<div style="color:#868686;margin-top: 20px">
+   1 value:20,range:'min'
+   2 value:20,range:'max'
+</div>
+</body>
+</html>

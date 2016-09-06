@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>分页栏组件</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="../../avalon.js"></script>
+        <!--<script src="../highlight/shCore.js"></script>-->
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/singledatepicker/avalon.singledatepicker","./component/textbox/avalon.textbox"], function () {
+                avalon.define({
+                    $id: "test",
+                    $singledatepicker1:{
+                        mouseclickout:true,//允许点击别处让控件消失
+                        cpwidth:'700px',
+                        singleSelect:false,
+                        aftercheckfunc:function(){
+                            alert(123);
+                        }
+                    },
+                    $singledatepicker2:{
+                        mouseclickout:true,//允许点击别处让控件消失
+                        cpwidth:'700px',
+                        showpk:false,
+                        singleSelect:false,
+                        aftercheckfunc:function(){
+                            alert(123);
+                        }
+                    },
+                    outerclose1:function(e){
+                    var ss1 = avalon.vmodels['sgr1'];
+                    ss1._togglepicker();
+                    e.stopPropagation();
+                },
+                    outerclose2:function(e){
+                        var ss2 = avalon.vmodels['sgr2'];
+                        ss2._togglepicker();
+                        e.stopPropagation();
+                    }
+                })
+                avalon.scan()
+            })
+        </script>
+    </head>
+    <body ms-controller="test">
+    <input type="text" ms-on-click="outerclose1($event)" singledatepicker="sgr1" style="top:100px;left:600px;position: absolute"/>
+    <aoyou:singledatepicker $id="sgr1" config="$singledatepicker1"></aoyou:singledatepicker>
+    <div><aoyou:textbox  ms-on-click="outerclose2($event)" style="top:400px;left:200px;position: absolute" singledatepicker="sgr2"></aoyou:textbox></div>
+    <aoyou:singledatepicker $id="sgr2" config="$singledatepicker2"></aoyou:singledatepicker>
+    </body>
+</html>

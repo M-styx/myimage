@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tooltip组件</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="../../avalon.js"></script>
+    <script>
+        avalon.library("aoyou", {
+            $ready: function () {
+                avalon.log("控件已经构建完毕")
+            }
+        })
+
+        require(["./component/textbox/avalon.textbox","./component/tooltip/avalon.tooltip"], function () {
+            var vm = avalon.define({
+                $id: "test",
+                $tpconfig1:{
+                    fromtarget:'s1',
+                    content:'控件已经构建完毕控件已经构建完毕控件已经构建完毕控件已经构建完毕控件已经构建完毕控件已经构建完毕控件已经构建完毕'
+                },
+                $tpconfig2:{
+                    fromtarget:'s2',
+                    color:'#000',
+                    backgroundcolor:'red',
+                    content:'tooltip组件的警告'
+                }
+            })
+            avalon.scan()
+        })
+    </script>
+</head>
+<body>
+<div ms-controller="test">
+    <div style="width:600px;margin-left: 600px;" class="test1">
+        <aoyou:textbox tooltip="s1"></aoyou:textbox>        
+    </div>
+     <div style="width:600px;" class="test2">
+        <aoyou:textbox tooltip="s2"></aoyou:textbox>        
+    </div>
+    <aoyou:tooltip config="$tpconfig1"></aoyou:tooltip>
+    <aoyou:tooltip config="$tpconfig2"></aoyou:tooltip>
+</div>
+</body>
+</html>

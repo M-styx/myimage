@@ -1,0 +1,30 @@
+<aoyou:tooltip ms-if="validation != ''" config="$tp"></aoyou:tooltip>
+<div class="aoyou-textbox">
+<label class="aoyou-textbox-fronttitle" ms-if="!fronttitle==''">{{fronttitle}}</label><label class="aoyou-textbox-lastalert" ms-if="!lastalert==''">{{lastalert}}</label>
+<div class="aoyou-textbox-main"
+     ms-class-1="aoyou-textbox-hover: _hovering"
+     ms-class-2="aoyou-textbox-focus: _focusing">
+    <span class="aoyou-textbox-placeholder"
+          ms-visible="_placeholderVisible && _isLowerEndBrowser"
+          ms-click = "_clickPlaceholder($event)">
+        {{placeholder}}
+    </span>
+    <div ms-visible="iconshow" class="aoyou-textbox-iconbox">
+        <i ms-class="{{mtype}}"></i>
+    </div>
+    <input class="aoyou-textbox-input"
+           ms-class="aoyou-state-disabled:disabled"
+           ms-attr-disabled="disabled"
+           ms-attr-placeholder="placeholder"
+           ms-if="type === 'input'"
+           ms-duplex="value"
+           ms-focus="_focus()"
+            ms-blur="_blur()" ms-css-width="width" ms-css-height="height"/>
+    <textarea class="aoyou-textbox-input"
+           ms-if="type === 'textarea'"
+           ms-duplex="value"
+           ms-focus="_focus()"
+           ms-blur="_blur()" ms-css-width="width" ms-css-height="height"/>
+</div>
+
+</div>

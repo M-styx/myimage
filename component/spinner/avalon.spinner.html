@@ -1,0 +1,19 @@
+<label class="aoyou-textbox-fronttitle" ms-visible="!fronttitle==''">{{fronttitle}}</label>
+<div class="aoyou-widget aoyou-spinner" ms-class-1="{{spinnerstyleclass}}">
+    <div ms-visible="_leftstyle" class="aoyou-spinner-btn-box aoyou-spinner-btn-box-left"><div ms-click="_add" class="aoyou-spinner-btn-updown aoyou-spinner-btn-updown-up"></div><div ms-click="_sub" class="aoyou-spinner-btn-updown aoyou-spinner-btn-updown-down"></div></div>
+    <button ms-visible="_normalstyle" type="button" class="aoyou-btn aoyou-spinner-btn-left"
+            ms-click="_sub"
+            ms-attr-disabled="min==value || disabled || !_valueIsValid"
+            ms-class="aoyou-state-disabled:min==value || disabled || !_valueIsValid"><span class="aoyou-spinner-icon aoyou-spinner-icon-minus">-</span></button>
+    <input ms-css-width="width" class="aoyou-textbox aoyou-widget-content"
+           ms-class-1="aoyou-state-disabled:disabled"
+           ms-class-2="aoyou-value-not-valid:!_valueIsValid"
+           ms-blur="_correct($event)"
+           ms-duplex-limit="value"
+           ms-attr-disabled="disabled"/>
+    <button ms-visible="_normalstyle" type="button" class="aoyou-btn aoyou-spinner-btn-right"
+            ms-click="_add"
+            ms-attr-disabled="max==value || disabled || !_valueIsValid"
+            ms-class="aoyou-state-disabled:max===value || disabled || !_valueIsValid"><span class="aoyou-spinner-icon aoyou-spinner-icon-plus">+</span></button>
+    <div ms-visible="_rightstyle" class="aoyou-spinner-btn-box aoyou-spinner-btn-box-right"><div ms-click="_add" class="aoyou-spinner-btn-updown aoyou-spinner-btn-updown-up"></div><div ms-click="_sub" class="aoyou-spinner-btn-updown aoyou-spinner-btn-updown-down"></div></div>
+</div>

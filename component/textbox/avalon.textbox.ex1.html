@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>textbox demo 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link type="text/css" rel="stylesheet" href="../style/avalon.doc.css">
+        <script src="../../avalon.js"></script>
+        <script src="../style/highlight/shCore.js"></script>
+        <script>
+            avalon.library("aoyou", {
+                $ready: function () {
+                    avalon.log("控件已经构建完毕")
+                }
+            })
+            require(["./component/textbox/avalon.textbox"], function () {
+                var demoVM = avalon.define({
+                    $id: "demo",
+                    sss1:"21",
+                    sss2:"10.1.1.22",
+                    sss3:"3244",
+                    sss4:"test",
+                    getI:function(){
+                        alert(avalon.vmodels['pp'].value);
+                    }
+                })
+                avalon.scan()
+            })
+        </script>
+    </head>
+    
+    <body ms-controller="demo">
+        <fieldset>
+            <legend>textbox 默认配置</legend>
+            <aoyou:textbox value="sss1" validation="req,int"></aoyou:textbox>
+            <aoyou:textbox value="sss2" validation="req,ip"></aoyou:textbox>
+            <aoyou:textbox value="sss3" validation="req,len-max-10,len-min-3"></aoyou:textbox>
+            <br>
+            <br>
+            <br>
+            <aoyou:textbox value="sss4" fronttitle="具有头部的:" lastalert="*:sffds"></aoyou:textbox>
+            <br>
+            <br>
+            <br>
+            <aoyou:textbox fronttitle="没有数据绑定的情况需要通过组件ID获取value" $id="pp"></aoyou:textbox>
+            <br>
+            <div ms-click="getI()" style="background-color: #00ee00;width:100px;">点击我--根据外部ID获取value</div>
+        </fieldset>
+    </body>
+
+</html>

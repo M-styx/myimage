@@ -1,0 +1,10 @@
+<div class="aoyou-panel-container" ms-attr-width="{{width}}">
+    <div class="aoyou-panel-top">
+        <div class="aoyou-panel-top-iconbody">
+            <img class="aoyou-panel-top-icon" ms-attr-src="{{iconsrc}}" />
+        </div>
+        <label class="aoyou-panel-top-title">{{title}}</label>
+        <span class="aoyou-panel-top-redtitle">{{redtitle}}</span>
+        <i ms-visible="uptool" ms-click="_argsClick($event)" ms-class-1="aoyou-panel-top-tool-icon" ms-class-2="{{toggle? 'aoyou-panel-top-tool-up':'aoyou-panel-top-tool-down'}}"></i>
+        <div class="aoyou-panel-top-button">{{button|html}}</div>
+    </div><div class="aoyou-panel-content">{{content|html}}</div></div>

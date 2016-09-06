@@ -1,0 +1,39 @@
+<div class="aoyou-doublelist">
+	<div class="aoyou-doublelist-menu" ms-css-width="{{width}}" ms-css-height="{{height}}">
+		<ul ms-each-item="_leftItems">
+			<li
+                ms-class-1="aoyou-state-disabled: item.disabled"
+                ms-class-2="aoyou-state-active: item.active"
+				ms-visible="item.visible"
+				ms-hover="aoyou-state-hover"
+                ms-click="_leftToggleActive($index)" >
+				{{item.name | html}}
+			</li>
+		</ul>
+	</div>
+	<div class="aoyou-doublelist-option">
+		<div class="aoyou-dbl-button" ms-click="_moveToRight()">
+			{{tpl_addBtnText|html}}
+		</div>
+		<div class="aoyou-dbl-button" ms-click="_moveToLeft()">
+			{{tpl_removeBtnText|html}}
+		</div>
+	</div>
+	<div class="aoyou-doublelist-menu" ms-css-width="{{width}}" ms-css-height="{{height}}">
+		<ul ms-each-item="_rightItems">
+            <li
+                ms-class="aoyou-state-active: item.active"
+                ms-visible="item.visible"
+                ms-hover="aoyou-state-hover"
+                ms-click="_rightToggleActive($index)" >
+				{{item.name | html}}
+            </li>
+		</ul>
+	</div>
+	<!--<div class="aoyou-doublelist-move">
+ 		<div class="aoyou-moveup-button">
+		</div>
+		<div class="aoyou-movedown-button">
+		</div>
+	</div>-->
+</div>
