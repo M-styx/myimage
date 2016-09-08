@@ -12,11 +12,11 @@
       font-size: $fontsmall;
       span.checked{
         background: url("../images/checkbox2.png") center right no-repeat;
-        background-size:30%;
+        background-size:32%;
       }
       span.unchecked{
         background: url("../images/checkbox1.png") center right no-repeat;
-        background-size:30%;
+        background-size:32%;
       }
 
       &:hover{
@@ -26,10 +26,22 @@
       img{
         margin-top: 12px;
         margin-right: 10px;
+        cursor: pointer;
       }
     }
   }
 
+  .back{
+    display: inline-block;
+    width: 62.4%;
+    span.listcheck{
+      width: 6.4%;
+    }
+
+    span.list1{
+      width: 87%;
+    }
+  }
 
   span{
     display: inline-block;

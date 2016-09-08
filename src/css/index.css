@@ -125,7 +125,8 @@ body {
       display: inline-block;
       height: 49px;
       vertical-align: -20px;
-      width: 60px; }
+      width: 60px;
+      cursor: pointer; }
     .header .tab .thumbnaila {
       background: url("../images/thumbnail-a.png") center no-repeat;
       border-left: 1px solid rgba(0, 0, 0, 0.1); }
@@ -210,15 +211,23 @@ body {
       font-size: 12px; }
       .listcontent ul li span.checked {
         background: url("../images/checkbox2.png") center right no-repeat;
-        background-size: 30%; }
+        background-size: 32%; }
       .listcontent ul li span.unchecked {
         background: url("../images/checkbox1.png") center right no-repeat;
-        background-size: 30%; }
+        background-size: 32%; }
       .listcontent ul li:hover {
         background: #F0F8FD; }
       .listcontent ul li img {
         margin-top: 12px;
-        margin-right: 10px; }
+        margin-right: 10px;
+        cursor: pointer; }
+  .listcontent .back {
+    display: inline-block;
+    width: 62.4%; }
+    .listcontent .back span.listcheck {
+      width: 6.4%; }
+    .listcontent .back span.list1 {
+      width: 87%; }
   .listcontent span {
     display: inline-block;
     height: 39px;
