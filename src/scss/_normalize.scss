@@ -9,7 +9,8 @@ $font_family:PingFangSC-Regular;
 }
 
 body{
-  width: 100%
+  width: 100%;
+  min-width:1100px;
 }
 input,button{
   outline: none;
