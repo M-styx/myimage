@@ -1,9 +1,4 @@
 .header{
-  left: 0;
-  position: fixed;
-  top:0;
-  width:100%;
-
   .title{
     height:30px;
     padding:8px 20px;
@@ -71,8 +66,10 @@
       position: relative;
       width: 78px;
 
+
+
       span.sj{
-        display: inline-block;
+        display: none;
         width: 10px;
         height: 10px;
         background: url("../images/sj.png") center no-repeat;
@@ -83,6 +80,7 @@
       }
 
       .filtercontent{
+        display: none;
         position: absolute;
         background: white;
         border: 2px solid #DADADA;

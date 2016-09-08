@@ -1,6 +1,8 @@
 require(["/component/pager/avalon.pager"],function () {
     var vm = avalon.define({
         $id:"aoyouimage",
+        filtertoggle:false,
+        filtersjcss:'none',
         changeperPage:function(p){//切换每页显示多少条
           avalon.vmodels['pager01'].perPages = p;
         },
@@ -30,6 +32,18 @@ require(["/component/pager/avalon.pager"],function () {
             onJump:function(){
                 alert(10);
             }
+        },
+        filteron:function (e) {
+            vm.filtertoggle = true;
+            vm.filtersjcss = "inline-block";
+            e.stopPropagation();
+        },
+        filterout:function () {
+            setTimeout(function () {
+                vm.filtertoggle = false;
+                vm.filtersjcss = 'none';
+            },100);
+
         }
     });
     avalon.scan(document.body,vm);

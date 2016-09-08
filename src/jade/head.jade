@@ -1,4 +1,4 @@
-.header
+.header.fixed
     .title
         h2 遨游图库
         span.tit1 V2.0
@@ -6,9 +6,9 @@
     .search
         input.searchtxt(type="text" id="searchtxtid" placeholder="搜索图片名称,关键字...")
         button.searchbtn
-        .filter 结果筛选
-            span.sj
-            .filtercontent
+        .filter(ms-on-mouseenter="filteron($event)" ms-on-mouseleave="filterout") 结果筛选
+            span.sj(ms-css-display="filtersjcss")
+            .filtercontent(ms-visible="filtertoggle")
                 .div
                     p 图片类别
                     .filtercheck.clearfix

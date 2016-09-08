@@ -11,15 +11,15 @@
     <script src="../js/index.js"></script>
   </head>
   <body ms-controller="aoyouimage">
-    <div class="header">
+    <div class="header fixed">
       <div class="title">
         <h2>遨游图库</h2><span class="tit1">V2.0</span><span class="tit2">打造正版旅游图库</span>
       </div>
       <div class="search">
         <input type="text" id="searchtxtid" placeholder="搜索图片名称,关键字..." class="searchtxt">
         <button class="searchbtn"></button>
-        <div class="filter">结果筛选<span class="sj"></span>
-          <div class="filtercontent">
+        <div ms-on-mouseenter="filteron($event)" ms-on-mouseleave="filterout" class="filter">结果筛选<span ms-css-display="filtersjcss" class="sj"></span>
+          <div ms-visible="filtertoggle" class="filtercontent">
             <div class="div">
               <p>图片类别</p>
               <div class="filtercheck clearfix"><a>全部类别</a><a>人物</a><a>风景</a><a>酒店</a><a>未分类</a></div>
@@ -52,7 +52,9 @@
         <div class="pagerdiv floatLeft"><span class="resultinfo">3689</span><span class="resultinfo">意大利</span><span class="resultinfo">图片结果</span></div>
       </div>
       <div class="listcontent">
-        <div class="tabletit"><span class="listcheck"></span><span class="list1">文件名</span><span class="list2">类型</span><span class="list2">尺寸</span><span class="list2">大小</span><span class="list3">修改日期</span></div>
+        <div class="tabletit">
+          <div class="back"><span class="listcheck"></span><span class="list1">文件名</span></div><span class="list2">类型</span><span class="list2">尺寸</span><span class="list2">大小</span><span class="list3">修改日期</span>
+        </div>
         <ul>
           <li>
             <div class="back"><span class="listcheck checked"></span><span class="list1">米兰大教堂<img src="../images/download-blue.png" class="floatRight"><img src="../images/delete-blue.png" class="floatRight"><img src="../images/edit-blue.png" class="floatRight"></span></div><span class="list2">JPG</span><span class="list2">1920*1280</span><span class="list2">1.6M</span><span class="list3">2016-08-19 12:07</span>
