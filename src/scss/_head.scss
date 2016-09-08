@@ -86,6 +86,14 @@
       width: 60px;
     }
 
+    .checked{
+      background: url('../images/checkbox1.png') center left no-repeat;
+    }
+
+    .unchecked{
+      background: url('../images/checkbox2.png') center left no-repeat;
+    }
+
     .tabimg{
       background: url('../images/thumbnail-a.png') center no-repeat;
       border-right: 1px solid rgba(0,0,0,0.10);
