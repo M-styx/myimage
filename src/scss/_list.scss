@@ -10,6 +10,23 @@
     li{
       border-bottom: 1px solid #EBECEF;
       font-size: $fontsmall;
+      span.checked{
+        background: url("../images/checkbox2.png") center right no-repeat;
+        background-size:30%;
+      }
+      span.unchecked{
+        background: url("../images/checkbox1.png") center right no-repeat;
+        background-size:30%;
+      }
+
+      &:hover{
+        background: #F0F8FD;
+      }
+
+      img{
+        margin-top: 12px;
+        margin-right: 10px;
+      }
     }
   }
 
@@ -27,7 +44,8 @@
     text-align: right;
   }
   span.list1{
-    width: 58%;
+    width: 55%;
+    padding-right: 30px;
   }
   span.list2{
     width: 8%;

@@ -187,14 +187,14 @@ body {
     .panel .pagersel ul {
       display: none; }
   .panel .pagersel.on ul {
-    display: block; }
+    position: absolute;
+    display: block;
+    border: 1px solid #DADADA; }
     .panel .pagersel.on ul li {
       background: #F2F2F2;
-      border-left: 1px solid #DADADA;
-      border-right: 1px solid #DADADA;
       height: 24px;
       line-height: 24px;
-      width: 38px; }
+      width: 39px; }
       .panel .pagersel.on ul li:hover {
         background: #E5E5E5; }
 
@@ -208,6 +208,17 @@ body {
     .listcontent ul li {
       border-bottom: 1px solid #EBECEF;
       font-size: 12px; }
+      .listcontent ul li span.checked {
+        background: url("../images/checkbox2.png") center right no-repeat;
+        background-size: 30%; }
+      .listcontent ul li span.unchecked {
+        background: url("../images/checkbox1.png") center right no-repeat;
+        background-size: 30%; }
+      .listcontent ul li:hover {
+        background: #F0F8FD; }
+      .listcontent ul li img {
+        margin-top: 12px;
+        margin-right: 10px; }
   .listcontent span {
     display: inline-block;
     height: 39px;
@@ -218,7 +229,8 @@ body {
     margin-right: 10px;
     text-align: right; }
   .listcontent span.list1 {
-    width: 58%; }
+    width: 55%;
+    padding-right: 30px; }
   .listcontent span.list2 {
     width: 8%; }
   .listcontent span.list3 {
