@@ -1,65 +1,66 @@
 <div class="aoyou-pager" onselectstart="return false;" unselectable="on">
+    <div class="aoyou-pager-jump" ms-if="showJumper">
+        <span class="aoyou-pager-text">第</span>
+        <div class="aoyou-pager-textbox-wrapper">
+            <input class="aoyou-pager-textbox" ms-duplex="_currentPage" data-duplex-event="change" ms-keyup="changeCurrentPage">
+        </div>
+        <span class="aoyou-pager-text" ms-html="_getTotalPages(totalPages)"></span>
+        <span class="aoyou-pager-text">{{regional.pageText}}</span>
+        <!--<button class="aoyou-pager-button" ms-click="changeCurrentPage" >{{regional.confirmText}}</button>-->
+    </div>
+    <span class="aoyou-pager-prev"
+          ms-class="aoyou-state-disabled:_currentPage==1"
+          ms-if="alwaysShowFirst"
+          ms-attr-title="getTitle('prevFirst')"
+          ms-click="jumpPage($event,'first')"
+    >{{prevFirstText|html}}</span>
       <span class="aoyou-pager-prev"
             ms-class="aoyou-state-disabled:_currentPage==1"
-            ms-if="alwaysShowFirst"
-            ms-attr-title="getTitle('prevFirst')"
-            ms-click="jumpPage($event,'first')"
-      >{{prevFirstText|html}}</span>
-      <span class="aoyou-pager-prev"
-          ms-class="aoyou-state-disabled:_currentPage==1"
-          ms-if="isShowPrev()"
-          ms-attr-title="getTitle('prev')" 
-          ms-click="jumpPage($event,'prev')"
-          >{{prevText|html}}</span>
+            ms-if="isShowPrev()"
+            ms-attr-title="getTitle('prev')"
+            ms-click="jumpPage($event,'prev')"
+      >{{prevText|html}}</span>
     <span class="aoyou-pager-item"
           ms-if = "showPageNumButtons"
-          ms-visible="firstPage!==1" 
-          ms-attr-title="getTitle('first', currentPage)" 
-          ms-click="jumpPage($event,'first')" 
+          ms-visible="firstPage!==1"
+          ms-attr-title="getTitle('first', currentPage)"
+          ms-click="jumpPage($event,'first')"
           ms-class="aoyou-state-active:currentPage == 1"
           ms-hover="aoyou-state-hover">1</span>
     <span class='aoyou-pager-omit'
-          ms-if="showFirstOmit && showPageNumButtons" 
+          ms-if="showFirstOmit && showPageNumButtons"
           ms-text="ellipseText"
-          ></span>
+    ></span>
     <span  class="aoyou-pager-item"
            ms-if = "showPageNumButtons && showPageNumButtons"
-           ms-repeat="pages" 
+           ms-repeat="pages"
            ms-attr-title="getTitle(el, currentPage)"
            ms-hover="aoyou-state-hover"
            ms-click="jumpPage($event,el)"
            ms-class="aoyou-state-active:el == currentPage"
            ms-text="el"
-           ></span>
+    ></span>
     <span class="aoyou-pager-omit"
-          ms-if="showLastOmit && showPageNumButtons" 
+          ms-if="showLastOmit && showPageNumButtons"
           ms-text="ellipseText"
-          ></span>
+    ></span>
     <span class="aoyou-pager-item"
-          ms-if="lastPage!==totalPages && showPageNumButtons" 
-          ms-attr-title="getTitle('last', currentPage, totalPages)" 
+          ms-if="lastPage!==totalPages && showPageNumButtons"
+          ms-attr-title="getTitle('last', currentPage, totalPages)"
           ms-hover="aoyou-state-hover"
-          ms-click="jumpPage($event,'last')"  
+          ms-click="jumpPage($event,'last')"
           ms-text="totalPages"
-          ></span>
+    ></span>
     <span class="aoyou-pager-next"
-          ms-if="isShowNext(alwaysShowNext,lastPage, totalPages)" 
+          ms-if="isShowNext(alwaysShowNext,lastPage, totalPages)"
           ms-attr-title="getTitle('next')"
           ms-click="jumpPage($event,'next')"
           ms-class="aoyou-state-disabled:_currentPage==totalPages||totalPages==0"
-          >{{nextText|html}}</span>
+    >{{nextText|html}}</span>
     <span class="aoyou-pager-next"
           ms-if="alwasyShowLast"
           ms-attr-title="getTitle('nextLast')"
           ms-class="aoyou-state-disabled:_currentPage==totalPages||totalPages==0"
           ms-click="jumpPage($event,'last')"
     >{{nextLastText|html}}</span>
-    <div class="aoyou-pager-jump" ms-if="showJumper">
-        <span class="aoyou-pager-text" ms-html="_getTotalPages(totalPages)"></span>
-        <div class="aoyou-pager-textbox-wrapper">
-            <input class="aoyou-pager-textbox" ms-duplex="_currentPage" data-duplex-event="change" ms-keyup="changeCurrentPage">
-        </div>
-        <span class="aoyou-pager-text">{{regional.pageText}}</span>
-        <button class="aoyou-pager-button" ms-click="changeCurrentPage" >{{regional.confirmText}}</button>
-    </div>
 </div>

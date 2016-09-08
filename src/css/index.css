@@ -1,0 +1,225 @@
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+.clearfix {
+  *zoom: 1; }
+
+body {
+  width: 100%; }
+
+input, button {
+  outline: none;
+  border: 0; }
+
+body, ul, li, h1, h2, h3, h4, h5, h6, p, form, dl, dt, dd {
+  margin: 0px;
+  padding: 0px; }
+
+ul {
+  list-style: none; }
+
+img {
+  border-style: none; }
+
+.floatLeft {
+  float: left; }
+
+.floatRight {
+  float: right; }
+
+.width100 {
+  width: 100%; }
+
+.width75 {
+  width: 75%; }
+
+.width50 {
+  width: 50%; }
+
+.alignLeft {
+  text-align: left; }
+
+.alignRight {
+  text-align: right; }
+
+body {
+  color: #333;
+  font-family: PingFangSC-Regular;
+  font-size: 14px; }
+
+.header {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%; }
+  .header .title {
+    height: 30px;
+    padding: 8px 20px; }
+    .header .title h2 {
+      display: inline-block;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.46px;
+      line-height: 30px;
+      margin: 0;
+      padding: 0; }
+    .header .title span.tit1 {
+      bottom: 9px;
+      font-size: 12px;
+      letter-spacing: 0.25px;
+      margin-left: 5px;
+      position: relative; }
+    .header .title span.tit2 {
+      color: #666;
+      font-size: 14px;
+      letter-spacing: 0.29px;
+      margin-left: 20px; }
+  .header .search {
+    border-bottom: 1px solid #EEEFF2;
+    border-top: 1px solid #EEEFF2;
+    height: 68px; }
+    .header .search .searchtxt {
+      border-width: 0;
+      color: black;
+      font-size: 24px;
+      height: 68px;
+      letter-spacing: 0.5px;
+      margin: 0 0 0 20px;
+      outline: none;
+      padding: 0;
+      vertical-align: top;
+      width: 945px; }
+    .header .search .searchbtn {
+      background: url("../images/search1.png") no-repeat;
+      display: inline-block;
+      height: 69px;
+      vertical-align: -27px;
+      width: 70px; }
+    .header .search .filter {
+      background: url("../images/filter.png") center right no-repeat;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 69px;
+      letter-spacing: 0.29px;
+      margin-left: 60px;
+      width: 78px; }
+  .header .tab {
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    height: 50px; }
+    .header .tab .checkall {
+      background: url("../images/checkbox1.png") center left no-repeat;
+      display: inline-block;
+      line-height: 20px;
+      margin: 15px 20px;
+      height: 20px;
+      width: 60px; }
+    .header .tab .tabimg {
+      background: url("../images/thumbnail-a.png") center no-repeat;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      height: 49px;
+      vertical-align: -20px;
+      width: 60px; }
+    .header .tab .thumbnaila {
+      background: url("../images/thumbnail-a.png") center no-repeat;
+      border-left: 1px solid rgba(0, 0, 0, 0.1); }
+    .header .tab .thumbnaild {
+      background: url("../images/thumbnail-d.png") center no-repeat;
+      border-left: 1px solid rgba(0, 0, 0, 0.1); }
+    .header .tab .listd {
+      background: url("../images/list-d.png") center no-repeat; }
+    .header .tab .lista {
+      background: url("../images/list-a.png") center no-repeat; }
+    .header .tab .uploadbtn {
+      background: #149AF1;
+      border-radius: 3px;
+      color: white;
+      letter-spacing: 0.29px;
+      margin: 10px 20px;
+      height: 30px;
+      width: 72px; }
+    .header .tab .download {
+      background: url("../images/download.png") center left no-repeat;
+      margin: 15px 0px 15px 20px;
+      height: 20px;
+      width: 83px; }
+    .header .tab .preview {
+      background: url("../images/checkbox2.png") center left no-repeat;
+      margin: 15px 0px 15px 20px;
+      height: 20px;
+      width: 83px; }
+
+.panel {
+  background: #F7F8FA;
+  width: 100%; }
+  .panel .seizediv {
+    background: white;
+    height: 166px; }
+  .panel .pagercontent {
+    margin-top: 8px;
+    height: 57px;
+    width: 100%; }
+  .panel .pagerdiv {
+    margin-left: 10px;
+    width: 324px; }
+    .panel .pagerdiv span.resultinfo {
+      line-height: 26px;
+      margin-left: 10px; }
+  .panel .pagershow {
+    float: left;
+    line-height: 26px;
+    margin-right: 10px; }
+  .panel .pagersel {
+    background: #F2F2F2;
+    border: 1px solid #DADADA;
+    border-radius: 2px;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    width: 40px; }
+    .panel .pagersel ul {
+      display: none; }
+  .panel .pagersel.on ul {
+    display: block; }
+    .panel .pagersel.on ul li {
+      background: #F2F2F2;
+      border-left: 1px solid #DADADA;
+      border-right: 1px solid #DADADA;
+      height: 24px;
+      line-height: 24px;
+      width: 38px; }
+      .panel .pagersel.on ul li:hover {
+        background: #E5E5E5; }
+
+.listcontent {
+  width: 100%; }
+  .listcontent .tabletit {
+    border-bottom: 1px solid #D2D2D2;
+    margin: 0 20px; }
+  .listcontent ul {
+    margin: 0 20px; }
+    .listcontent ul li {
+      border-bottom: 1px solid #EBECEF;
+      font-size: 12px; }
+  .listcontent span {
+    display: inline-block;
+    height: 39px;
+    line-height: 39px;
+    vertical-align: middle; }
+  .listcontent span.listcheck {
+    width: 4%;
+    margin-right: 10px;
+    text-align: right; }
+  .listcontent span.list1 {
+    width: 58%; }
+  .listcontent span.list2 {
+    width: 8%; }
+  .listcontent span.list3 {
+    width: 12%; }

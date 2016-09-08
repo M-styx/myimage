@@ -1,0 +1,38 @@
+.listcontent{
+  width: 100%;
+  .tabletit{
+    border-bottom: 1px solid #D2D2D2;
+    margin:0 20px;
+  }
+
+  ul{
+    margin: 0 20px;
+    li{
+      border-bottom: 1px solid #EBECEF;
+      font-size: $fontsmall;
+    }
+  }
+
+
+  span{
+    display: inline-block;
+    height: 39px;
+    line-height: 39px;
+    vertical-align: middle;
+  }
+
+  span.listcheck{
+    width: 4%;
+    margin-right: 10px;
+    text-align: right;
+  }
+  span.list1{
+    width: 58%;
+  }
+  span.list2{
+    width: 8%;
+  }
+  span.list3{
+    width: 12%;
+  }
+}

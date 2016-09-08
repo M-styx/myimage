@@ -1,0 +1,144 @@
+.header{
+  left: 0;
+  position: fixed;
+  top:0;
+  width:100%;
+
+  .title{
+    height:30px;
+    padding:8px 20px;
+
+    h2{
+      display: inline-block;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.46px;
+      line-height: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    span.tit1{
+      bottom:9px;
+      font-size: $fontsmall;
+      letter-spacing: 0.25px;
+      margin-left:5px;
+      position: relative;
+    }
+
+    span.tit2{
+      color:$gray;
+      font-size: $fontnormal;
+      letter-spacing: 0.29px;
+      margin-left:20px;
+    }
+  }
+
+
+  .search{
+    border-bottom: 1px solid #EEEFF2;
+    border-top:1px solid #EEEFF2;
+    height:68px;
+
+    .searchtxt{
+      border-width: 0;
+      color: black;
+      font-size: 24px;
+      height: 68px;
+      letter-spacing: 0.5px;
+      margin: 0 0 0 20px;
+      outline: none;
+      padding: 0;
+      vertical-align: top;
+      width: 945px;
+    }
+
+    .searchbtn{
+      background: url("../images/search1.png") no-repeat;
+      display: inline-block;
+      height: 69px;
+      vertical-align: -27px;
+      width: 70px;
+    }
+
+    .filter{
+      background: url("../images/filter.png") center right no-repeat;
+      display: inline-block;
+      font-size: $fontnormal;
+      line-height: 69px;
+      letter-spacing: 0.29px;
+      margin-left: 60px;
+      width: 78px;
+    }
+  }
+
+
+  .tab{
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.10);
+    height: 50px;
+
+    .checkall{
+      background: url('../images/checkbox1.png') center left no-repeat;
+      display: inline-block;
+      line-height: 20px;
+      margin: 15px 20px;
+      height: 20px;
+      width: 60px;
+    }
+
+    .tabimg{
+      background: url('../images/thumbnail-a.png') center no-repeat;
+      border-right: 1px solid rgba(0,0,0,0.10);
+      display: inline-block;
+      height: 49px;
+      vertical-align: -20px;
+      width: 60px;
+    }
+
+    .thumbnaila{
+      background: url('../images/thumbnail-a.png') center no-repeat;
+      border-left: 1px solid rgba(0,0,0,0.10);
+    }
+
+    .thumbnaild{
+      background: url('../images/thumbnail-d.png') center no-repeat;
+      border-left: 1px solid rgba(0,0,0,0.10);
+    }
+
+    .listd{
+      background: url('../images/list-d.png') center no-repeat;
+    }
+
+    .lista{
+      background: url('../images/list-a.png') center no-repeat;
+    }
+
+    .uploadbtn{
+      background: #149AF1;
+      border-radius: 3px;
+      color:white;
+      letter-spacing: 0.29px;
+      margin:10px 20px;
+      height:30px;
+      width: 72px;
+    }
+
+    .download{
+      background: url("../images/download.png") center left no-repeat;
+      margin:15px 0px 15px 20px;
+      height: 20px;
+      width: 83px;
+    }
+
+    .preview{
+      background: url("../images/checkbox2.png") center left no-repeat;
+      margin:15px 0px 15px 20px;
+      height: 20px;
+      width: 83px;
+    }
+
+  }
+}
+
+
+

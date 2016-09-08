@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>遨游图库</title>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script src="../../avalon.js"></script>
+    <script src="../js/index.js"></script>
+  </head>
+  <body ms-controller="aoyouimage">
+    <div class="header">
+      <div class="title">
+        <h2>遨游图库</h2><span class="tit1">V2.0</span><span class="tit2">打造正版旅游图库</span>
+      </div>
+      <div class="search">
+        <input type="text" id="searchtxtid" placeholder="搜索图片名称,关键字..." class="searchtxt">
+        <button class="searchbtn"></button>
+        <div class="filter">结果筛选</div>
+      </div>
+      <div class="tab"><span class="checkall alignRight">全选</span><span class="tabimg thumbnaild"></span><span class="tabimg lista"></span>
+        <button class="uploadbtn floatRight">上传</button><span class="download floatRight alignRight">打包下载</span><span class="preview floatRight alignRight">图片预览</span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="seizediv"></div>
+      <div class="pagercontent">
+        <div class="pagerdiv floatRight">
+          <aoyou:pager config="$pageropt"></aoyou:pager>
+        </div>
+        <div class="pagerdiv floatLeft"><span class="resultinfo">3689</span><span class="resultinfo">意大利</span><span class="resultinfo">图片结果</span></div>
+      </div>
+      <div class="listcontent">
+        <div class="tabletit"><span class="listcheck"></span><span class="list1">文件名</span><span class="list2">类型</span><span class="list2">尺寸</span><span class="list2">大小</span><span class="list3">修改日期</span></div>
+        <ul>
+          <li><span class="listcheck">1</span><span class="list1">米兰大教堂</span><span class="list2">JPG</span><span class="list2">1920*1280</span><span class="list2">1.6M</span><span class="list3">2016-08-19 12:07</span></li>
+          <li><span class="listcheck">1</span><span class="list1">文件名</span><span class="list2">类型</span><span class="list2">尺寸</span><span class="list2">大小</span><span class="list3">修改日期</span></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

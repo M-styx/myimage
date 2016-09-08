@@ -1,4 +1,39 @@
 $font_family1 : "微软雅黑",Tahoma,Helvetica,"SimSun",sans-serif;
-$greenstylecolor:#288d41;
+$font_family:PingFangSC-Regular;
+
 .clearfix:after {content: "";display: block;height: 0;clear: both;}
 .clearfix {zoom: 1;}
+
+.clearfix {
+  *zoom: 1;
+}
+
+body{
+  width: 100%
+}
+input,button{
+  outline: none;
+  border:0;
+}
+
+body, ul, li, h1, h2, h3, h4, h5, h6, p, form, dl, dt, dd { margin: 0px; padding: 0px;  }
+ul { list-style: none; }
+img { border-style: none; }
+
+
+.floatLeft { float: left; }
+.floatRight { float: right; }
+
+.width100 { width: 100%; }
+.width75 { width: 75%; }
+.width50 { width: 50%; }
+
+.alignLeft { text-align: left; }
+.alignRight { text-align: right; }
+
+$black:#333;
+$gray:#666;
+$lightgray:#F7F8FA;
+$fontsmall:12px;
+$fontnormal:14px;
+

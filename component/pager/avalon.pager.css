@@ -1,6 +1,6 @@
 
 .aoyou-pager {
-  font: normal 12px/1.5 tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif; }
+  font: normal 12px/1.5 PingFangSC-Regular tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif; }
 
 /*
 这是每个都组件都应该引用的部分
@@ -49,7 +49,7 @@
     -o-border-radius: 2px;
     border-radius: 2px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
     vertical-align: middle;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -83,7 +83,7 @@
     margin-right: 5px;
     padding: 1px 0;
     vertical-align: middle;
-    font-size: 12px;
+    font-size: 14px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -107,7 +107,7 @@
     *vertical-align: auto;
     zoom: 1;
     *display: inline;
-    width: 26px;
+    width: 48px;
     margin-left: 5px;
     margin-right: 5px;
     padding: 3px 5px;
@@ -115,17 +115,18 @@
     font-size: 0;
     outline: none;
     background-color: white;
+    border-radius: 2px;
     border: 1px solid #d4d4d4; }
   .aoyou-pager .aoyou-pager-textbox {
     display: inline;
     float: left;
     position: relative;
-    width: 26px;
+    width: 40px;
     height: 18px;
     line-height: 18px;
     padding: 0;
     border: 0 none;
-    font-size: 12px;
+    font-size: 14px;
     outline: medium none;
     vertical-align: middle;
     text-align: center;
@@ -145,7 +146,7 @@
     border-radius: 2px;
     outline: none;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
     vertical-align: middle;
     padding: 0 10px;
     text-decoration: none;
@@ -161,5 +162,5 @@
     *vertical-align: auto;
     zoom: 1;
     *display: inline;
-    font-size: 12px;
+    font-size: 14px;
     vertical-align: middle; }

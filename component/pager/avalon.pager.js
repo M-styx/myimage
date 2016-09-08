@@ -267,16 +267,16 @@ define(["avalon",
         nextText: "下一页",
         prevFirstText:"第一页",
         nextLastText:"最后一页",
-        confirmText: "确定",
+        confirmText: "",
         totalText: "共",
         pagesText: "页",
-        pageText: "页",
+        pageText: "",
         toText: "到",
-        jumpToText: "跳转到",
+        jumpToText: "",
         currentText: "当前页",
         firstText: "第一页",
         lastText: "最后一页",
-        numberText: "第"
+        numberText: ""
     }
     return avalon
 })
