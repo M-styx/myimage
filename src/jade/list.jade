@@ -8,14 +8,14 @@
         span.list2 大小
         span.list3 修改日期
     ul.clearfix
-        li
+        li(ms-on-mouseenter="changelihover(true)" ms-on-mouseleave="changelihover(false)")
             .back
                 span.listcheck.checked
                 span.list1
                     span(ms-visible="tablist") 米兰大教堂
-                    i.downloadl.floatRight
-                    i.deletel.floatRight
-                    i.editl.floatRight
+                    i.downloadl.floatRight(ms-visible="!tablist || lihoveredit")
+                    i.deletel.floatRight(ms-visible="!tablist || lihoveredit")
+                    i.editl.floatRight(ms-visible="!tablist || lihoveredit")
             span.list2(ms-visible="!tablist") 亚德里亚大酒店Best Western Grand Hotel...
             span.list2(ms-visible="tablist") JPG
             span.list2(ms-visible="tablist") 1920*1280

@@ -3,6 +3,7 @@ require(["/component/pager/avalon.pager"],function () {
         $id:"aoyouimage",
         filtertoggle:false,
         filtersjcss:'none',
+        lihoveredit:false,
         imgMarginLeft:'25px',
         tablist:true,
         temptext:'米兰大教堂', //临时变量 后面会放到数组中
@@ -47,12 +48,11 @@ require(["/component/pager/avalon.pager"],function () {
                 vm.filtersjcss = 'none';
             },100);
         },
-        tothumbnail:function () {
-            vm.tablist = false;
-            temptext = '';
+        changetab:function (val) {
+            vm.tablist = val;
         },
-        tolist:function () {
-            vm.tablist = true;
+        changelihover:function (val) {
+            vm.lihoveredit = val;
         }
     });
     avalon.scan(document.body,vm);

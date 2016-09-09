@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-      <div class="tab"><span class="checkall checked alignRight">全选</span><span ms-click="tothumbnail" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}" class="tabimg thumbnaild"></span><span ms-click="tolist" ms-class="{{tablist?'lista':'listd'}}" class="tabimg lista"></span>
+      <div class="tab"><span class="checkall checked alignRight">全选</span><span ms-click="changetab(false)" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}" class="tabimg thumbnaild"></span><span ms-click="changetab(true)" ms-class="{{tablist?'lista':'listd'}}" class="tabimg lista"></span>
         <button class="uploadbtn floatRight">上传</button><span class="download floatRight alignRight">打包下载</span><span class="preview floatRight alignRight">图片预览</span>
       </div>
     </div>
@@ -56,8 +56,8 @@
           <div class="back"><span class="listcheck"></span><span class="list1">文件名</span></div><span class="list2">类型</span><span class="list2">尺寸</span><span class="list2">大小</span><span class="list3">修改日期</span>
         </div>
         <ul class="clearfix">
-          <li>
-            <div class="back"><span class="listcheck checked"></span><span class="list1"><span ms-visible="tablist">米兰大教堂</span><i class="downloadl floatRight"></i><i class="deletel floatRight"></i><i class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">亚德里亚大酒店Best Western Grand Hotel...</span><span ms-visible="tablist" class="list2">JPG</span><span ms-visible="tablist" class="list2">1920*1280</span><span ms-visible="tablist" class="list2">1.6M</span><span ms-visible="tablist" class="list3">2016-08-19 12:07</span><span ms-visible="!tablist" class="list3"><img src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft"></span>
+          <li ms-on-mouseenter="changelihover(true)" ms-on-mouseleave="changelihover(false)">
+            <div class="back"><span class="listcheck checked"></span><span class="list1"><span ms-visible="tablist">米兰大教堂</span><i ms-visible="!tablist || lihoveredit" class="downloadl floatRight"></i><i ms-visible="!tablist || lihoveredit" class="deletel floatRight"></i><i ms-visible="!tablist || lihoveredit" class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">亚德里亚大酒店Best Western Grand Hotel...</span><span ms-visible="tablist" class="list2">JPG</span><span ms-visible="tablist" class="list2">1920*1280</span><span ms-visible="tablist" class="list2">1.6M</span><span ms-visible="tablist" class="list3">2016-08-19 12:07</span><span ms-visible="!tablist" class="list3"><img src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft"></span>
           </li>
           <!--li
           .back
