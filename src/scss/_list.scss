@@ -23,11 +23,11 @@
         background: #F0F8FD;
       }
 
-      img{
+      /*img{
         margin-top: 12px;
         margin-right: 10px;
         cursor: pointer;
-      }
+      }*/
     }
   }
 
@@ -41,6 +41,28 @@
     span.list1{
       width: 87%;
     }
+
+    i{
+      display: block;
+      margin-top: 12px;
+      margin-right: 10px;
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+    }
+
+    i.downloadl{
+      background: url('../images/download-blue.png') center no-repeat;
+    }
+
+    i.deletel{
+      background: url('../images/delete-blue.png') center no-repeat;
+    }
+
+    i.editl{
+      background: url('../images/edit-blue.png') center no-repeat;
+    }
+
   }
 
   span{

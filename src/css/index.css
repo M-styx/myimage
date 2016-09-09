@@ -10,8 +10,16 @@
 .clearfix {
   *zoom: 1; }
 
+.fixed {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white; }
+
 body {
-  width: 100%; }
+  width: 100%;
+  min-width: 1100px; }
 
 input, button {
   outline: none;
@@ -53,112 +61,154 @@ body {
   font-family: PingFangSC-Regular;
   font-size: 14px; }
 
-.header {
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%; }
-  .header .title {
-    height: 30px;
-    padding: 8px 20px; }
-    .header .title h2 {
-      display: inline-block;
-      font-size: 22px;
-      font-weight: 500;
-      letter-spacing: 0.46px;
-      line-height: 30px;
-      margin: 0;
-      padding: 0; }
-    .header .title span.tit1 {
-      bottom: 9px;
-      font-size: 12px;
-      letter-spacing: 0.25px;
-      margin-left: 5px;
-      position: relative; }
-    .header .title span.tit2 {
-      color: #666;
-      font-size: 14px;
-      letter-spacing: 0.29px;
-      margin-left: 20px; }
-  .header .search {
-    border-bottom: 1px solid #EEEFF2;
-    border-top: 1px solid #EEEFF2;
-    height: 68px; }
-    .header .search .searchtxt {
-      border-width: 0;
-      color: black;
-      font-size: 24px;
-      height: 68px;
-      letter-spacing: 0.5px;
-      margin: 0 0 0 20px;
-      outline: none;
-      padding: 0;
-      vertical-align: top;
-      width: 945px; }
-    .header .search .searchbtn {
-      background: url("../images/search1.png") no-repeat;
-      display: inline-block;
-      height: 69px;
-      vertical-align: -27px;
-      width: 70px; }
-    .header .search .filter {
-      background: url("../images/filter.png") center right no-repeat;
-      display: inline-block;
-      font-size: 14px;
-      line-height: 69px;
-      letter-spacing: 0.29px;
-      margin-left: 60px;
-      width: 78px; }
-  .header .tab {
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
-    height: 50px; }
-    .header .tab .checkall {
-      background: url("../images/checkbox1.png") center left no-repeat;
-      display: inline-block;
-      line-height: 20px;
-      margin: 15px 20px;
-      height: 20px;
-      width: 60px; }
-    .header .tab .checked {
-      background: url("../images/checkbox1.png") center left no-repeat; }
-    .header .tab .unchecked {
-      background: url("../images/checkbox2.png") center left no-repeat; }
-    .header .tab .tabimg {
-      background: url("../images/thumbnail-a.png") center no-repeat;
-      border-right: 1px solid rgba(0, 0, 0, 0.1);
-      display: inline-block;
-      height: 49px;
-      vertical-align: -20px;
-      width: 60px;
-      cursor: pointer; }
-    .header .tab .thumbnaila {
-      background: url("../images/thumbnail-a.png") center no-repeat;
-      border-left: 1px solid rgba(0, 0, 0, 0.1); }
-    .header .tab .thumbnaild {
-      background: url("../images/thumbnail-d.png") center no-repeat;
-      border-left: 1px solid rgba(0, 0, 0, 0.1); }
-    .header .tab .listd {
-      background: url("../images/list-d.png") center no-repeat; }
-    .header .tab .lista {
-      background: url("../images/list-a.png") center no-repeat; }
-    .header .tab .uploadbtn {
-      background: #149AF1;
+.header .title {
+  height: 30px;
+  padding: 8px 20px; }
+  .header .title h2 {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.46px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0; }
+  .header .title span.tit1 {
+    bottom: 9px;
+    font-size: 12px;
+    letter-spacing: 0.25px;
+    margin-left: 5px;
+    position: relative; }
+  .header .title span.tit2 {
+    color: #666;
+    font-size: 14px;
+    letter-spacing: 0.29px;
+    margin-left: 20px; }
+.header .search {
+  border-bottom: 1px solid #EEEFF2;
+  border-top: 1px solid #EEEFF2;
+  height: 68px; }
+  .header .search .searchtxt {
+    border-width: 0;
+    color: black;
+    font-size: 24px;
+    height: 68px;
+    letter-spacing: 0.5px;
+    margin: 0 0 0 20px;
+    outline: none;
+    padding: 0;
+    vertical-align: top;
+    width: 76%; }
+  .header .search .searchbtn {
+    background: url("../images/search1.png") no-repeat;
+    display: inline-block;
+    height: 69px;
+    vertical-align: -27px;
+    width: 70px; }
+  .header .search .filter {
+    background: url("../images/filter.png") center right no-repeat;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 29px;
+    letter-spacing: 0.29px;
+    margin-left: 4%;
+    position: relative;
+    width: 78px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer; }
+    .header .search .filter span.sj {
+      display: none;
+      width: 10px;
+      height: 10px;
+      background: url("../images/sj.png") center no-repeat;
+      position: absolute;
+      top: 22px;
+      right: 5px;
+      z-index: 2; }
+    .header .search .filter .filtercontent {
+      display: none;
+      position: absolute;
+      background: white;
+      border: 2px solid #DADADA;
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
       border-radius: 3px;
-      color: white;
-      letter-spacing: 0.29px;
-      margin: 10px 20px;
-      height: 30px;
-      width: 72px; }
-    .header .tab .download {
-      background: url("../images/download.png") center left no-repeat;
-      margin: 15px 0px 15px 20px;
-      height: 20px;
-      width: 83px; }
-    .header .tab .preview {
-      background: url("../images/checkbox2.png") center left no-repeat;
-      margin: 15px 0px 15px 20px;
-      height: 20px;
-      width: 83px; }
+      width: 400px;
+      max-height: 412px;
+      top: 30px;
+      right: -30px;
+      overflow: auto; }
+      .header .search .filter .filtercontent .div {
+        border-bottom: 1px solid #EEEFF2;
+        margin: 20px 20px 0px 20px;
+        padding-bottom: 15px;
+        width: 360px; }
+        .header .search .filter .filtercontent .div p {
+          font-weight: bold;
+          line-height: 25px;
+          margin-bottom: 3px; }
+        .header .search .filter .filtercontent .div .filtercheck {
+          width: 100%; }
+          .header .search .filter .filtercontent .div .filtercheck a {
+            background: url("../images/checkbox1.png") no-repeat center left;
+            font-size: 12px;
+            float: left;
+            line-height: 25px;
+            height: 25px;
+            width: 95px;
+            padding-left: 20px;
+            background-size: 13%; }
+      .header .search .filter .filtercontent .lastfilter {
+        border: 0px; }
+.header .tab {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  height: 50px; }
+  .header .tab .checkall {
+    background: url("../images/checkbox1.png") center left no-repeat;
+    display: inline-block;
+    line-height: 20px;
+    margin: 15px 20px;
+    height: 20px;
+    width: 60px; }
+  .header .tab .checked {
+    background: url("../images/checkbox1.png") center left no-repeat; }
+  .header .tab .unchecked {
+    background: url("../images/checkbox2.png") center left no-repeat; }
+  .header .tab .tabimg {
+    background: url("../images/thumbnail-a.png") center no-repeat;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    height: 49px;
+    vertical-align: -20px;
+    width: 60px;
+    cursor: pointer; }
+  .header .tab .thumbnaila {
+    background: url("../images/thumbnail-a.png") center no-repeat;
+    border-left: 1px solid rgba(0, 0, 0, 0.1); }
+  .header .tab .thumbnaild {
+    background: url("../images/thumbnail-d.png") center no-repeat;
+    border-left: 1px solid rgba(0, 0, 0, 0.1); }
+  .header .tab .listd {
+    background: url("../images/list-d.png") center no-repeat; }
+  .header .tab .lista {
+    background: url("../images/list-a.png") center no-repeat; }
+  .header .tab .uploadbtn {
+    background: #149AF1;
+    border-radius: 3px;
+    color: white;
+    letter-spacing: 0.29px;
+    margin: 10px 20px;
+    height: 30px;
+    width: 72px; }
+  .header .tab .download {
+    background: url("../images/download.png") center left no-repeat;
+    margin: 15px 0px 15px 20px;
+    height: 20px;
+    width: 83px; }
+  .header .tab .preview {
+    background: url("../images/checkbox2.png") center left no-repeat;
+    margin: 15px 0px 15px 20px;
+    height: 20px;
+    width: 83px; }
 
 .panel {
   background: #F7F8FA;
@@ -212,7 +262,12 @@ body {
     margin: 0 20px; }
     .listcontent ul li {
       border-bottom: 1px solid #EBECEF;
-      font-size: 12px; }
+      font-size: 12px;
+      /*img{
+        margin-top: 12px;
+        margin-right: 10px;
+        cursor: pointer;
+      }*/ }
       .listcontent ul li span.checked {
         background: url("../images/checkbox2.png") center right no-repeat;
         background-size: 32%; }
@@ -221,10 +276,6 @@ body {
         background-size: 32%; }
       .listcontent ul li:hover {
         background: #F0F8FD; }
-      .listcontent ul li img {
-        margin-top: 12px;
-        margin-right: 10px;
-        cursor: pointer; }
   .listcontent .back {
     display: inline-block;
     width: 62.4%; }
@@ -232,6 +283,19 @@ body {
       width: 6.4%; }
     .listcontent .back span.list1 {
       width: 87%; }
+    .listcontent .back i {
+      display: block;
+      margin-top: 12px;
+      margin-right: 10px;
+      cursor: pointer;
+      height: 15px;
+      width: 15px; }
+    .listcontent .back i.downloadl {
+      background: url("../images/download-blue.png") center no-repeat; }
+    .listcontent .back i.deletel {
+      background: url("../images/delete-blue.png") center no-repeat; }
+    .listcontent .back i.editl {
+      background: url("../images/edit-blue.png") center no-repeat; }
   .listcontent span {
     display: inline-block;
     height: 39px;
@@ -248,3 +312,61 @@ body {
     width: 8%; }
   .listcontent span.list3 {
     width: 12%; }
+
+.thumbnailcontent {
+  width: 100%; }
+  .thumbnailcontent .tabletit {
+    display: none; }
+  .thumbnailcontent ul {
+    margin: 0 20px; }
+    .thumbnailcontent ul li {
+      height: 244px;
+      margin-right: 12px;
+      margin-bottom: 20px;
+      width: 170px;
+      float: left;
+      position: relative; }
+      .thumbnailcontent ul li span.list3 {
+        display: inline-block;
+        height: 164px;
+        width: 100%; }
+        .thumbnailcontent ul li span.list3 img {
+          position: absolute;
+          bottom: 87px; }
+      .thumbnailcontent ul li span.list2 {
+        height: 40px;
+        line-height: 20px;
+        position: absolute;
+        bottom: 0;
+        margin: 0 5px;
+        text-align: left; }
+      .thumbnailcontent ul li .back {
+        background: #EBEBEB;
+        height: 40px;
+        width: 100%;
+        position: absolute;
+        bottom: 43px; }
+        .thumbnailcontent ul li .back .listcheck {
+          display: inline-block;
+          height: 20px;
+          width: 20px;
+          margin-top: 10px;
+          margin-left: 5px;
+          text-align: right; }
+        .thumbnailcontent ul li .back i {
+          display: block;
+          margin-top: 12px;
+          margin-right: 10px;
+          cursor: pointer;
+          height: 15px;
+          width: 16px; }
+        .thumbnailcontent ul li .back i.downloadl {
+          background: url("../images/download-black.png") center no-repeat; }
+        .thumbnailcontent ul li .back i.deletel {
+          background: url("../images/delete-black.png") center no-repeat; }
+        .thumbnailcontent ul li .back i.editl {
+          background: url("../images/edit-black.png") center no-repeat; }
+        .thumbnailcontent ul li .back span.checked {
+          background: url("../images/checkbox2.png") center right no-repeat; }
+        .thumbnailcontent ul li .back span.unchecked {
+          background: url("../images/checkbox1.png") center right no-repeat; }

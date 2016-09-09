@@ -1,4 +1,4 @@
-.header
+.header.fixed
     .title
         h2 遨游图库
         span.tit1 V2.0
@@ -6,7 +6,36 @@
     .search
         input.searchtxt(type="text" id="searchtxtid" placeholder="搜索图片名称,关键字...")
         button.searchbtn
-        .filter 结果筛选
+        .filter(ms-on-mouseenter="filteron($event)" ms-on-mouseleave="filterout") 结果筛选
+            span.sj(ms-css-display="filtersjcss")
+            .filtercontent(ms-visible="filtertoggle")
+                .div
+                    p 图片类别
+                    .filtercheck.clearfix
+                        a 全部类别
+                        a 人物
+                        a 风景
+                        a 酒店
+                        a 未分类
+                .div
+                    p 规格
+                    .filtercheck.clearfix
+                        a 横图
+                        a 竖图
+                        a 方图
+                .div
+                    p 格式
+                    .filtercheck.clearfix
+                        a JPG
+                        a PNG
+                .div.lastfilter
+                    p 版权来源
+                    .filtercheck.clearfix
+                        a 壹图
+                        a 视觉中国
+                        a 旅游局
+                        a 供应商
+                        a 个人
     .tab
         span.checkall.checked.alignRight 全选
         span.tabimg.thumbnaild
