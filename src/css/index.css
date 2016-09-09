@@ -170,9 +170,9 @@ body {
     height: 20px;
     width: 60px; }
   .header .tab .checked {
-    background: url("../images/checkbox1.png") center left no-repeat; }
-  .header .tab .unchecked {
     background: url("../images/checkbox2.png") center left no-repeat; }
+  .header .tab .unchecked {
+    background: url("../images/checkbox1.png") center left no-repeat; }
   .header .tab .tabimg {
     background: url("../images/thumbnail-a.png") center no-repeat;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -282,7 +282,8 @@ body {
     display: inline-block;
     width: 62.4%; }
     .listcontent .back span.listcheck {
-      width: 6.4%; }
+      width: 6.4%;
+      cursor: pointer; }
     .listcontent .back span.list1 {
       width: 87%; }
     .listcontent .back i {
@@ -354,7 +355,8 @@ body {
           width: 20px;
           margin-top: 10px;
           margin-left: 5px;
-          text-align: right; }
+          text-align: right;
+          cursor: pointer; }
         .thumbnailcontent ul li .back i {
           display: block;
           margin-top: 12px;

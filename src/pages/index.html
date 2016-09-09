@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-      <div class="tab"><span class="checkall checked alignRight">全选</span><span ms-click="changetab(false)" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}" class="tabimg thumbnaild"></span><span ms-click="changetab(true)" ms-class="{{tablist?'lista':'listd'}}" class="tabimg lista"></span>
+      <div class="tab"><span ms-click="checkallimg()" ms-class-1="{{checkallclass}}" class="checkall alignRight">全选</span><span ms-click="changetab(false)" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}" class="tabimg thumbnaild"></span><span ms-click="changetab(true)" ms-class="{{tablist?'lista':'listd'}}" class="tabimg lista"></span>
         <button class="uploadbtn floatRight">上传</button><span class="download floatRight alignRight">打包下载</span><span class="preview floatRight alignRight">图片预览</span>
       </div>
     </div>
@@ -47,7 +47,7 @@
       <div class="seizediv"></div>
       <div class="pagercontent">
         <div class="pagerdiv floatRight">
-          <aoyou:pager config="$pageropt"></aoyou:pager>
+          <aoyou:pager config="$pageropt" $id="pager01"></aoyou:pager>
         </div>
         <div class="pagerdiv floatLeft"><span class="resultinfo">3689</span><span class="resultinfo">意大利</span><span class="resultinfo">图片结果</span></div>
       </div>
