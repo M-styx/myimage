@@ -14,7 +14,8 @@
   left: 0;
   position: fixed;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  background: white; }
 
 body {
   width: 100%;
@@ -107,18 +108,21 @@ body {
     background: url("../images/filter.png") center right no-repeat;
     display: inline-block;
     font-size: 14px;
-    line-height: 69px;
+    line-height: 29px;
     letter-spacing: 0.29px;
     margin-left: 4%;
     position: relative;
-    width: 78px; }
+    width: 78px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer; }
     .header .search .filter span.sj {
       display: none;
       width: 10px;
       height: 10px;
       background: url("../images/sj.png") center no-repeat;
       position: absolute;
-      top: 41px;
+      top: 22px;
       right: 5px;
       z-index: 2; }
     .header .search .filter .filtercontent {
@@ -130,7 +134,7 @@ body {
       border-radius: 3px;
       width: 400px;
       max-height: 412px;
-      top: 49px;
+      top: 30px;
       right: -30px;
       overflow: auto; }
       .header .search .filter .filtercontent .div {
@@ -258,7 +262,12 @@ body {
     margin: 0 20px; }
     .listcontent ul li {
       border-bottom: 1px solid #EBECEF;
-      font-size: 12px; }
+      font-size: 12px;
+      /*img{
+        margin-top: 12px;
+        margin-right: 10px;
+        cursor: pointer;
+      }*/ }
       .listcontent ul li span.checked {
         background: url("../images/checkbox2.png") center right no-repeat;
         background-size: 32%; }
@@ -267,10 +276,6 @@ body {
         background-size: 32%; }
       .listcontent ul li:hover {
         background: #F0F8FD; }
-      .listcontent ul li img {
-        margin-top: 12px;
-        margin-right: 10px;
-        cursor: pointer; }
   .listcontent .back {
     display: inline-block;
     width: 62.4%; }
@@ -278,6 +283,19 @@ body {
       width: 6.4%; }
     .listcontent .back span.list1 {
       width: 87%; }
+    .listcontent .back i {
+      display: block;
+      margin-top: 12px;
+      margin-right: 10px;
+      cursor: pointer;
+      height: 15px;
+      width: 15px; }
+    .listcontent .back i.downloadl {
+      background: url("../images/download-blue.png") center no-repeat; }
+    .listcontent .back i.deletel {
+      background: url("../images/delete-blue.png") center no-repeat; }
+    .listcontent .back i.editl {
+      background: url("../images/edit-blue.png") center no-repeat; }
   .listcontent span {
     display: inline-block;
     height: 39px;
@@ -294,3 +312,61 @@ body {
     width: 8%; }
   .listcontent span.list3 {
     width: 12%; }
+
+.thumbnailcontent {
+  width: 100%; }
+  .thumbnailcontent .tabletit {
+    display: none; }
+  .thumbnailcontent ul {
+    margin: 0 20px; }
+    .thumbnailcontent ul li {
+      height: 244px;
+      margin-right: 12px;
+      margin-bottom: 20px;
+      width: 170px;
+      float: left;
+      position: relative; }
+      .thumbnailcontent ul li span.list3 {
+        display: inline-block;
+        height: 164px;
+        width: 100%; }
+        .thumbnailcontent ul li span.list3 img {
+          position: absolute;
+          bottom: 87px; }
+      .thumbnailcontent ul li span.list2 {
+        height: 40px;
+        line-height: 20px;
+        position: absolute;
+        bottom: 0;
+        margin: 0 5px;
+        text-align: left; }
+      .thumbnailcontent ul li .back {
+        background: #EBEBEB;
+        height: 40px;
+        width: 100%;
+        position: absolute;
+        bottom: 43px; }
+        .thumbnailcontent ul li .back .listcheck {
+          display: inline-block;
+          height: 20px;
+          width: 20px;
+          margin-top: 10px;
+          margin-left: 5px;
+          text-align: right; }
+        .thumbnailcontent ul li .back i {
+          display: block;
+          margin-top: 12px;
+          margin-right: 10px;
+          cursor: pointer;
+          height: 15px;
+          width: 16px; }
+        .thumbnailcontent ul li .back i.downloadl {
+          background: url("../images/download-black.png") center no-repeat; }
+        .thumbnailcontent ul li .back i.deletel {
+          background: url("../images/delete-black.png") center no-repeat; }
+        .thumbnailcontent ul li .back i.editl {
+          background: url("../images/edit-black.png") center no-repeat; }
+        .thumbnailcontent ul li .back span.checked {
+          background: url("../images/checkbox2.png") center right no-repeat; }
+        .thumbnailcontent ul li .back span.unchecked {
+          background: url("../images/checkbox1.png") center right no-repeat; }

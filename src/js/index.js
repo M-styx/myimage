@@ -3,6 +3,7 @@ require(["/component/pager/avalon.pager"],function () {
         $id:"aoyouimage",
         filtertoggle:false,
         filtersjcss:'none',
+        imgMarginLeft:'25px',
         changeperPage:function(p){//切换每页显示多少条
           avalon.vmodels['pager01'].perPages = p;
         },

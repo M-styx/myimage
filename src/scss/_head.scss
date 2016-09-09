@@ -60,13 +60,14 @@
       background: url("../images/filter.png") center right no-repeat;
       display: inline-block;
       font-size: $fontnormal;
-      line-height: 69px;
+      line-height: 29px;
       letter-spacing: 0.29px;
       margin-left: 4%;
       position: relative;
       width: 78px;
-
-
+      margin-top: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
 
       span.sj{
         display: none;
@@ -74,7 +75,7 @@
         height: 10px;
         background: url("../images/sj.png") center no-repeat;
         position: absolute;
-        top: 41px;
+        top: 22px;
         right: 5px;
         z-index: 2;
       }
@@ -88,7 +89,7 @@
         border-radius: 3px;
         width: 400px;
         max-height: 412px;
-        top: 49px;
+        top: 30px;
         right: -30px;
         overflow: auto;
 
