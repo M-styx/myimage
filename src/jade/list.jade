@@ -8,33 +8,20 @@
         span.list2 大小
         span.list3 修改日期
     ul.clearfix
-        li
+        li(ms-repeat='imagedata')
             .back
-                span.listcheck.checked
+                span(ms-class-1='{{el.check}}' ms-click='checkimg($index)').listcheck
                 span.list1
-                    span(ms-visible="tablist") 米兰大教堂
+                    span(ms-visible="tablist") {{el.name}}
                     i.downloadl.floatRight
                     i.deletel.floatRight
                     i.editl.floatRight
-            span.list2(ms-visible="!tablist") 亚德里亚大酒店Best Western Grand Hotel...
-            span.list2(ms-visible="tablist") JPG
-            span.list2(ms-visible="tablist") 1920*1280
-            span.list2(ms-visible="tablist") 1.6M
-            span.list3(ms-visible="tablist") 2016-08-19 12:07
+            span.list2(ms-visible="!tablist") {{el.name}}
+            span.list2(ms-visible="tablist") {{el.type}}
+            span.list2(ms-visible="tablist") {{el.size}}
+            span.list2(ms-visible="tablist") {{el.space}}
+            span.list3(ms-visible="tablist") {{el.lastupdate}}
             span.list3(ms-visible="!tablist")
                 img(src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft")
-        //li(ms-on-mouseenter="changelihover(true)" ms-on-mouseleave="changelihover(false)")
-            .back
-                span.listcheck.checked
-                span.list1
-                    span(ms-visible="tablist") 米兰大教堂
-                    i.downloadl.floatRight(ms-visible="!tablist || lihoveredit")
-                    i.deletel.floatRight(ms-visible="!tablist || lihoveredit")
-                    i.editl.floatRight(ms-visible="!tablist || lihoveredit")
-            span.list2(ms-visible="!tablist") 亚德里亚大酒店Best Western Grand Hotel...
-            span.list2(ms-visible="tablist") JPG
-            span.list2(ms-visible="tablist") 1920*1280
-            span.list2(ms-visible="tablist") 1.6M
-            span.list3(ms-visible="tablist") 2016-08-19 12:07
-            span.list3(ms-visible="!tablist")
-                img(src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft")
+
+

@@ -56,25 +56,9 @@
           <div class="back"><span class="listcheck"></span><span class="list1">文件名</span></div><span class="list2">类型</span><span class="list2">尺寸</span><span class="list2">大小</span><span class="list3">修改日期</span>
         </div>
         <ul class="clearfix">
-          <li>
-            <div class="back"><span class="listcheck checked"></span><span class="list1"><span ms-visible="tablist">米兰大教堂</span><i class="downloadl floatRight"></i><i class="deletel floatRight"></i><i class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">亚德里亚大酒店Best Western Grand Hotel...</span><span ms-visible="tablist" class="list2">JPG</span><span ms-visible="tablist" class="list2">1920*1280</span><span ms-visible="tablist" class="list2">1.6M</span><span ms-visible="tablist" class="list3">2016-08-19 12:07</span><span ms-visible="!tablist" class="list3"><img src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft"></span>
+          <li ms-repeat="imagedata">
+            <div class="back"><span ms-class-1="{{el.check}}" ms-click="checkimg($index)" class="listcheck"></span><span class="list1"><span ms-visible="tablist">{{el.name}}</span><i class="downloadl floatRight"></i><i class="deletel floatRight"></i><i class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">{{el.name}}</span><span ms-visible="tablist" class="list2">{{el.type}}</span><span ms-visible="tablist" class="list2">{{el.size}}</span><span ms-visible="tablist" class="list2">{{el.space}}</span><span ms-visible="tablist" class="list3">{{el.lastupdate}}</span><span ms-visible="!tablist" class="list3"><img src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft"></span>
           </li>
-          <!--li(ms-on-mouseenter="changelihover(true)" ms-on-mouseleave="changelihover(false)")
-          .back
-              span.listcheck.checked
-              span.list1
-                  span(ms-visible="tablist") 米兰大教堂
-                  i.downloadl.floatRight(ms-visible="!tablist || lihoveredit")
-                  i.deletel.floatRight(ms-visible="!tablist || lihoveredit")
-                  i.editl.floatRight(ms-visible="!tablist || lihoveredit")
-          span.list2(ms-visible="!tablist") 亚德里亚大酒店Best Western Grand Hotel...
-          span.list2(ms-visible="tablist") JPG
-          span.list2(ms-visible="tablist") 1920*1280
-          span.list2(ms-visible="tablist") 1.6M
-          span.list3(ms-visible="tablist") 2016-08-19 12:07
-          span.list3(ms-visible="!tablist")
-              img(src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft")
-          -->
         </ul>
       </div>
     </div>
