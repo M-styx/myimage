@@ -3,10 +3,8 @@ require(["/component/pager/avalon.pager"],function () {
         $id:"aoyouimage",
         filtertoggle:false,
         filtersjcss:'none',
-        lihoveredit:false,
         imgMarginLeft:'25px',
         tablist:true,
-        temptext:'米兰大教堂', //临时变量 后面会放到数组中
         changeperPage:function(p){//切换每页显示多少条
           avalon.vmodels['pager01'].perPages = p;
         },
@@ -50,9 +48,6 @@ require(["/component/pager/avalon.pager"],function () {
         },
         changetab:function (val) {
             vm.tablist = val;
-        },
-        changelihover:function (val) {
-            vm.lihoveredit = val;
         }
     });
     avalon.scan(document.body,vm);
