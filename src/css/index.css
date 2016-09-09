@@ -276,6 +276,8 @@ body {
         background-size: 32%; }
       .listcontent ul li:hover {
         background: #F0F8FD; }
+        .listcontent ul li:hover i {
+          display: block; }
   .listcontent .back {
     display: inline-block;
     width: 62.4%; }
@@ -284,7 +286,7 @@ body {
     .listcontent .back span.list1 {
       width: 87%; }
     .listcontent .back i {
-      display: block;
+      display: none;
       margin-top: 12px;
       margin-right: 10px;
       cursor: pointer;

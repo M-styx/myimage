@@ -21,6 +21,9 @@
 
       &:hover{
         background: #F0F8FD;
+        i{
+          display: block;
+        }
       }
 
       /*img{
@@ -29,6 +32,7 @@
         cursor: pointer;
       }*/
     }
+
   }
 
   .back{
@@ -43,7 +47,7 @@
     }
 
     i{
-      display: block;
+      display: none;
       margin-top: 12px;
       margin-right: 10px;
       cursor: pointer;
