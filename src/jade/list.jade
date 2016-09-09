@@ -1,4 +1,4 @@
-.thumbnailcontent
+.div(ms-class="{{tablist?'listcontent':'thumbnailcontent'}}")
     .tabletit
         .back
             span.listcheck
@@ -8,19 +8,22 @@
         span.list2 大小
         span.list3 修改日期
     ul.clearfix
-        //li
+        li
             .back
                 span.listcheck.checked
                 span.list1
+                    span(ms-visible="tablist") 米兰大教堂
                     i.downloadl.floatRight
                     i.deletel.floatRight
                     i.editl.floatRight
-            span.list2 亚德里亚大酒店Best Western Grand Hotel...
-            //span.list2 1920*1280
-            //span.list2 1.6M
-            span.list3
+            span.list2(ms-visible="!tablist") 亚德里亚大酒店Best Western Grand Hotel...
+            span.list2(ms-visible="tablist") JPG
+            span.list2(ms-visible="tablist") 1920*1280
+            span.list2(ms-visible="tablist") 1.6M
+            span.list3(ms-visible="tablist") 2016-08-19 12:07
+            span.list3(ms-visible="!tablist")
                 img(src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft")
-        li
+        //li
             .back
                 span.listcheck.unchecked
                 span.list1 米兰大教堂

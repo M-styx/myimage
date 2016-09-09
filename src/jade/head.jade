@@ -38,8 +38,8 @@
                         a 个人
     .tab
         span.checkall.checked.alignRight 全选
-        span.tabimg.thumbnaild
-        span.tabimg.lista
+        span.tabimg.thumbnaild(ms-click="tothumbnail" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}")
+        span.tabimg.lista(ms-click="tolist" ms-class="{{tablist?'lista':'listd'}}")
         button.uploadbtn.floatRight 上传
         span.download.floatRight.alignRight 打包下载
         span.preview.floatRight.alignRight 图片预览

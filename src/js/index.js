@@ -4,6 +4,8 @@ require(["/component/pager/avalon.pager"],function () {
         filtertoggle:false,
         filtersjcss:'none',
         imgMarginLeft:'25px',
+        tablist:true,
+        temptext:'米兰大教堂', //临时变量 后面会放到数组中
         changeperPage:function(p){//切换每页显示多少条
           avalon.vmodels['pager01'].perPages = p;
         },
@@ -44,7 +46,13 @@ require(["/component/pager/avalon.pager"],function () {
                 vm.filtertoggle = false;
                 vm.filtersjcss = 'none';
             },100);
-
+        },
+        tothumbnail:function () {
+            vm.tablist = false;
+            temptext = '';
+        },
+        tolist:function () {
+            vm.tablist = true;
         }
     });
     avalon.scan(document.body,vm);

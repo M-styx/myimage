@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-      <div class="tab"><span class="checkall checked alignRight">全选</span><span class="tabimg thumbnaild"></span><span class="tabimg lista"></span>
+      <div class="tab"><span class="checkall checked alignRight">全选</span><span ms-click="tothumbnail" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}" class="tabimg thumbnaild"></span><span ms-click="tolist" ms-class="{{tablist?'lista':'listd'}}" class="tabimg lista"></span>
         <button class="uploadbtn floatRight">上传</button><span class="download floatRight alignRight">打包下载</span><span class="preview floatRight alignRight">图片预览</span>
       </div>
     </div>
@@ -51,27 +51,26 @@
         </div>
         <div class="pagerdiv floatLeft"><span class="resultinfo">3689</span><span class="resultinfo">意大利</span><span class="resultinfo">图片结果</span></div>
       </div>
-      <div class="thumbnailcontent">
+      <div ms-class="{{tablist?'listcontent':'thumbnailcontent'}}" class="div">
         <div class="tabletit">
           <div class="back"><span class="listcheck"></span><span class="list1">文件名</span></div><span class="list2">类型</span><span class="list2">尺寸</span><span class="list2">大小</span><span class="list3">修改日期</span>
         </div>
         <ul class="clearfix">
+          <li>
+            <div class="back"><span class="listcheck checked"></span><span class="list1"><span ms-visible="tablist">米兰大教堂</span><i class="downloadl floatRight"></i><i class="deletel floatRight"></i><i class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">亚德里亚大酒店Best Western Grand Hotel...</span><span ms-visible="tablist" class="list2">JPG</span><span ms-visible="tablist" class="list2">1920*1280</span><span ms-visible="tablist" class="list2">1.6M</span><span ms-visible="tablist" class="list3">2016-08-19 12:07</span><span ms-visible="!tablist" class="list3"><img src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft"></span>
+          </li>
           <!--li
           .back
-              span.listcheck.checked
-              span.list1
+              span.listcheck.unchecked
+              span.list1 米兰大教堂
                   i.downloadl.floatRight
                   i.deletel.floatRight
                   i.editl.floatRight
-          span.list2 亚德里亚大酒店Best Western Grand Hotel...
-          //span.list2 1920*1280
-          //span.list2 1.6M
-          span.list3
-              img(src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft")
+          span.list2 JPG
+          span.list2 1920*1280
+          span.list2 1.6M
+          span.list3 2016-08-19 12:07
           -->
-          <li>
-            <div class="back"><span class="listcheck unchecked"></span><span class="list1">米兰大教堂<i class="downloadl floatRight"></i><i class="deletel floatRight"></i><i class="editl floatRight"></i></span></div><span class="list2">JPG</span><span class="list2">1920*1280</span><span class="list2">1.6M</span><span class="list3">2016-08-19 12:07</span>
-          </li>
         </ul>
       </div>
     </div>
