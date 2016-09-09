@@ -37,7 +37,7 @@
                         a 供应商
                         a 个人
     .tab
-        span.checkall.checked.alignRight 全选
+        span(ms-click='checkallimg()' ms-class-1='{{checkallclass}}').checkall.alignRight 全选
         span.tabimg.thumbnaild(ms-click="changetab(false)" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}")
         span.tabimg.lista(ms-click="changetab(true)" ms-class="{{tablist?'lista':'listd'}}")
         button.uploadbtn.floatRight 上传
