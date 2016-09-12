@@ -20,6 +20,7 @@
   line-height: 50px;
   font-size: 14px;
   color: $blue;
+  font-weight: normal;
   border-bottom: 1px solid #EEEFF2;
   .icon-keyword{
     margin-right: 8px;
@@ -28,8 +29,13 @@
 .detail-infor{
   float: left;
   width: 30%;
-  .infor-content{
-    padding: 10px 20px;
+  .labelname{
+    display:inline-block;
+    width: 90px;
+  }
+  .imgname{
+    font-size: 18px;
+    font-weight: normal;
   }
 }
 .detail-top{
@@ -40,7 +46,46 @@
     width: 100%;
   }
 }
-.content-foot
+.line{
+  padding: 0 20px;
+  height:60px;
+  line-height: 60px;
+  border-bottom: 1px solid #EEEFF2;
+  .count{
+    font-size: 12px;
+    color: #999999;
+  }
+
+}
+.basic-infor{
+  background-color: #F7F8FA;
+  padding: 0 20px;
+  height:60px;
+  line-height: 60px;
+  border-bottom: 1px solid #EEEFF2;
+  h3{
+    color: #333333;
+    font-weight: normal;
+  }
+  .icon-lists{
+    margin-right: 8px;
+  }
+  .icon-arrow{
+    margin-top: 26px;
+  }
+}
+h3.active{
+  color: $blue;
+}
+.img-feature{
+  padding: 0 20px;
+  .list{
+    padding: 20px 0;
+    li{
+      line-height: 24px;
+    }
+  }
+}
 .return{
   height: 30px;
   line-height: 30px;
@@ -54,6 +99,36 @@
   width: 9px;
   height: 15px;
   background: url("../images/icons.png") no-repeat 0 -42px;
+  vertical-align: middle;
+}
+.active{
+  .icon-arrow{
+    display: inline-block;
+    width: 15px;
+    height: 8px;
+    background: url("../images/icons.png") no-repeat 0 -82px;
+    vertical-align: middle;
+  }
+  .icon-lists{
+    display: inline-block;
+    width: 15px;
+    height: 16px;
+    background: url("../images/icons.png") no-repeat 0 -62px;
+    vertical-align: middle;
+  }
+}
+.icon-arrow{
+  display: inline-block;
+  width: 15px;
+  height: 8px;
+  background: url("../images/icons.png") no-repeat 0 -91px;
+  vertical-align: middle;
+}
+.icon-lists{
+  display: inline-block;
+  width: 15px;
+  height: 16px;
+  background: url("../images/icons.png") no-repeat -22px -62px;
   vertical-align: middle;
 }
 .btn-default{
@@ -82,6 +157,14 @@
   background: url("../images/icons.png") no-repeat -45px -23px;
   vertical-align: middle;
 }
+.icon-down-white{
+  display: inline-block;
+  width: 23px;
+  height: 18px;
+  background: url("../images/icons.png") no-repeat -22px -81px;
+  vertical-align: middle;
+}
+
 
 .btn-default{
   display: inline-block;
@@ -93,5 +176,23 @@
   line-height: 28px;
   border: 1px solid #D8DDE1;
   border-radius: 3px;
-
+}
+.btn-blue{
+  display: inline-block;
+  padding: 0 16px;
+  height:30px;
+  line-height: 30px;
+  background-color: $blue;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover{
+    background-color: $hoverblue;
+  }
+}
+.btn-big{
+  display: block;
+  height:40px;
+  line-height: 40px;
 }
