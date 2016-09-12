@@ -6,12 +6,12 @@ html
         title 遨游图库
         meta(name="Keywords" content="")
         meta(name="Description",content="")
-        link(rel="stylesheet" type="text/css" href="../css/index.css")
+        link(rel="stylesheet" type="text/css" href="../css/detail.css")
         script(src='../../avalon.js')
         script(src='../js/index.js')
     body(ms-controller="aoyouimage")
         -var  pages = 'detail';
         include head
-        .panel
-            p 我空间返回房间号
+        .panel.clearfix
+            include imgdetail
 

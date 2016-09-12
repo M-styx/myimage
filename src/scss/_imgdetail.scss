@@ -1,0 +1,97 @@
+.detail-content{
+  float: left;
+  width: 70%;
+  .content{
+    padding: 10px 20px;
+    border-right: 1px solid #EEEFF2;
+    background-color: #fff;
+  }
+  .content-foot{
+    background: $lightgray;
+    padding: 10px 20px;
+  }
+}
+.article{
+  padding: 10px 0;
+  line-height: 18px;
+}
+.title{
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  color: $blue;
+  border-bottom: 1px solid #EEEFF2;
+  .icon-keyword{
+    margin-right: 8px;
+  }
+}
+.detail-infor{
+  float: left;
+  width: 30%;
+  .infor-content{
+    padding: 10px 20px;
+  }
+}
+.detail-top{
+  margin-bottom: 20px;
+}
+.img-box{
+  img{
+    width: 100%;
+  }
+}
+.content-foot
+.return{
+  height: 30px;
+  line-height: 30px;
+  .icon-arrleft{
+    margin-right: 8px;
+  }
+  cursor: pointer;
+}
+.icon-arrleft{
+  display: inline-block;
+  width: 9px;
+  height: 15px;
+  background: url("../images/icons.png") no-repeat 0 -42px;
+  vertical-align: middle;
+}
+.btn-default{
+  .icon-edit{
+    margin-right:8px;
+  }
+}
+.icon-edit{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url("../images/icons.png") no-repeat -22px -23px;
+  vertical-align: middle;
+}
+.icon-keyword{
+  display: inline-block;
+  width: 23px;
+  height: 17px;
+  background: url("../images/icons.png") no-repeat -45px -1px;
+  vertical-align: middle;
+}
+.icon-shield{
+  display: inline-block;
+  width: 23px;
+  height: 18px;
+  background: url("../images/icons.png") no-repeat -45px -23px;
+  vertical-align: middle;
+}
+
+.btn-default{
+  display: inline-block;
+  height: 28px;
+  padding: 0 16px;
+  background-color: #F2F2F2;
+  color: #666666;
+  font-size: 14px;
+  line-height: 28px;
+  border: 1px solid #D8DDE1;
+  border-radius: 3px;
+
+}
