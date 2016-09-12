@@ -1,30 +1,38 @@
-.header.fixed
-    .title
-        h2 遨游图库
-        span.tit1 V2.0
-        span.tit2 打造正版旅游图库
-    .search
-        input.searchtxt(type="text" id="searchtxtid" placeholder="搜索图片名称,关键字...")
-        button.searchbtn
-        .filter(ms-on-mouseenter="filteron($event)" ms-on-mouseleave="filterout") 结果筛选
-            span.sj(ms-css-display="filtersjcss")
-            .filtercontent(ms-visible="filtertoggle")
-                .div(ms-repeat="imagetype")
-                    p {{el.name}}
-                    .filtercheck.clearfix
-                        a(ms-repeat="el.info")
-                            em(ms-class="{{el.check?'checked':'unchecked'}}" ms-click="checktype($index,$outer.$index)")
-                            span {{el.type}}
-    .filterresult
-        span 清空筛选
-        a(ms-repeat="currentfilter")
-            span {{el.name}}
-            i.menudel(ms-click="removefilter(el.index,el.outer,el.current)")
+case pages
+    when 'detail'
+        .header
+            .title
+                h2 遨游图库
+                span.tit1 V2.0
+                span.tit2 打造正版旅游图库
+    default
+        .header.fixed
+            .title
+                h2 遨游图库
+                span.tit1 V2.0
+                span.tit2 打造正版旅游图库
+            .search
+                input.searchtxt(type="text" id="searchtxtid" placeholder="搜索图片名称,关键字...")
+                button.searchbtn
+                .filter(ms-on-mouseenter="filteron($event)" ms-on-mouseleave="filterout") 结果筛选
+                    span.sj(ms-css-display="filtersjcss")
+                    .filtercontent(ms-visible="filtertoggle")
+                        .div(ms-repeat="imagetype")
+                            p {{el.name}}
+                            .filtercheck.clearfix
+                                a(ms-repeat="el.info")
+                                    em(ms-class="{{el.check?'checked':'unchecked'}}" ms-click="checktype($index,$outer.$index)")
+                                    span {{el.type}}
+            .filterresult
+                span 清空筛选
+                a(ms-repeat="currentfilter")
+                    span {{el.name}}
+                    i.menudel(ms-click="removefilter(el.index,el.outer,el.current)")
 
-    .tab
-        span(ms-click='checkallimg()' ms-class-1='{{checkallclass}}').checkall.alignRight 全选
-        span.tabimg.thumbnaild(ms-click="changetab(false)" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}")
-        span.tabimg.lista(ms-click="changetab(true)" ms-class="{{tablist?'lista':'listd'}}")
-        button.uploadbtn.floatRight 上传
-        span.download.floatRight.alignRight 打包下载
-        span.preview.floatRight.alignRight 图片预览
+            .tab
+                span(ms-click='checkallimg()' ms-class-1='{{checkallclass}}').checkall.alignRight 全选
+                span.tabimg.thumbnaild(ms-click="changetab(false)" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}")
+                span.tabimg.lista(ms-click="changetab(true)" ms-class="{{tablist?'lista':'listd'}}")
+                button.uploadbtn.floatRight 上传
+                span.download.floatRight.alignRight 打包下载
+                span.preview.floatRight.alignRight 图片预览
