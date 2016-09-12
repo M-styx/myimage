@@ -1,4 +1,4 @@
-.div(ms-class="{{tablist?'listcontent':'thumbnailcontent'}}")
+.div(ms-class="{{tablist?'listcontent':'thumbnailcontent'}}" ms-visible="showlist")
     .tabletit
         .back
             span.listcheck
@@ -23,5 +23,9 @@
             span.list3(ms-visible="tablist") {{el.lastupdate}}
             span.list3(ms-visible="!tablist")
                 img(src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft")
+.noresult(ms-visible="shownoresult")
+    img(src="../images/search.png" width="48px" height="48px")
+    span 无结果 {{noresulttxt}}
+    i 检查您的输入是否正确or修改您的搜索
 
 

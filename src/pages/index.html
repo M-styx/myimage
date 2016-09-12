@@ -20,38 +20,27 @@
         <button class="searchbtn"></button>
         <div ms-on-mouseenter="filteron($event)" ms-on-mouseleave="filterout" class="filter">结果筛选<span ms-css-display="filtersjcss" class="sj"></span>
           <div ms-visible="filtertoggle" class="filtercontent">
-            <div class="div">
-              <p>图片类别</p>
-              <div class="filtercheck clearfix"><a>全部类别</a><a>人物</a><a>风景</a><a>酒店</a><a>未分类</a></div>
-            </div>
-            <div class="div">
-              <p>规格</p>
-              <div class="filtercheck clearfix"><a>横图</a><a>竖图</a><a>方图</a></div>
-            </div>
-            <div class="div">
-              <p>格式</p>
-              <div class="filtercheck clearfix"><a>JPG</a><a>PNG</a></div>
-            </div>
-            <div class="div lastfilter">
-              <p>版权来源</p>
-              <div class="filtercheck clearfix"><a>壹图</a><a>视觉中国</a><a>旅游局</a><a>供应商</a><a>个人</a></div>
+            <div ms-repeat="imagetype" class="div">
+              <p>{{el.name}}</p>
+              <div class="filtercheck clearfix"><a ms-repeat="el.info"><em ms-class="{{el.check?'checked':'unchecked'}}" ms-click="checktype($index,$outer.$index)"></em><span>{{el.type}}</span></a></div>
             </div>
           </div>
         </div>
       </div>
+      <div ms-visible="showfilter" class="filterresult"><span ms-click="removefilterall">清空筛选</span><a ms-repeat="currentfilter"><span>{{el.name}}</span><i ms-click="removefilter(el.name,el.index,el.outer)" class="menudel"></i></a></div>
       <div class="tab"><span ms-click="checkallimg()" ms-class-1="{{checkallclass}}" class="checkall alignRight">全选</span><span ms-click="changetab(false)" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}" class="tabimg thumbnaild"></span><span ms-click="changetab(true)" ms-class="{{tablist?'lista':'listd'}}" class="tabimg lista"></span>
         <button class="uploadbtn floatRight">上传</button><span class="download floatRight alignRight">打包下载</span><span class="preview floatRight alignRight">图片预览</span>
       </div>
     </div>
     <div class="panel">
       <div class="seizediv"></div>
-      <div class="pagercontent">
+      <div ms-visible="showpager" class="pagercontent">
         <div class="pagerdiv floatRight">
           <aoyou:pager config="$pageropt" $id="pager01"></aoyou:pager>
         </div>
         <div class="pagerdiv floatLeft"><span class="resultinfo">3689</span><span class="resultinfo">意大利</span><span class="resultinfo">图片结果</span></div>
       </div>
-      <div ms-class="{{tablist?'listcontent':'thumbnailcontent'}}" class="div">
+      <div ms-class="{{tablist?'listcontent':'thumbnailcontent'}}" ms-visible="showlist" class="div">
         <div class="tabletit">
           <div class="back"><span class="listcheck"></span><span class="list1">文件名</span></div><span class="list2">类型</span><span class="list2">尺寸</span><span class="list2">大小</span><span class="list3">修改日期</span>
         </div>
@@ -61,6 +50,7 @@
           </li>
         </ul>
       </div>
+      <div ms-visible="shownoresult" class="noresult"><img src="../images/search.png" width="48px" height="48px"><span>无结果 {{noresulttxt}}</span><i>检查您的输入是否正确or修改您的搜索</i></div>
     </div>
   </body>
 </html>

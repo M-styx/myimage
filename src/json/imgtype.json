@@ -1,0 +1,6 @@
+{"data":[
+  {"name":"图片类别","info":[{"check":false,"type":"全部类别"},{"check":false,"type":"人物"},{"check":false,"type":"风景"},{"check":false,"type":"酒店"},{"check":false,"type":"未分类"}]},
+  {"name":"规格","info":[{"check":false,"type":"横图"},{"check":false,"type":"竖图"},{"check":false,"type":"方图"}]},
+  {"name":"格式","info":[{"check":false,"type":"JPG"},{"check":false,"type":"PNG"}]},
+  {"name":"版权来源","info":[{"check":true,"type":"壹图"},{"check":false,"type":"视觉中国"},{"check":false,"type":"旅游局"},{"check":false,"type":"供应商"},{"check":false,"type":"个人"}]}
+]}

@@ -23,11 +23,11 @@ case pages
                                 a(ms-repeat="el.info")
                                     em(ms-class="{{el.check?'checked':'unchecked'}}" ms-click="checktype($index,$outer.$index)")
                                     span {{el.type}}
-            .filterresult
-                span 清空筛选
+            .filterresult(ms-visible="showfilter")
+                span(ms-click="removefilterall") 清空筛选
                 a(ms-repeat="currentfilter")
                     span {{el.name}}
-                    i.menudel(ms-click="removefilter(el.index,el.outer,el.current)")
+                    i.menudel(ms-click="removefilter(el.name,el.index,el.outer)")
 
             .tab
                 span(ms-click='checkallimg()' ms-class-1='{{checkallclass}}').checkall.alignRight 全选

@@ -9,6 +9,13 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager"],function (
           avalon.vmodels['pager01'].perPages = p;
         },
         imagedata:[],
+        imagetype:[],
+        currentfilter:[],
+        showfilter:false,
+        showpager:true,
+        showlist:true,
+        shownoresult:false,
+        noresulttxt:'"哥斯拉怪兽"',
         checkimg:function(idx){
             vm.imagedata[idx]['check'] = (vm.imagedata[idx]['check'] == "unchecked"?"checked":"unchecked");
         },
@@ -26,6 +33,23 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager"],function (
                 }
             }
 
+        },
+        getImgType:function(url){
+            req.ajax({
+                type: 'POST',
+                url: url,
+                data: '',
+                headers: {},
+                success: function(dat, status, xhr) {
+                    var redata = avalon.parseJSON(dat);
+                    if(redata){
+                        vm.imagetype = redata.data;
+                    }
+                },
+                error: function(dat) {
+                    console.log('没有获取数据');
+                }
+            });
         },
         getImgInfo:function(url,para){
             req.ajax({
@@ -72,9 +96,55 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager"],function (
         },
         changetab:function (val) {
             vm.tablist = val;
+        },
+        checktype:function(idx,outer){
+            var newarr = [];
+            vm.imagetype[outer].info[idx]['check'] = !vm.imagetype[outer].info[idx]['check'];
+            if(vm.imagetype[outer].info[idx]['check']){
+                vm.currentfilter.push({"name":vm.imagetype[outer].info[idx]['type'],"index":idx,"outer":outer})
+                vm.showfilter = true;
+            }else{
+                for(var i=0;i<vm.currentfilter.length;i++){
+                    if(vm.currentfilter[i].name==vm.imagetype[outer].info[idx]['type']){
+                        if(vm.currentfilter[i].index==idx && vm.currentfilter[i].outer == outer)
+                            newarr.push(vm.currentfilter[i])
+                    }
+                }
+                vm.currentfilter.removeAll(newarr);
+                if(vm.currentfilter.length==0){
+                    vm.showfilter = false;
+                }
+            }
+        },
+        removefilter:function (name,idx,outer) {
+            var newarr = [];
+            vm.imagetype[outer].info[idx]['check'] = !vm.imagetype[outer].info[idx]['check'];
+
+            for(var i=0;i<vm.currentfilter.length;i++){
+                if(vm.currentfilter[i].name==vm.imagetype[outer].info[idx]['type']){
+                    if(vm.currentfilter[i].index==idx && vm.currentfilter[i].outer == outer)
+                        newarr.push(vm.currentfilter[i])
+                }
+            }
+            vm.currentfilter.removeAll(newarr);
+            if(vm.currentfilter.length==0){
+                vm.showfilter = false;
+            }
+        },
+        removefilterall:function () {
+            vm.currentfilter.removeAll();
+            for(var i=0;i<vm.imagetype.length;i++){
+                for(var j=0;j<vm.imagetype[i].info.length;j++){
+                    vm.imagetype[i].info[j]['check'] = false;
+                }
+            }
+            if(vm.currentfilter.length==0){
+                vm.showfilter = false;
+            }
         }
     });
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});
+    vm.getImgType('../json/imgtype.json');
     avalon.scan(document.body,vm);
 })
 

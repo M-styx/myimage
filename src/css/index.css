@@ -59,7 +59,8 @@ img {
 body {
   color: #333;
   font-family: PingFangSC-Regular;
-  font-size: 14px; }
+  font-size: 14px;
+  background: #F7F8FA; }
 
 .header .title {
   height: 30px;
@@ -103,7 +104,10 @@ body {
     display: inline-block;
     height: 69px;
     vertical-align: -27px;
-    width: 70px; }
+    width: 70px;
+    cursor: pointer; }
+    .header .search .searchbtn:hover {
+      background: url("../images/search2.png") no-repeat; }
   .header .search .filter {
     background: url("../images/filter.png") center right no-repeat;
     display: inline-block;
@@ -141,7 +145,8 @@ body {
         border-bottom: 1px solid #EEEFF2;
         margin: 20px 20px 0px 20px;
         padding-bottom: 15px;
-        width: 360px; }
+        width: 360px;
+        cursor: default; }
         .header .search .filter .filtercontent .div p {
           font-weight: bold;
           line-height: 25px;
@@ -149,14 +154,25 @@ body {
         .header .search .filter .filtercontent .div .filtercheck {
           width: 100%; }
           .header .search .filter .filtercontent .div .filtercheck a {
-            background: url("../images/checkbox1.png") no-repeat center left;
             font-size: 12px;
             float: left;
             line-height: 25px;
             height: 25px;
-            width: 95px;
-            padding-left: 20px;
-            background-size: 13%; }
+            width: 95px; }
+            .header .search .filter .filtercontent .div .filtercheck a em {
+              background: url("../images/checkbox1.png") no-repeat center left;
+              background-size: 75%;
+              width: 20px;
+              height: 25px;
+              display: inline-block;
+              vertical-align: -9px;
+              cursor: pointer; }
+            .header .search .filter .filtercontent .div .filtercheck a em.checked {
+              background: url("../images/checkbox2.png") no-repeat center left;
+              background-size: 75%; }
+            .header .search .filter .filtercontent .div .filtercheck a em.unchecked {
+              background: url("../images/checkbox1.png") no-repeat center left;
+              background-size: 75%; }
       .header .search .filter .filtercontent .lastfilter {
         border: 0px; }
 .header .tab {
@@ -198,7 +214,10 @@ body {
     letter-spacing: 0.29px;
     margin: 10px 20px;
     height: 30px;
-    width: 72px; }
+    width: 72px;
+    cursor: pointer; }
+    .header .tab .uploadbtn:hover {
+      background: #00A8FF; }
   .header .tab .download {
     background: url("../images/download.png") center left no-repeat;
     margin: 15px 0px 15px 20px;
@@ -209,6 +228,27 @@ body {
     margin: 15px 0px 15px 20px;
     height: 20px;
     width: 83px; }
+.header .filterresult {
+  height: 36px;
+  background: #F5F5F5; }
+  .header .filterresult > span {
+    line-height: 36px;
+    margin-left: 20px;
+    color: red;
+    cursor: pointer; }
+  .header .filterresult a {
+    background: #B9C1C7;
+    border-radius: 3px;
+    margin-left: 10px;
+    padding: 0 5px;
+    color: white; }
+    .header .filterresult a i {
+      margin-left: 8px;
+      display: inline-block;
+      height: 8px;
+      width: 10px;
+      background: url("../images/delicon.png") no-repeat;
+      cursor: pointer; }
 
 .panel {
   background: #F7F8FA;
@@ -315,6 +355,24 @@ body {
     width: 8%; }
   .listcontent span.list3 {
     width: 12%; }
+
+.noresult {
+  margin-top: 100px;
+  text-align: center; }
+  .noresult img {
+    display: block;
+    margin: 0 auto; }
+  .noresult span {
+    font-size: 24px;
+    color: #666666;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px; }
+  .noresult i {
+    font-size: 14px;
+    color: #666666;
+    display: block;
+    font-style: normal; }
 
 .thumbnailcontent {
   width: 100%; }
