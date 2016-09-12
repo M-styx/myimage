@@ -58,9 +58,12 @@ img {
 
 body {
   color: #333;
-  font-family: PingFangSC-Regular;
+  font-family: "Microsoft yahei", Tahoma, Helvetica, "SimSun", sans-serif;
   font-size: 14px;
   background: #F7F8FA; }
+
+.text-blue {
+  color: #149AF1; }
 
 .header .title {
   height: 30px;
