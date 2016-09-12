@@ -2,6 +2,7 @@
   .title{
     height:30px;
     padding:8px 20px;
+    border-bottom: 1px solid #EEEFF2;
 
     h2{
       display: inline-block;
@@ -32,7 +33,7 @@
 
   .search{
     border-bottom: 1px solid #EEEFF2;
-    border-top:1px solid #EEEFF2;
+    //border-top:1px solid #EEEFF2;
     height:68px;
 
     .searchtxt{

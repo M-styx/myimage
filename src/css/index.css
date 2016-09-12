@@ -64,7 +64,8 @@ body {
 
 .header .title {
   height: 30px;
-  padding: 8px 20px; }
+  padding: 8px 20px;
+  border-bottom: 1px solid #EEEFF2; }
   .header .title h2 {
     display: inline-block;
     font-size: 22px;
@@ -86,7 +87,6 @@ body {
     margin-left: 20px; }
 .header .search {
   border-bottom: 1px solid #EEEFF2;
-  border-top: 1px solid #EEEFF2;
   height: 68px; }
   .header .search .searchtxt {
     border-width: 0;
