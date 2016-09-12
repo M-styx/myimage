@@ -9,33 +9,18 @@
         .filter(ms-on-mouseenter="filteron($event)" ms-on-mouseleave="filterout") 结果筛选
             span.sj(ms-css-display="filtersjcss")
             .filtercontent(ms-visible="filtertoggle")
-                .div
-                    p 图片类别
+                .div(ms-repeat="imagetype")
+                    p {{el.name}}
                     .filtercheck.clearfix
-                        a 全部类别
-                        a 人物
-                        a 风景
-                        a 酒店
-                        a 未分类
-                .div
-                    p 规格
-                    .filtercheck.clearfix
-                        a 横图
-                        a 竖图
-                        a 方图
-                .div
-                    p 格式
-                    .filtercheck.clearfix
-                        a JPG
-                        a PNG
-                .div.lastfilter
-                    p 版权来源
-                    .filtercheck.clearfix
-                        a 壹图
-                        a 视觉中国
-                        a 旅游局
-                        a 供应商
-                        a 个人
+                        a(ms-repeat="el.info")
+                            em(ms-class="{{el.check?'checked':'unchecked'}}" ms-click="checktype($index,$outer.$index)")
+                            span {{el.type}}
+    .filterresult
+        span 清空筛选
+        a(ms-repeat="currentfilter")
+            span {{el.name}}
+            i.menudel(ms-click="removefilter(el.index,el.outer,el.current)")
+
     .tab
         span(ms-click='checkallimg()' ms-class-1='{{checkallclass}}').checkall.alignRight 全选
         span.tabimg.thumbnaild(ms-click="changetab(false)" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}")
