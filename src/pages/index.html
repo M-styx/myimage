@@ -10,7 +10,35 @@
     <script src="../../avalon.js"></script>
     <script src="../js/index.js"></script>
   </head>
-  <body ms-controller="aoyouimage">
+  <body ms-controller="aoyouimage" ms-class="isshowmask:showmask">
+    <div ms-visible="isshowmask" class="mask"></div>
+    <div ms-visible="isshowmask" class="maskcon">
+      <aoyou:dialog config="$imgeditopt" $id="imgedit" $slot="content">
+        <div class="dlgmaininfo clearfix">
+          <div class="dlgimg"><img src="../images/img4-3.png" width="160px" height="120px"><span>编号: 93487532</span></div>
+          <div class="dlginfo">
+            <aoyou:textbox fronttitle="名称:" width="270px" value="imageeditinfo[0].name"></aoyou:textbox>
+            <aoyou:textbox fronttitle="上传时间:" width="270px" value="imageeditinfo[0].time"></aoyou:textbox>
+            <aoyou:textbox fronttitle="图片所属:" width="270px" value="imageeditinfo[0].imgsource"></aoyou:textbox>
+            <aoyou:textbox fronttitle="类型:" width="270px" value="imageeditinfo[0].type"></aoyou:textbox>
+            <aoyou:textbox fronttitle="尺寸:" width="270px" value="imageeditinfo[0].size"></aoyou:textbox>
+            <aoyou:textbox fronttitle="大小:" width="270px" value="imageeditinfo[0].space"></aoyou:textbox>
+          </div>
+        </div>
+        <div class="dlgother">
+          <p>名称</p>
+          <aoyou:textbox width="360px" value="imageeditinfo[0].name"></aoyou:textbox>
+          <p class="keywords">关键词</p>
+          <aoyou:textbox width="360px" type="textarea" height="50px" value="imageeditinfo[0].keywords" class="textarea"></aoyou:textbox><span>例如：景色、大海、山脉、自然</span>
+          <aoyou:dropdowncheckbox config="$copyrightsrc" fronttitle="版权来源:" value="imageeditinfo[0].copyrightsrc"></aoyou:dropdowncheckbox>
+          <div class="copyrighttime"><b>版权有效期:</b><i>永久使用</i></div>
+          <aoyou:textbox fronttitle="摄影师:" width="270px" value="imageeditinfo[0].camerist"></aoyou:textbox>
+        </div>
+        <div class="dlgbtn">
+          <button class="savebtn">保 存</button><span>保存并关闭</span><span class="uploader">上传者：白雪</span>
+        </div>
+      </aoyou:dialog>
+    </div>
     <div class="header fixed">
       <div class="title">
         <h2>遨游图库</h2><span class="tit1">V2.0</span><span class="tit2">打造正版旅游图库</span>
@@ -46,7 +74,7 @@
         </div>
         <ul class="clearfix">
           <li ms-repeat="imagedata">
-            <div class="back"><span ms-class-1="{{el.check}}" ms-click="checkimg($index)" class="listcheck"></span><span class="list1"><span ms-visible="tablist">{{el.name}}</span><i class="downloadl floatRight"></i><i class="deletel floatRight"></i><i class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">{{el.name}}</span><span ms-visible="tablist" class="list2">{{el.type}}</span><span ms-visible="tablist" class="list2">{{el.size}}</span><span ms-visible="tablist" class="list2">{{el.space}}</span><span ms-visible="tablist" class="list3">{{el.lastupdate}}</span><span ms-visible="!tablist" class="list3"><img src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft"></span>
+            <div class="back"><span ms-class-1="{{el.check}}" ms-click="checkimg($index)" class="listcheck"></span><span class="list1"><span ms-visible="tablist">{{el.name}}</span><i class="downloadl floatRight"></i><i class="deletel floatRight"></i><i ms-click="edit($index)" class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">{{el.name}}</span><span ms-visible="tablist" class="list2">{{el.type}}</span><span ms-visible="tablist" class="list2">{{el.size}}</span><span ms-visible="tablist" class="list2">{{el.space}}</span><span ms-visible="tablist" class="list3">{{el.lastupdate}}</span><span ms-visible="!tablist" class="list3"><img src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft"></span>
           </li>
         </ul>
       </div>

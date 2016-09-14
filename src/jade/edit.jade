@@ -1,0 +1,31 @@
+.mask(ms-visible="isshowmask")
+.maskcon(ms-visible="isshowmask")
+    aoyou:dialog(config="$imgeditopt")&attributes({'$id':'imgedit','$slot':'content'})
+        .dlgmaininfo.clearfix
+            .dlgimg
+                img(src="../images/img4-3.png" width="160px" height="120px")
+                span 编号: 93487532
+            .dlginfo
+                aoyou:textbox(fronttitle="名称:" width="270px" value="imageeditinfo[0].name")
+                aoyou:textbox(fronttitle="上传时间:" width="270px" value="imageeditinfo[0].time")
+                aoyou:textbox(fronttitle="图片所属:" width="270px" value="imageeditinfo[0].imgsource")
+                aoyou:textbox(fronttitle="类型:" width="270px" value="imageeditinfo[0].type")
+                aoyou:textbox(fronttitle="尺寸:" width="270px" value="imageeditinfo[0].size")
+                aoyou:textbox(fronttitle="大小:" width="270px" value="imageeditinfo[0].space")
+        .dlgother
+            p 名称
+            aoyou:textbox( width="360px" value="imageeditinfo[0].name")
+            p.keywords 关键词
+            aoyou:textbox.textarea( width="360px" type="textarea" height="50px" value="imageeditinfo[0].keywords")
+            span 例如：景色、大海、山脉、自然
+            aoyou:dropdowncheckbox(config="$copyrightsrc" fronttitle="版权来源:" value="imageeditinfo[0].copyrightsrc")
+            .copyrighttime
+                b 版权有效期:
+                i 永久使用
+            aoyou:textbox(fronttitle="摄影师:" width="270px" value="imageeditinfo[0].camerist")
+        .dlgbtn
+            button.savebtn 保 存
+            span 保存并关闭
+            span.uploader 上传者：白雪
+
+

@@ -7,3 +7,9 @@ body{
 .text-blue{
   color: $blue;
 }
+
+
+input, textarea, keygen, select, button{
+  color:$black;
+  font-family: $font_family;
+}

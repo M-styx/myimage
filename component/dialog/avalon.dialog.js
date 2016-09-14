@@ -10,7 +10,7 @@ define([
     "avalon",
     "text!./avalon.dialog.html",
     "../button/avalon.button",
-    "css!./avalon.dialog.css",
+    "css!./avalon.dialog.css"
 ], function (avalon, template) {
     var _interface = function () {
     }

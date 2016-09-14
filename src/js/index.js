@@ -1,10 +1,11 @@
-require(["/component/base/mmRequest","/component/pager/avalon.pager"],function (req) {
+require(["/component/base/mmRequest","/component/pager/avalon.pager","/component/dialog/avalon.dialog","/component/textbox/avalon.textbox","/component/dropdowncheckbox/avalon.dropdowncheckbox"],function (req) {
     var vm = avalon.define({
         $id:"aoyouimage",
         filtertoggle:false,
         filtersjcss:'none',
         imgMarginLeft:'25px',
         tablist:true,
+        isshowmask:false,
         changeperPage:function(p){//切换每页显示多少条
           avalon.vmodels['pager01'].perPages = p;
         },
@@ -16,6 +17,10 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager"],function (
         showlist:true,
         shownoresult:false,
         noresulttxt:'"哥斯拉怪兽"',
+        imageeditinfo:[],
+        showdia: function (id) {
+            avalon.vmodels[id].toggle = true;
+        },
         checkimg:function(idx){
             vm.imagedata[idx]['check'] = (vm.imagedata[idx]['check'] == "unchecked"?"checked":"unchecked");
         },
@@ -33,6 +38,23 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager"],function (
                 }
             }
 
+        },
+        getImageEditInfo:function(url){
+            req.ajax({
+                type: 'POST',
+                url: url,
+                data: '',
+                headers: {},
+                success: function(dat, status, xhr) {
+                    var redata = avalon.parseJSON(dat);
+                    if(redata){
+                        vm.imageeditinfo = redata.data;
+                    }
+                },
+                error: function(dat) {
+                    console.log('没有获取数据');
+                }
+            });
         },
         getImgType:function(url){
             req.ajax({
@@ -82,6 +104,19 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager"],function (
             onJump:function(ev,pg){
                 vm.getImgInfo('../json/imginfo.json',{'pagenum':pg._currentPage});
             }
+        },
+        $imgeditopt:{
+            width:620,
+            title:"编辑图片",
+            onClose:function () {
+                vm.isshowmask = false;
+            }
+        },
+        $copyrightsrc:{
+            width:286,
+            singleselect:true,
+            sourceFlag:{value:"id",text:"name"},
+            dataSource:[{name:'壹图',id:1},{name:'视觉中国',id:2},{name:'旅游局',id:3},{name:'供应商',id:4},{name:'个人',id:5}]
         },
         filteron:function (e) {
             vm.filtertoggle = true;
@@ -141,10 +176,16 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager"],function (
             if(vm.currentfilter.length==0){
                 vm.showfilter = false;
             }
+        },
+        edit:function (idx) {
+            vm.isshowmask = true;
+            vm.showdia('imgedit');
         }
+
     });
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});
     vm.getImgType('../json/imgtype.json');
+    vm.getImageEditInfo('../json/imgeditinfo.json');
     avalon.scan(document.body,vm);
 })
 

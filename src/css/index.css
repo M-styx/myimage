@@ -14,8 +14,7 @@
   left: 0;
   position: fixed;
   top: 0;
-  width: 100%;
-  background: white; }
+  width: 100%; }
 
 body {
   width: 100%;
@@ -65,193 +64,435 @@ body {
 .text-blue {
   color: #149AF1; }
 
-.header .title {
-  height: 30px;
-  padding: 8px 20px;
-  border-bottom: 1px solid #EEEFF2; }
-  .header .title h2 {
-    display: inline-block;
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: 0.46px;
-    line-height: 30px;
-    margin: 0;
-    padding: 0; }
-  .header .title span.tit1 {
-    bottom: 9px;
-    font-size: 12px;
-    letter-spacing: 0.25px;
-    margin-left: 5px;
-    position: relative; }
-  .header .title span.tit2 {
-    color: #666;
-    font-size: 14px;
-    letter-spacing: 0.29px;
-    margin-left: 20px; }
-.header .search {
-  border-bottom: 1px solid #EEEFF2;
-  height: 68px; }
-  .header .search .searchtxt {
-    border-width: 0;
-    color: black;
-    font-size: 24px;
-    height: 68px;
-    letter-spacing: 0.5px;
-    margin: 0 0 0 20px;
-    outline: none;
-    padding: 0;
-    vertical-align: top;
-    width: 76%; }
-  .header .search .searchbtn {
-    background: url("../images/search1.png") no-repeat;
-    display: inline-block;
-    height: 69px;
-    vertical-align: -27px;
-    width: 70px;
-    cursor: pointer; }
-    .header .search .searchbtn:hover {
-      background: url("../images/search2.png") no-repeat; }
-  .header .search .filter {
-    background: url("../images/filter.png") center right no-repeat;
-    display: inline-block;
-    font-size: 14px;
-    line-height: 29px;
-    letter-spacing: 0.29px;
-    margin-left: 4%;
-    position: relative;
-    width: 78px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    cursor: pointer; }
-    .header .search .filter span.sj {
-      display: none;
-      width: 10px;
-      height: 10px;
-      background: url("../images/sj.png") center no-repeat;
-      position: absolute;
-      top: 22px;
-      right: 5px;
-      z-index: 2; }
-    .header .search .filter .filtercontent {
-      display: none;
-      position: absolute;
-      background: white;
-      border: 2px solid #DADADA;
-      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
-      border-radius: 3px;
-      width: 400px;
-      max-height: 412px;
-      top: 30px;
-      right: -30px;
-      overflow: auto; }
-      .header .search .filter .filtercontent .div {
-        border-bottom: 1px solid #EEEFF2;
-        margin: 20px 20px 0px 20px;
-        padding-bottom: 15px;
-        width: 360px;
-        cursor: default; }
-        .header .search .filter .filtercontent .div p {
-          font-weight: bold;
-          line-height: 25px;
-          margin-bottom: 3px; }
-        .header .search .filter .filtercontent .div .filtercheck {
-          width: 100%; }
-          .header .search .filter .filtercontent .div .filtercheck a {
-            font-size: 12px;
-            float: left;
-            line-height: 25px;
-            height: 25px;
-            width: 95px; }
-            .header .search .filter .filtercontent .div .filtercheck a em {
-              background: url("../images/checkbox1.png") no-repeat center left;
-              background-size: 75%;
-              width: 20px;
-              height: 25px;
-              display: inline-block;
-              vertical-align: -9px;
-              cursor: pointer; }
-            .header .search .filter .filtercontent .div .filtercheck a em.checked {
-              background: url("../images/checkbox2.png") no-repeat center left;
-              background-size: 75%; }
-            .header .search .filter .filtercontent .div .filtercheck a em.unchecked {
-              background: url("../images/checkbox1.png") no-repeat center left;
-              background-size: 75%; }
-      .header .search .filter .filtercontent .lastfilter {
-        border: 0px; }
-.header .tab {
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+input, textarea, keygen, select, button {
+  color: #333;
+  font-family: "Microsoft yahei", Tahoma, Helvetica, "SimSun", sans-serif; }
+
+.showmask {
+  height: 100%;
+  overflow: hidden; }
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+  display: none; }
+
+.maskcon {
+  position: absolute;
+  top: 187px;
+  left: 50%;
+  margin-left: -310px;
+  z-index: 1002;
+  width: 100%;
+  display: none; }
+
+.aoyou-dialog .aoyou-dialog-inner {
+  box-shadow: 0;
+  background: #FFFFFF;
+  border: 1px solid #DADADA;
+  border-radius: 6px;
+  height: 650px; }
+  .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-tip {
+    display: none; }
+  .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-title {
+    color: #149AF1;
+    font-size: 16px;
+    border: 0;
+    font-weight: normal; }
+  .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer {
+    display: none; }
+  .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-close {
+    margin-top: 9px; }
+    .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-close .aoyou-dialog-icon {
+      background: url("../images/dlgdel.png") no-repeat; }
+
+.dlgtitle {
+  font-size: 16px;
+  color: #149AF1;
+  margin: 18px 20px 0 20px;
   height: 50px; }
-  .header .tab .checkall {
-    background: url("../images/checkbox1.png") center left no-repeat;
-    display: inline-block;
-    line-height: 20px;
-    margin: 15px 20px;
+  .dlgtitle p {
+    margin-left: 10px; }
+
+.dlgmaininfo {
+  width: 560px;
+  height: 190px;
+  background: #F3F4F5;
+  border-radius: 6px;
+  padding: 10px; }
+  .dlgmaininfo .dlgimg {
+    float: left;
+    width: 180px;
+    height: 190px; }
+    .dlgmaininfo .dlgimg span {
+      display: block;
+      margin-top: 2px; }
+  .dlgmaininfo .dlginfo {
+    float: left;
+    width: 380px;
+    height: 190px; }
+    .dlgmaininfo .dlginfo .aoyou-textbox {
+      float: right;
+      background: white;
+      border-radius: 6px;
+      padding: 5px 10px;
+      height: 20px;
+      margin-bottom: 2px; }
+      .dlgmaininfo .dlginfo .aoyou-textbox .aoyou-textbox-fronttitle {
+        line-height: 20px;
+        margin-right: 18px;
+        width: 72px; }
+      .dlgmaininfo .dlginfo .aoyou-textbox .aoyou-textbox-main {
+        width: 270px; }
+        .dlgmaininfo .dlginfo .aoyou-textbox .aoyou-textbox-main .aoyou-textbox-input {
+          position: relative;
+          display: inline;
+          margin: 0;
+          padding: 0;
+          height: 20px;
+          line-height: 20px;
+          font-size: 14px;
+          vertical-align: middle;
+          outline: medium none;
+          border: 0; }
+
+.dlgother {
+  width: 560px;
+  height: 290px;
+  margin-top: 20px;
+  background: #F3F4F5;
+  border-radius: 6px;
+  padding: 10px 10px 0 10px; }
+  .dlgother span {
+    display: block;
+    font-size: 12px;
+    color: #959DA2;
+    background: url("../images/info.png") no-repeat center left;
+    padding-left: 18px;
+    line-height: 27px;
+    margin-left: 12px; }
+  .dlgother p.keywords {
+    margin-top: 10px; }
+  .dlgother .copyrighttime {
+    height: 30px; }
+    .dlgother .copyrighttime b {
+      display: inline-block;
+      width: 94px;
+      line-height: 30px;
+      font-weight: normal; }
+    .dlgother .copyrighttime i {
+      font-style: normal;
+      display: inline-block;
+      line-height: 30px;
+      height: 30px;
+      padding-left: 30px;
+      color: #149AF1;
+      background: url("../images/checkbox1.png") no-repeat center left; }
+  .dlgother .textarea .aoyou-textbox {
+    border-radius: 3px;
+    padding: 5px 0;
+    height: 50px;
+    margin-bottom: 6px; }
+    .dlgother .textarea .aoyou-textbox .aoyou-textbox-fronttitle {
+      line-height: 30px;
+      width: 90px; }
+    .dlgother .textarea .aoyou-textbox .aoyou-textbox-main {
+      border: 1px solid #D8D8D8; }
+      .dlgother .textarea .aoyou-textbox .aoyou-textbox-main .aoyou-textbox-input {
+        position: relative;
+        display: inline;
+        margin: 0;
+        padding: 5px 9px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 14px;
+        vertical-align: middle;
+        outline: medium none;
+        border: 0; }
+  .dlgother .aoyou-dropdowncheckbox {
+    border-radius: 3px;
+    padding: 5px 0;
     height: 20px;
-    width: 60px; }
-  .header .tab .checked {
-    background: url("../images/checkbox2.png") center left no-repeat; }
-  .header .tab .unchecked {
-    background: url("../images/checkbox1.png") center left no-repeat; }
-  .header .tab .tabimg {
-    background: url("../images/thumbnail-a.png") center no-repeat;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    height: 49px;
-    vertical-align: -20px;
-    width: 60px;
-    cursor: pointer; }
-  .header .tab .thumbnaila {
-    background: url("../images/thumbnail-a.png") center no-repeat;
-    border-left: 1px solid rgba(0, 0, 0, 0.1); }
-  .header .tab .thumbnaild {
-    background: url("../images/thumbnail-d.png") center no-repeat;
-    border-left: 1px solid rgba(0, 0, 0, 0.1); }
-  .header .tab .listd {
-    background: url("../images/list-d.png") center no-repeat; }
-  .header .tab .lista {
-    background: url("../images/list-a.png") center no-repeat; }
-  .header .tab .uploadbtn {
+    margin-bottom: 6px; }
+    .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-fronttitle {
+      line-height: 30px;
+      width: 90px;
+      margin-right: 36px; }
+    .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-dropdownpart {
+      border: 1px solid #D8D8D8; }
+      .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-dropdownpart li {
+        background: white;
+        line-height: 24px;
+        border: 0; }
+        .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-dropdownpart li:hover {
+          background: #F2F2F2; }
+      .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-dropdownpart span {
+        background: none;
+        padding-left: 8px;
+        margin-left: 0;
+        font-size: 14px;
+        line-height: 24px;
+        color: #333; }
+      .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-dropdownpart .aoyou-dropdowncheckbox-div {
+        padding: 4px 0;
+        background: white;
+        border: 1px solid #eeeeee;
+        line-height: 20px; }
+        .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-dropdownpart .aoyou-dropdowncheckbox-div .aoyou-dropdowncheckbox-div-content {
+          text-indent: 8px;
+          height: 20px;
+          border: 0; }
+          .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-dropdownpart .aoyou-dropdowncheckbox-div .aoyou-dropdowncheckbox-div-content .aoyou-dropdowncheckbox-downbtn, .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-dropdownpart .aoyou-dropdowncheckbox-div .aoyou-dropdowncheckbox-div-content .aoyou-dropdowncheckbox-upbtn {
+            background: url("../images/Triangle.png") no-repeat center;
+            height: 20px; }
+  .dlgother .aoyou-textbox {
+    border-radius: 3px;
+    padding: 5px 0;
+    height: 20px;
+    margin-bottom: 6px; }
+    .dlgother .aoyou-textbox .aoyou-textbox-fronttitle {
+      line-height: 30px;
+      width: 90px; }
+    .dlgother .aoyou-textbox .aoyou-textbox-main {
+      border: 1px solid #D8D8D8; }
+      .dlgother .aoyou-textbox .aoyou-textbox-main .aoyou-textbox-input {
+        position: relative;
+        display: inline;
+        margin: 0;
+        padding: 5px 9px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 14px;
+        vertical-align: middle;
+        outline: medium none;
+        border: 0; }
+
+.dlgbtn {
+  margin-top: 20px; }
+  .dlgbtn .savebtn {
+    width: 90px;
+    height: 30px;
     background: #149AF1;
     border-radius: 3px;
+    font-size: 14px;
     color: white;
-    letter-spacing: 0.29px;
-    margin: 10px 20px;
-    height: 30px;
-    width: 72px;
     cursor: pointer; }
-    .header .tab .uploadbtn:hover {
+    .dlgbtn .savebtn:hover {
       background: #00A8FF; }
-  .header .tab .download {
-    background: url("../images/download.png") center left no-repeat;
-    margin: 15px 0px 15px 20px;
-    height: 20px;
-    width: 83px; }
-  .header .tab .preview {
-    background: url("../images/checkbox2.png") center left no-repeat;
-    margin: 15px 0px 15px 20px;
-    height: 20px;
-    width: 83px; }
-.header .filterresult {
-  height: 36px;
-  background: #F5F5F5; }
-  .header .filterresult > span {
-    line-height: 36px;
-    margin-left: 20px;
-    color: red;
+  .dlgbtn span {
+    background: url("../images/checkbox2.png") no-repeat center left;
+    display: inline-block;
+    width: 100px;
+    height: 17px;
+    font-size: 12px;
+    padding-left: 20px;
+    margin-left: 16px;
+    background-size: contain;
     cursor: pointer; }
-  .header .filterresult a {
-    background: #B9C1C7;
-    border-radius: 3px;
-    margin-left: 10px;
-    padding: 0 5px;
-    color: white; }
-    .header .filterresult a i {
-      margin-left: 8px;
+  .dlgbtn span.uploader {
+    color: #999;
+    float: right;
+    background: none;
+    line-height: 30px;
+    cursor: default; }
+
+.header {
+  background: white; }
+  .header .title {
+    height: 30px;
+    padding: 8px 20px;
+    border-bottom: 1px solid #EEEFF2; }
+    .header .title h2 {
       display: inline-block;
-      height: 8px;
-      width: 10px;
-      background: url("../images/delicon.png") no-repeat;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.46px;
+      line-height: 30px;
+      margin: 0;
+      padding: 0; }
+    .header .title span.tit1 {
+      bottom: 9px;
+      font-size: 12px;
+      letter-spacing: 0.25px;
+      margin-left: 5px;
+      position: relative; }
+    .header .title span.tit2 {
+      color: #666;
+      font-size: 14px;
+      letter-spacing: 0.29px;
+      margin-left: 20px; }
+  .header .search {
+    border-bottom: 1px solid #EEEFF2;
+    height: 68px; }
+    .header .search .searchtxt {
+      border-width: 0;
+      color: black;
+      font-size: 24px;
+      height: 68px;
+      letter-spacing: 0.5px;
+      margin: 0 0 0 20px;
+      outline: none;
+      padding: 0;
+      vertical-align: top;
+      width: 76%; }
+    .header .search .searchbtn {
+      background: url("../images/search1.png") no-repeat;
+      display: inline-block;
+      height: 69px;
+      vertical-align: -27px;
+      width: 70px;
       cursor: pointer; }
+      .header .search .searchbtn:hover {
+        background: url("../images/search2.png") no-repeat; }
+    .header .search .filter {
+      background: url("../images/filter.png") center right no-repeat;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 29px;
+      letter-spacing: 0.29px;
+      margin-left: 4%;
+      position: relative;
+      width: 78px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      cursor: pointer; }
+      .header .search .filter span.sj {
+        display: none;
+        width: 10px;
+        height: 10px;
+        background: url("../images/sj.png") center no-repeat;
+        position: absolute;
+        top: 22px;
+        right: 5px;
+        z-index: 2; }
+      .header .search .filter .filtercontent {
+        display: none;
+        position: absolute;
+        background: white;
+        border: 2px solid #DADADA;
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+        width: 400px;
+        max-height: 412px;
+        top: 30px;
+        right: -30px;
+        overflow: auto; }
+        .header .search .filter .filtercontent .div {
+          border-bottom: 1px solid #EEEFF2;
+          margin: 20px 20px 0px 20px;
+          padding-bottom: 15px;
+          width: 360px;
+          cursor: default; }
+          .header .search .filter .filtercontent .div p {
+            font-weight: bold;
+            line-height: 25px;
+            margin-bottom: 3px; }
+          .header .search .filter .filtercontent .div .filtercheck {
+            width: 100%; }
+            .header .search .filter .filtercontent .div .filtercheck a {
+              font-size: 12px;
+              float: left;
+              line-height: 25px;
+              height: 25px;
+              width: 95px; }
+              .header .search .filter .filtercontent .div .filtercheck a em {
+                background: url("../images/checkbox1.png") no-repeat center left;
+                background-size: 75%;
+                width: 20px;
+                height: 25px;
+                display: inline-block;
+                vertical-align: -9px;
+                cursor: pointer; }
+              .header .search .filter .filtercontent .div .filtercheck a em.checked {
+                background: url("../images/checkbox2.png") no-repeat center left;
+                background-size: 75%; }
+              .header .search .filter .filtercontent .div .filtercheck a em.unchecked {
+                background: url("../images/checkbox1.png") no-repeat center left;
+                background-size: 75%; }
+        .header .search .filter .filtercontent .lastfilter {
+          border: 0px; }
+  .header .tab {
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    height: 50px; }
+    .header .tab .checkall {
+      background: url("../images/checkbox1.png") center left no-repeat;
+      display: inline-block;
+      line-height: 20px;
+      margin: 15px 20px;
+      height: 20px;
+      width: 60px; }
+    .header .tab .checked {
+      background: url("../images/checkbox2.png") center left no-repeat; }
+    .header .tab .unchecked {
+      background: url("../images/checkbox1.png") center left no-repeat; }
+    .header .tab .tabimg {
+      background: url("../images/thumbnail-a.png") center no-repeat;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      height: 49px;
+      vertical-align: -20px;
+      width: 60px;
+      cursor: pointer; }
+    .header .tab .thumbnaila {
+      background: url("../images/thumbnail-a.png") center no-repeat;
+      border-left: 1px solid rgba(0, 0, 0, 0.1); }
+    .header .tab .thumbnaild {
+      background: url("../images/thumbnail-d.png") center no-repeat;
+      border-left: 1px solid rgba(0, 0, 0, 0.1); }
+    .header .tab .listd {
+      background: url("../images/list-d.png") center no-repeat; }
+    .header .tab .lista {
+      background: url("../images/list-a.png") center no-repeat; }
+    .header .tab .uploadbtn {
+      background: #149AF1;
+      border-radius: 3px;
+      color: white;
+      letter-spacing: 0.29px;
+      margin: 10px 20px;
+      height: 30px;
+      width: 72px;
+      cursor: pointer; }
+      .header .tab .uploadbtn:hover {
+        background: #00A8FF; }
+    .header .tab .download {
+      background: url("../images/download.png") center left no-repeat;
+      margin: 15px 0px 15px 20px;
+      height: 20px;
+      width: 83px; }
+    .header .tab .preview {
+      background: url("../images/checkbox2.png") center left no-repeat;
+      margin: 15px 0px 15px 20px;
+      height: 20px;
+      width: 83px; }
+  .header .filterresult {
+    height: 36px;
+    background: #F5F5F5; }
+    .header .filterresult > span {
+      line-height: 36px;
+      margin-left: 20px;
+      color: red;
+      cursor: pointer; }
+    .header .filterresult a {
+      background: #B9C1C7;
+      border-radius: 3px;
+      margin-left: 10px;
+      padding: 0 5px;
+      color: white; }
+      .header .filterresult a i {
+        margin-left: 8px;
+        display: inline-block;
+        height: 8px;
+        width: 10px;
+        background: url("../images/delicon.png") no-repeat;
+        cursor: pointer; }
 
 .panel {
   background: #F7F8FA;

@@ -15,7 +15,7 @@
                     span(ms-visible="tablist") {{el.name}}
                     i.downloadl.floatRight
                     i.deletel.floatRight
-                    i.editl.floatRight
+                    i.editl.floatRight(ms-click="edit($index)")
             span.list2(ms-visible="!tablist") {{el.name}}
             span.list2(ms-visible="tablist") {{el.type}}
             span.list2(ms-visible="tablist") {{el.size}}
