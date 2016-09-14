@@ -1,10 +1,10 @@
 .detail-content{
   float: left;
   width: 70%;
+  background-color: #fff;
   .content{
     padding: 10px 20px;
     border-right: 1px solid #EEEFF2;
-    background-color: #fff;
   }
   .content-foot{
     background: $lightgray;
@@ -29,6 +29,7 @@
 .detail-infor{
   float: left;
   width: 30%;
+  background-color: #fff;
   .labelname{
     display:inline-block;
     width: 90px;
@@ -58,14 +59,14 @@
 
 }
 .basic-infor{
-  background-color: #F7F8FA;
-  padding: 0 20px;
-  height:60px;
-  line-height: 60px;
   border-bottom: 1px solid #EEEFF2;
   h3{
+    padding: 0 20px;
     color: #333333;
     font-weight: normal;
+    background-color: #F7F8FA;
+    height:60px;
+    line-height: 60px;
   }
   .icon-lists{
     margin-right: 8px;
