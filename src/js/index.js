@@ -16,6 +16,7 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
         showpager:true,
         showlist:true,
         shownoresult:false,
+        searchreq:'',
         noresulttxt:'"哥斯拉怪兽"',
         imageeditinfo:[],
         showdia: function (id) {
@@ -180,8 +181,13 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
         edit:function (idx) {
             vm.isshowmask = true;
             vm.showdia('imgedit');
+        },
+        search:function () {
+            if(vm.searchreq=="咯咯咯"){
+                vm.showlist = false;
+                vm.shownoresult = true;
+            }
         }
-
     });
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});
     vm.getImgType('../json/imgtype.json');

@@ -12,8 +12,8 @@ case pages
                 span.tit1 V2.0
                 span.tit2 打造正版旅游图库
             .search
-                input.searchtxt(type="text" id="searchtxtid" placeholder="搜索图片名称,关键字...")
-                button.searchbtn
+                input.searchtxt(type="text" id="searchtxtid" placeholder="搜索图片名称,关键字..." ms-duplex="searchreq")
+                button.searchbtn(ms-on-click="search")
                 .filter(ms-on-mouseenter="filteron($event)" ms-on-mouseleave="filterout") 结果筛选
                     span.sj(ms-css-display="filtersjcss")
                     .filtercontent(ms-visible="filtertoggle")

@@ -44,8 +44,8 @@
         <h2>遨游图库</h2><span class="tit1">V2.0</span><span class="tit2">打造正版旅游图库</span>
       </div>
       <div class="search">
-        <input type="text" id="searchtxtid" placeholder="搜索图片名称,关键字..." class="searchtxt">
-        <button class="searchbtn"></button>
+        <input type="text" id="searchtxtid" placeholder="搜索图片名称,关键字..." ms-duplex="searchreq" class="searchtxt">
+        <button ms-on-click="search" class="searchbtn"></button>
         <div ms-on-mouseenter="filteron($event)" ms-on-mouseleave="filterout" class="filter">结果筛选<span ms-css-display="filtersjcss" class="sj"></span>
           <div ms-visible="filtertoggle" class="filtercontent">
             <div ms-repeat="imagetype" class="div">
