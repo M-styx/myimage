@@ -57,7 +57,7 @@
       </div>
       <div ms-visible="showfilter" class="filterresult"><span ms-click="removefilterall">清空筛选</span><a ms-repeat="currentfilter"><span>{{el.name}}</span><i ms-click="removefilter(el.name,el.index,el.outer)" class="menudel"></i></a></div>
       <div class="tab"><span ms-click="checkallimg()" ms-class-1="{{checkallclass}}" class="checkall alignRight">全选</span><span ms-click="changetab(false)" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}" class="tabimg thumbnaild"></span><span ms-click="changetab(true)" ms-class="{{tablist?'lista':'listd'}}" class="tabimg lista"></span>
-        <button class="uploadbtn floatRight">上传</button><span class="download floatRight alignRight">打包下载</span><span class="preview floatRight alignRight">图片预览</span>
+        <button class="uploadbtn floatRight">上传</button><span class="download floatRight alignRight">打包下载</span><span ms-class="checked:enlargeenable" ms-click="checkenlarge" class="preview floatRight alignRight">图片预览</span>
       </div>
     </div>
     <div class="panel">
@@ -77,7 +77,15 @@
             <div class="back"><span ms-class-1="{{el.check}}" ms-click="checkimg($index)" class="listcheck"></span><span class="list1"><span ms-visible="tablist">{{el.name}}</span><i class="downloadl floatRight"></i><i ms-click="del($index)" class="deletel floatRight"></i><i ms-click="edit($index)" class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">{{el.name}}</span><span ms-visible="tablist" class="list2">{{el.type}}</span><span ms-visible="tablist" class="list2">{{el.size}}</span><span ms-visible="tablist" class="list2">{{el.space}}</span><span ms-visible="tablist" class="list3">{{el.lastupdate}}</span><span ms-visible="!tablist" class="list3"><img ms-attr-src="el.img" ms-attr-width="el.width" ms-attr-height="el.height" ms-css-margin_Left="{{(170-el.width)/2}}" ms-on-mouseenter="enlarge(1,$index)" ms-on-mouseleave="enlarge(2,$index)"></span>
           </li>
         </ul>
-        <div ms-visible="showenlarge" ms-css-top="enlargetop" ms-css-left="enlargeleft" ms-css-height="enlargeheight" ms-css-width="enlargewidth" ms-css-background_image="enlargesrc" class="enlarge"></div>
+        <div ms-visible="showenlarge &amp;&amp; enlargeenable" ms-css-top="enlargetop" ms-css-left="enlargeleft" ms-css-height="enlargeheight" ms-css-width="enlargewidth" ms-css-background_image="enlargesrc" class="enlarge"></div>
+        <div ms-click="backtop" class="backtop"></div>
+        <div ms-visible="showpagerb" class="pagerbottom">
+          <div ms-visible="showpager" class="pagercontent">
+            <div class="pagerdiv floatRight">
+              <aoyou:pager config="$pageropt" $id="pager01"></aoyou:pager>
+            </div>
+          </div>
+        </div>
       </div>
       <div ms-visible="shownoresult" class="noresult"><img src="../images/search.png" width="48px" height="48px"><span>无结果 {{noresulttxt}}</span><i>检查您的输入是否正确or修改您的搜索</i></div>
     </div>

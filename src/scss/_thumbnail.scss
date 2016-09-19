@@ -89,4 +89,25 @@
     background-size:contain;
     z-index:101;
   }
+
+  .backtop{
+    position: fixed;
+    bottom: 72px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: url('../images/backtop.jpg');
+    background-size:contain;
+    z-index:100;
+    cursor: pointer;
+  }
+
+  .pagerbottom{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    z-index:100;
+    background: white;
+  }
 }

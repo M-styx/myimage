@@ -23,7 +23,10 @@
             span.list3(ms-visible="tablist") {{el.lastupdate}}
             span.list3(ms-visible="!tablist")
                 img(ms-attr-src="el.img" ms-attr-width="el.width" ms-attr-height="el.height" ms-css-margin_Left="{{(170-el.width)/2}}" ms-on-mouseenter="enlarge(1,$index)" ms-on-mouseleave="enlarge(2,$index)")
-    .enlarge(ms-visible="showenlarge" ms-css-top="enlargetop" ms-css-left="enlargeleft" ms-css-height="enlargeheight" ms-css-width="enlargewidth" ms-css-background_image="enlargesrc")
+    .enlarge(ms-visible="showenlarge && enlargeenable" ms-css-top="enlargetop" ms-css-left="enlargeleft" ms-css-height="enlargeheight" ms-css-width="enlargewidth" ms-css-background_image="enlargesrc")
+    .backtop(ms-click="backtop")
+    .pagerbottom(ms-visible = "showpagerb")
+        include pagerb
 .noresult(ms-visible="shownoresult")
     img(src="../images/search.png" width="48px" height="48px")
     span 无结果 {{noresulttxt}}

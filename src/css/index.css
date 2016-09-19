@@ -476,10 +476,13 @@ input, textarea, keygen, select, button {
       height: 20px;
       width: 83px; }
     .header .tab .preview {
-      background: url("../images/checkbox2.png") center left no-repeat;
+      background: url("../images/checkbox1.png") center left no-repeat;
       margin: 15px 0px 15px 20px;
       height: 20px;
-      width: 83px; }
+      width: 83px;
+      cursor: pointer; }
+    .header .tab .checked {
+      background: url("../images/checkbox2.png") center left no-repeat; }
   .header .filterresult {
     height: 36px;
     background: #F5F5F5; }
@@ -530,7 +533,8 @@ input, textarea, keygen, select, button {
     height: 24px;
     line-height: 24px;
     text-align: center;
-    width: 40px; }
+    width: 40px;
+    cursor: pointer; }
     .panel .pagersel ul {
       display: none; }
   .panel .pagersel.on ul {
@@ -691,3 +695,20 @@ input, textarea, keygen, select, button {
     position: absolute;
     background-size: contain;
     z-index: 101; }
+  .thumbnailcontent .backtop {
+    position: fixed;
+    bottom: 72px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: url("../images/backtop.jpg");
+    background-size: contain;
+    z-index: 100;
+    cursor: pointer; }
+  .thumbnailcontent .pagerbottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 100;
+    background: white; }

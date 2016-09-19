@@ -228,10 +228,15 @@
     }
 
     .preview{
-      background: url("../images/checkbox2.png") center left no-repeat;
+      background: url("../images/checkbox1.png") center left no-repeat;
       margin:15px 0px 15px 20px;
       height: 20px;
       width: 83px;
+      cursor: pointer;
+    }
+
+    .checked{
+      background: url("../images/checkbox2.png") center left no-repeat;
     }
 
   }

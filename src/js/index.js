@@ -18,17 +18,22 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
         searchreq:'', //查询条件存储
         noresulttxt:'"哥斯拉怪兽"', //没有查询结果显示文字
         imageeditinfo:[], //图片编辑信息
+        enlargeenable:false,//是否允许图片预览
         showenlarge:false, //是否显示放大图片
         enlargeleft:'', //放大图片的定位
         enlargetop:'', //放大图片的定位
         enlargeheight:'',//放大图片的高度
         enlargewidth:'', //放大图片的宽度
         enlargesrc:'',//放大图片的路径
+        showpagerb:true,//是否显示底部分页
         showdia: function (id) {
             avalon.vmodels[id].toggle = true;
         },
         checkimg:function(idx){
             vm.imagedata[idx]['check'] = (vm.imagedata[idx]['check'] == "unchecked"?"checked":"unchecked");
+        },
+        checkenlarge:function () {
+            vm.enlargeenable = !vm.enlargeenable;
         },
         checkallclass:"unchecked",
         checkallimg:function(){
@@ -221,6 +226,9 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
             }else{
                 vm.showenlarge = false;
             }
+        },
+        backtop:function () {  //回到顶部
+            document.documentElement.scrollTop = document.body.scrollTop =0;
         }
     });
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});
