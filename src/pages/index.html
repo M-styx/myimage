@@ -10,7 +10,7 @@
     <script src="../../avalon.js"></script>
     <script src="../js/index.js"></script>
   </head>
-  <body ms-controller="aoyouimage" ms-class="isshowmask:showmask" class="gray">
+  <body ms-controller="aoyouimage" ms-class="showmask:isshowmask" class="gray">
     <div ms-visible="isshowmask" class="mask"></div>
     <div ms-visible="isshowmask" class="maskcon">
       <aoyou:dialog config="$imgeditopt" $id="imgedit" $slot="content">
@@ -39,6 +39,31 @@
         </div>
       </aoyou:dialog>
     </div>
+    <aoyou:dialog config="$imguploadopt" class="upload" $id="imgupload" $slot="content">
+      <div class="dlgulcontent">
+        <div class="dlgultarget"><span>目标位置</span><i>制定要存储文档的目标地理位置标签</i>
+          <p>../</p><span class="choose">选择</span>
+        </div>
+        <div class="dlgulchoose"><span>上传图片</span><i>浏览要上载的图片,支持多选</i><br>
+          <button class="choosebtn">选择文件</button><b>未选择任何文件</b>
+        </div>
+        <div class="dlguldetail">
+          <ul>
+            <li>米兰大教堂.jpg</li>
+            <li>意大利胶凝冰糕.jpg</li>
+            <li>科莫湖.jpg</li>
+            <li>皇冠假日罗马圣彼得酒店.jpg</li>
+            <li>罗马斗兽场.jpg</li>
+            <li>米兰大教堂.jpg</li>
+            <li>意大利胶凝冰糕.jpg</li>
+            <li>科莫湖.jpg</li>
+            <li>皇冠假日罗马圣彼得酒店.jpg</li>
+            <li>罗马斗兽场.jpg</li>
+          </ul>
+        </div>
+        <div class="dlgulbtn"></div>
+      </div>
+    </aoyou:dialog>
     <div class="header fixed">
       <div class="title">
         <h2>遨游图库</h2><span class="tit1">V2.0</span><span class="tit2">打造正版旅游图库</span>
@@ -57,7 +82,7 @@
       </div>
       <div ms-visible="showfilter" class="filterresult"><span ms-click="removefilterall">清空筛选</span><a ms-repeat="currentfilter"><span>{{el.name}}</span><i ms-click="removefilter(el.name,el.index,el.outer)" class="menudel"></i></a></div>
       <div class="tab"><span ms-click="checkallimg()" ms-class-1="{{checkallclass}}" class="checkall alignRight">全选</span><span ms-click="changetab(false)" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}" class="tabimg thumbnaild"></span><span ms-click="changetab(true)" ms-class="{{tablist?'lista':'listd'}}" class="tabimg lista"></span>
-        <button class="uploadbtn floatRight">上传</button><span class="download floatRight alignRight">打包下载</span><span ms-class="checked:enlargeenable" ms-click="checkenlarge" class="preview floatRight alignRight">图片预览</span>
+        <button ms-click="uploadfile" class="uploadbtn floatRight">上传</button><span class="download floatRight alignRight">打包下载</span><span ms-class="checked:enlargeenable" ms-click="checkenlarge" class="preview floatRight alignRight">图片预览</span>
       </div>
     </div>
     <div class="panel">

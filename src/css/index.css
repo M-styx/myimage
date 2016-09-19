@@ -119,6 +119,18 @@ input, textarea, keygen, select, button {
     .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-close .aoyou-dialog-icon {
       background: url("../images/dlgdel.png") no-repeat; }
 
+.upload .aoyou-dialog .aoyou-dialog-inner {
+  height: 500px; }
+.upload .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer {
+  display: block;
+  background-color: white; }
+  .upload .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer .aoyou-dialog-btns {
+    margin-left: 200px; }
+    .upload .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer .aoyou-dialog-btns .aoyou-button-big {
+      padding: 0;
+      margin-right: 20px;
+      margin-left: 0; }
+
 .dlgtitle {
   font-size: 16px;
   color: #149AF1;
@@ -712,3 +724,69 @@ input, textarea, keygen, select, button {
     height: 50px;
     z-index: 100;
     background: white; }
+
+.dlgulcontent span {
+  font-weight: 400;
+  display: inline-block;
+  margin-right: 10px; }
+.dlgulcontent i {
+  display: inline-block;
+  background: url("../images/info.png") center left no-repeat;
+  background-size: 14px;
+  color: #959DA2;
+  font-size: 12px;
+  padding-left: 20px;
+  font-style: normal;
+  letter-spacing: 0.25px; }
+.dlgulcontent span.choose {
+  cursor: pointer;
+  width: 40px;
+  background: url("../images/filter.png") center right no-repeat; }
+.dlgulcontent .dlgultarget {
+  width: 540px;
+  height: 100px;
+  padding: 10px;
+  background: #F3F4F5;
+  border-radius: 6px; }
+  .dlgulcontent .dlgultarget p {
+    font-size: 12px;
+    color: #999;
+    margin: 20px 0; }
+.dlgulcontent .dlgulchoose {
+  margin-top: 20px;
+  width: 540px;
+  height: 80px;
+  padding: 10px;
+  background: #F3F4F5;
+  border-radius: 6px; }
+  .dlgulcontent .dlgulchoose button.choosebtn {
+    width: 90px;
+    height: 30px;
+    background: #149AF1;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    line-height: 25px;
+    margin-top: 20px;
+    margin-right: 10px;
+    letter-spacing: 0.29px; }
+    .dlgulcontent .dlgulchoose button.choosebtn:hover {
+      background: #00A8FF; }
+  .dlgulcontent .dlgulchoose b {
+    color: #999;
+    font-size: 12px;
+    letter-spacing: 0.25px; }
+.dlgulcontent .dlguldetail {
+  width: 540px;
+  height: 100px;
+  padding: 7px 10px;
+  background: #F3F4F5;
+  border-radius: 6px;
+  margin-top: 20px;
+  overflow: auto; }
+  .dlgulcontent .dlguldetail ul li {
+    font-size: 12px;
+    color: #9B9B9B;
+    letter-spacing: 0.25px;
+    line-height: 18px; }

@@ -55,10 +55,11 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
                 url: url,
                 data: '',
                 headers: {},
+                dataType:"json",
                 success: function(dat, status, xhr) {
-                    var redata = avalon.parseJSON(dat);
-                    if(redata){
-                        vm.imageeditinfo = redata.data;
+                    //var redata = avalon.parseJSON(dat);
+                    if(dat){
+                        vm.imageeditinfo = dat.data;
                     }
                 },
                 error: function(dat) {
@@ -72,10 +73,10 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
                 url: url,
                 data: '',
                 headers: {},
+                dataType:"json",
                 success: function(dat, status, xhr) {
-                    var redata = avalon.parseJSON(dat);
-                    if(redata){
-                        vm.imagetype = redata.data;
+                    if(dat){
+                        vm.imagetype = dat.data;
                     }
                 },
                 error: function(dat) {
@@ -89,11 +90,11 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
                 url: url,
                 data: para,
                 headers: {},
+                dataType:"json",
                 success: function(dat, status, xhr) {
-                    var redata = avalon.parseJSON(dat);
-                    if(redata){
-                        vm.imagedata = redata.data;
-                        avalon.vmodels['pager01'].totalItems = redata.total;
+                    if(dat){
+                        vm.imagedata = dat.data;
+                        avalon.vmodels['pager01'].totalItems = dat.total;
                     }
                 },
                 error: function(dat) {
@@ -118,6 +119,16 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
         $imgeditopt:{
             width:620,
             title:"编辑图片",
+            onClose:function () {
+                vm.isshowmask = false;
+            }
+        },
+        $imguploadopt:{
+            width:'600px',
+            height:'500px',
+            title:"选择图片",
+            confirmText: "确定",
+            cancelText: "取消",
             onClose:function () {
                 vm.isshowmask = false;
             }
@@ -229,6 +240,10 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
         },
         backtop:function () {  //回到顶部
             document.documentElement.scrollTop = document.body.scrollTop =0;
+        },
+        uploadfile:function () {
+            vm.isshowmask = true;
+            vm.showdia('imgupload');
         }
     });
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});

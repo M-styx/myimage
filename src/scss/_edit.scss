@@ -59,7 +59,25 @@
 
 }
 
+.upload{
+  .aoyou-dialog .aoyou-dialog-inner{
+    height: 500px;
+  }
+  .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer{
+    display: block;
+    background-color:white;
 
+    .aoyou-dialog-btns{
+      margin-left: 200px;
+      .aoyou-button-big{
+        padding: 0;
+        margin-right: 20px;
+        margin-left: 0;
+      }
+    }
+
+  }
+}
 
 .dlgtitle{
   font-size: $fontbig;

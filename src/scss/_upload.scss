@@ -1,0 +1,93 @@
+.dlgulcontent{
+
+
+  span{
+    font-weight: 400;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  i{
+    display: inline-block;
+    background: url("../images/info.png") center left no-repeat;
+    background-size:14px;
+    color:$infocolor;
+    font-size: $fontsmall;
+    padding-left:20px;
+    font-style: normal;
+    letter-spacing: 0.25px;
+  }
+
+  span.choose{
+    cursor: pointer;
+    width: 40px;
+    background: url("../images/filter.png") center right no-repeat;
+  }
+
+  .dlgultarget{
+    width: 540px;
+    height: 100px;
+    padding:10px;
+    background: #F3F4F5;
+    border-radius: 6px;
+
+    p{
+      font-size: $fontsmall;
+      color:#999;
+      margin:20px 0;
+    }
+  }
+
+  .dlgulchoose{
+    margin-top: 20px;
+    width: 540px;
+    height: 80px;
+    padding: 10px;
+    background: #F3F4F5;
+    border-radius: 6px;
+
+    button.choosebtn{
+      width: 90px;
+      height: 30px;
+      background: #149AF1;
+      border-radius: 3px;
+      cursor: pointer;
+      color:white;
+      font-size: $fontnormal;
+      line-height: 25px;
+      margin-top: 20px;
+      margin-right: 10px;
+      letter-spacing: 0.29px;
+
+      &:hover{
+        background: #00A8FF;
+      }
+    }
+
+    b{
+      color:#999;
+      font-size: $fontsmall;
+      letter-spacing: 0.25px;
+    }
+  }
+
+
+  .dlguldetail{
+    width: 540px;
+    height: 100px;
+    padding:7px 10px;
+    background: #F3F4F5;
+    border-radius: 6px;
+    margin-top: 20px;
+    overflow: auto;
+    ul{
+
+      li{
+        font-size: $fontsmall;
+        color: #9B9B9B;
+        letter-spacing: 0.25px;
+        line-height: 18px;
+      }
+    }
+  }
+}
