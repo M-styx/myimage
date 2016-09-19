@@ -74,9 +74,10 @@
         </div>
         <ul class="clearfix">
           <li ms-repeat="imagedata">
-            <div class="back"><span ms-class-1="{{el.check}}" ms-click="checkimg($index)" class="listcheck"></span><span class="list1"><span ms-visible="tablist">{{el.name}}</span><i class="downloadl floatRight"></i><i class="deletel floatRight"></i><i ms-click="edit($index)" class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">{{el.name}}</span><span ms-visible="tablist" class="list2">{{el.type}}</span><span ms-visible="tablist" class="list2">{{el.size}}</span><span ms-visible="tablist" class="list2">{{el.space}}</span><span ms-visible="tablist" class="list3">{{el.lastupdate}}</span><span ms-visible="!tablist" class="list3"><img src="../images/img3-4.png" width="120px" height="160px" ms-css-margin_Left="imgMarginLeft"></span>
+            <div class="back"><span ms-class-1="{{el.check}}" ms-click="checkimg($index)" class="listcheck"></span><span class="list1"><span ms-visible="tablist">{{el.name}}</span><i class="downloadl floatRight"></i><i ms-click="del($index)" class="deletel floatRight"></i><i ms-click="edit($index)" class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">{{el.name}}</span><span ms-visible="tablist" class="list2">{{el.type}}</span><span ms-visible="tablist" class="list2">{{el.size}}</span><span ms-visible="tablist" class="list2">{{el.space}}</span><span ms-visible="tablist" class="list3">{{el.lastupdate}}</span><span ms-visible="!tablist" class="list3"><img ms-attr-src="el.img" ms-attr-width="el.width" ms-attr-height="el.height" ms-css-margin_Left="{{(170-el.width)/2}}" ms-on-mouseenter="enlarge(1,$index)" ms-on-mouseleave="enlarge(2,$index)"></span>
           </li>
         </ul>
+        <div ms-visible="showenlarge" ms-css-top="enlargetop" ms-css-left="enlargeleft" ms-css-height="enlargeheight" ms-css-width="enlargewidth" ms-css-background_image="enlargesrc" class="enlarge"></div>
       </div>
       <div ms-visible="shownoresult" class="noresult"><img src="../images/search.png" width="48px" height="48px"><span>无结果 {{noresulttxt}}</span><i>检查您的输入是否正确or修改您的搜索</i></div>
     </div>

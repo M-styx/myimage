@@ -2,6 +2,7 @@ body{
   color:$black;
   font-family: $font_family;
   font-size:$fontnormal;
+  overflow-x: hidden;
 }
 .gray{
   background:$lightgray;

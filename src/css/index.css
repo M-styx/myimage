@@ -14,7 +14,8 @@
   left: 0;
   position: fixed;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 100; }
 
 body {
   width: 100%;
@@ -58,7 +59,8 @@ img {
 body {
   color: #333;
   font-family: "Microsoft yahei", Tahoma, Helvetica, "SimSun", sans-serif;
-  font-size: 14px; }
+  font-size: 14px;
+  overflow-x: hidden; }
 
 .gray {
   background: #F7F8FA; }
@@ -112,7 +114,8 @@ input, textarea, keygen, select, button {
   .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-footer {
     display: none; }
   .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-close {
-    margin-top: 9px; }
+    margin-top: 9px;
+    padding: 1px 24px 1px 9px; }
     .aoyou-dialog .aoyou-dialog-inner .aoyou-dialog-close .aoyou-dialog-icon {
       background: url("../images/dlgdel.png") no-repeat; }
 
@@ -430,11 +433,14 @@ input, textarea, keygen, select, button {
       line-height: 20px;
       margin: 15px 20px;
       height: 20px;
-      width: 60px; }
+      width: 60px;
+      cursor: pointer; }
     .header .tab .checked {
-      background: url("../images/checkbox2.png") center left no-repeat; }
+      background: url("../images/checkbox2.png") center left no-repeat;
+      cursor: pointer; }
     .header .tab .unchecked {
-      background: url("../images/checkbox1.png") center left no-repeat; }
+      background: url("../images/checkbox1.png") center left no-repeat;
+      cursor: pointer; }
     .header .tab .tabimg {
       background: url("../images/thumbnail-a.png") center no-repeat;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -535,7 +541,8 @@ input, textarea, keygen, select, button {
       background: #F2F2F2;
       height: 24px;
       line-height: 24px;
-      width: 39px; }
+      width: 39px;
+      cursor: pointer; }
       .panel .pagersel.on ul li:hover {
         background: #E5E5E5; }
 
@@ -556,10 +563,10 @@ input, textarea, keygen, select, button {
       }*/ }
       .listcontent ul li span.checked {
         background: url("../images/checkbox2.png") center right no-repeat;
-        background-size: 32%; }
+        background-size: 22%; }
       .listcontent ul li span.unchecked {
         background: url("../images/checkbox1.png") center right no-repeat;
-        background-size: 32%; }
+        background-size: 22%; }
       .listcontent ul li:hover {
         background: #F0F8FD; }
         .listcontent ul li:hover i {
@@ -621,7 +628,8 @@ input, textarea, keygen, select, button {
     font-style: normal; }
 
 .thumbnailcontent {
-  width: 100%; }
+  width: 100%;
+  overflow-x: hidden; }
   .thumbnailcontent .tabletit {
     display: none; }
   .thumbnailcontent ul {
@@ -639,7 +647,8 @@ input, textarea, keygen, select, button {
         width: 100%; }
         .thumbnailcontent ul li span.list3 img {
           position: absolute;
-          bottom: 87px; }
+          bottom: 87px;
+          cursor: pointer; }
       .thumbnailcontent ul li span.list2 {
         height: 40px;
         line-height: 20px;
@@ -678,3 +687,7 @@ input, textarea, keygen, select, button {
           background: url("../images/checkbox2.png") center right no-repeat; }
         .thumbnailcontent ul li .back span.unchecked {
           background: url("../images/checkbox1.png") center right no-repeat; }
+  .thumbnailcontent .enlarge {
+    position: absolute;
+    background-size: contain;
+    z-index: 101; }

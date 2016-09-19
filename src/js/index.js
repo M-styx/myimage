@@ -1,24 +1,29 @@
 require(["/component/base/mmRequest","/component/pager/avalon.pager","/component/dialog/avalon.dialog","/component/textbox/avalon.textbox","/component/dropdowncheckbox/avalon.dropdowncheckbox"],function (req) {
     var vm = avalon.define({
         $id:"aoyouimage",
-        filtertoggle:false,
-        filtersjcss:'none',
-        imgMarginLeft:'25px',
-        tablist:true,
-        isshowmask:false,
+        filtertoggle:false,  //筛选框是否出现
+        filtersjcss:'none', //筛选 小三角的css
+        tablist:true, //是否是列表样式
+        isshowmask:false, //是否显示黑色浮层
         changeperPage:function(p){//切换每页显示多少条
           avalon.vmodels['pager01'].perPages = p;
         },
-        imagedata:[],
-        imagetype:[],
-        currentfilter:[],
-        showfilter:false,
-        showpager:true,
-        showlist:true,
-        shownoresult:false,
-        searchreq:'',
-        noresulttxt:'"哥斯拉怪兽"',
-        imageeditinfo:[],
+        imagedata:[],  //图片数据
+        imagetype:[],  //筛选数据
+        currentfilter:[], //当前选中的筛选条件
+        showfilter:false, //是否显示筛选结果
+        showpager:true, //是否显示分页
+        showlist:true,  //是否显示列表项
+        shownoresult:false, //是否显示无结果样式
+        searchreq:'', //查询条件存储
+        noresulttxt:'"哥斯拉怪兽"', //没有查询结果显示文字
+        imageeditinfo:[], //图片编辑信息
+        showenlarge:false, //是否显示放大图片
+        enlargeleft:'', //放大图片的定位
+        enlargetop:'', //放大图片的定位
+        enlargeheight:'',//放大图片的高度
+        enlargewidth:'', //放大图片的宽度
+        enlargesrc:'',//放大图片的路径
         showdia: function (id) {
             avalon.vmodels[id].toggle = true;
         },
@@ -38,11 +43,10 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
                     vm.imagedata[i]['check'] = 'unchecked';
                 }
             }
-
         },
         getImageEditInfo:function(url){
             req.ajax({
-                type: 'POST',
+                type: 'GET',
                 url: url,
                 data: '',
                 headers: {},
@@ -59,7 +63,7 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
         },
         getImgType:function(url){
             req.ajax({
-                type: 'POST',
+                type: 'GET',
                 url: url,
                 data: '',
                 headers: {},
@@ -76,7 +80,7 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
         },
         getImgInfo:function(url,para){
             req.ajax({
-                type: 'POST',
+                type: 'GET',
                 url: url,
                 data: para,
                 headers: {},
@@ -182,10 +186,40 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
             vm.isshowmask = true;
             vm.showdia('imgedit');
         },
+        del:function (idx) {
+            vm.imagedata.removeAt(idx);
+        },
         search:function () {
             if(vm.searchreq=="咯咯咯"){
                 vm.showlist = false;
                 vm.shownoresult = true;
+            }else{
+                vm.showlist = true;
+                vm.shownoresult = false;
+            }
+        },
+        enlarge:function (type,idx) {
+            vm.enlargesrc = "url("+this.currentSrc+")";
+            var left = this.parentElement.offsetLeft + 170 + this.parentElement.parentElement.offsetLeft;
+            var top = this.offsetTop + this.parentElement.parentElement.offsetTop - this.clientHeight * 1.5;
+            vm.enlargeheight = this.clientHeight * 2.5;
+            vm.enlargewidth = this.clientWidth * 2.5;
+            if(left + this.clientWidth * 2.5 >window.innerWidth){
+                left = left-170-this.clientWidth * 2.5
+            }
+            if(top<window.pageYOffset){
+                top = window.pageYOffset
+            }
+
+            vm.enlargeleft = left;
+            vm.enlargetop = top>0?top:0;
+
+            if(type == 1){
+                setTimeout(function () {
+                    vm.showenlarge = true;
+                }, 200);
+            }else{
+                vm.showenlarge = false;
             }
         }
     });

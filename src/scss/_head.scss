@@ -165,14 +165,17 @@
       margin: 15px 20px;
       height: 20px;
       width: 60px;
+      cursor: pointer;
     }
 
     .checked{
       background: url('../images/checkbox2.png') center left no-repeat;
+      cursor: pointer;
     }
 
     .unchecked{
       background: url('../images/checkbox1.png') center left no-repeat;
+      cursor: pointer;
     }
 
     .tabimg{
