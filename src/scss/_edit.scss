@@ -177,7 +177,7 @@
 
     b{
       display: inline-block;
-      width: 94px;
+      width: 95px;
       line-height: 30px;
       font-weight: normal;
     }
@@ -228,9 +228,9 @@
 
   .aoyou-dropdowncheckbox{
     border-radius: 3px;
-    padding: 5px 0;
-    height: 20px;
-    margin-bottom: 6px;
+    //padding: 5px 0;
+    height: 30px;
+    margin-bottom: 5px;
     .aoyou-dropdowncheckbox-fronttitle{
       line-height: 30px;
       width: 90px;
@@ -262,13 +262,14 @@
       .aoyou-dropdowncheckbox-div{
         padding: 4px 0;
         background: white;
-        border: 1px solid #eeeeee;
+        //border: 1px solid #eeeeee;
         line-height:20px;
 
         .aoyou-dropdowncheckbox-div-content {
           text-indent: 8px;
           height: 20px;
           border: 0;
+
           .aoyou-dropdowncheckbox-downbtn,.aoyou-dropdowncheckbox-upbtn{
             background: url("../images/Triangle.png") no-repeat center;
             height: 20px;

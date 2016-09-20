@@ -60,7 +60,7 @@ body {
   color: #333;
   font-family: "Microsoft yahei", Tahoma, Helvetica, "SimSun", sans-serif;
   font-size: 14px;
-  overflow-x: hidden; }
+  padding-bottom: 50px; }
 
 .gray {
   background: #F7F8FA; }
@@ -202,7 +202,7 @@ input, textarea, keygen, select, button {
     height: 30px; }
     .dlgother .copyrighttime b {
       display: inline-block;
-      width: 94px;
+      width: 95px;
       line-height: 30px;
       font-weight: normal; }
     .dlgother .copyrighttime i {
@@ -236,9 +236,8 @@ input, textarea, keygen, select, button {
         border: 0; }
   .dlgother .aoyou-dropdowncheckbox {
     border-radius: 3px;
-    padding: 5px 0;
-    height: 20px;
-    margin-bottom: 6px; }
+    height: 30px;
+    margin-bottom: 5px; }
     .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-fronttitle {
       line-height: 30px;
       width: 90px;
@@ -261,7 +260,6 @@ input, textarea, keygen, select, button {
       .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-dropdownpart .aoyou-dropdowncheckbox-div {
         padding: 4px 0;
         background: white;
-        border: 1px solid #eeeeee;
         line-height: 20px; }
         .dlgother .aoyou-dropdowncheckbox .aoyou-dropdowncheckbox-dropdownpart .aoyou-dropdowncheckbox-div .aoyou-dropdowncheckbox-div-content {
           text-indent: 8px;
@@ -526,7 +524,9 @@ input, textarea, keygen, select, button {
   .panel .pagercontent {
     margin-top: 8px;
     height: 57px;
-    width: 100%; }
+    width: 100%;
+    position: relative;
+    z-index: 1; }
   .panel .pagerdiv {
     margin-left: 10px;
     width: 324px; }
@@ -558,7 +558,9 @@ input, textarea, keygen, select, button {
       height: 24px;
       line-height: 24px;
       width: 39px;
-      cursor: pointer; }
+      cursor: pointer;
+      position: relative;
+      z-index: 3; }
       .panel .pagersel.on ul li:hover {
         background: #E5E5E5; }
 
@@ -579,10 +581,10 @@ input, textarea, keygen, select, button {
       }*/ }
       .listcontent ul li span.checked {
         background: url("../images/checkbox2.png") center right no-repeat;
-        background-size: 22%; }
+        background-size: 14px; }
       .listcontent ul li span.unchecked {
         background: url("../images/checkbox1.png") center right no-repeat;
-        background-size: 22%; }
+        background-size: 14px; }
       .listcontent ul li:hover {
         background: #F0F8FD; }
         .listcontent ul li:hover i {
@@ -640,6 +642,10 @@ input, textarea, keygen, select, button {
         line-height: 50px; }
       .listcontent .pagerbottom .pagercontent .pagersel {
         margin-top: 13px; }
+        .listcontent .pagerbottom .pagercontent .pagersel ul {
+          position: absolute;
+          bottom: 36px;
+          right: 225px; }
 
 .noresult {
   margin-top: 100px;
@@ -749,6 +755,13 @@ input, textarea, keygen, select, button {
         line-height: 50px; }
       .thumbnailcontent .pagerbottom .pagercontent .pagersel {
         margin-top: 13px; }
+        .thumbnailcontent .pagerbottom .pagercontent .pagersel ul {
+          position: absolute;
+          bottom: 36px;
+          right: 225px;
+          width: 40px; }
+          .thumbnailcontent .pagerbottom .pagercontent .pagersel ul li {
+            margin: 0; }
 
 .dlgulcontent span {
   font-weight: 400;

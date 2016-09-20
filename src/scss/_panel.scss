@@ -11,6 +11,8 @@
     margin-top: 8px;
     height: 57px;
     width: 100%;
+    position: relative;
+    z-index:1;
   }
 
   .pagerdiv{
@@ -57,6 +59,8 @@
         line-height: 24px;
         width: 39px;
         cursor: pointer;
+        position: relative;
+        z-index:3;
         &:hover{
           background: #E5E5E5;
         }

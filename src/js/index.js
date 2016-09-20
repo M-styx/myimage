@@ -1,4 +1,4 @@
-require(["/component/base/mmRequest","/component/pager/avalon.pager","/component/dialog/avalon.dialog","/component/textbox/avalon.textbox","/component/dropdowncheckbox/avalon.dropdowncheckbox"],function (req) {
+require(["/component/base/mmRequest","/component/base/normalThings","/component/pager/avalon.pager","/component/dialog/avalon.dialog","/component/textbox/avalon.textbox","/component/dropdowncheckbox/avalon.dropdowncheckbox"],function (req) {
     var vm = avalon.define({
         $id:"aoyouimage",
         filtertoggle:false,  //筛选框是否出现
@@ -25,7 +25,7 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
         enlargeheight:'',//放大图片的高度
         enlargewidth:'', //放大图片的宽度
         enlargesrc:'',//放大图片的路径
-        showpagerb:true,//是否显示底部分页
+        showpagerb:false,//是否显示底部分页
         filterchoosesjcss:false, //是否显示目录三角
         filterchoosetoggle:false, //是否显示目录
         showdia: function (id) {
@@ -136,7 +136,7 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
             }
         },
         $copyrightsrc:{
-            width:286,
+            width:283,
             singleselect:true,
             sourceFlag:{value:"id",text:"name"},
             dataSource:[{name:'壹图',id:1},{name:'视觉中国',id:2},{name:'旅游局',id:3},{name:'供应商',id:4},{name:'个人',id:5}]
@@ -165,6 +165,9 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
         },
         changetab:function (val) {
             vm.tablist = val;
+            if(val){
+                vm.showenlarge = false;
+            }
         },
         checktype:function(idx,outer){
             var newarr = [];
@@ -252,7 +255,9 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
             }
         },
         backtop:function () {  //回到顶部
-            document.documentElement.scrollTop = document.body.scrollTop =0;
+            //document.documentElement.scrollTop = document.body.scrollTop =0;
+            //document.body.scrollTop =0;
+            avalon.startrun(document.body,"scrollTop",0,10,null) ;
         },
         uploadfile:function () {
             vm.isshowmask = true;
@@ -262,6 +267,18 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});
     vm.getImgType('../json/imgtype.json');
     vm.getImageEditInfo('../json/imgeditinfo.json');
+
+    window.onscroll = function(){
+        var t = document.documentElement.scrollTop || document.body.scrollTop;
+        if( t >= 35 ) {
+            vm.showpagerb = true;
+        } else {
+            vm.showpagerb = false;
+        }
+    }
     avalon.scan(document.body,vm);
-})
+});
+
+
+
 

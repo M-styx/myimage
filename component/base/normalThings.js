@@ -124,13 +124,17 @@ define(["avalon"], function(avalon) {
             }else{
                 if(attr=='height' && avalon.isIE()){
                     cur = parseInt(parseFloat(obj.clientHeight));
-                }else{
+                }else if(attr=='scrollTop')
+                {
+                    cur = parseInt(parseFloat(obj.scrollTop))
+                }
+                else{
                     cur = parseInt(avalon.getstyle(obj,attr));
                 }
             }
             var speed = (target-cur)/outspeed;
             speed = speed>0?Math.ceil(speed):Math.floor(speed);
-
+            
             if(cur == target){
                 clearInterval(obj.timer);
                 if(fn){
@@ -140,7 +144,10 @@ define(["avalon"], function(avalon) {
                 if(attr == "opacity"){
                     obj.style.filter = "alpha(opacity="+(cur+speed)+")";
                     obj.style.opacity = (cur+speed)/100;
-                }else{
+                }else if(attr=='scrollTop') {
+                    obj.scrollTop = cur+speed;
+                }else
+                {
                     obj.style[attr] = cur + speed + "px";
                 }
             }

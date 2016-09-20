@@ -1,6 +1,7 @@
 .thumbnailcontent{
   width: 100%;
   overflow-x: hidden;
+
   .tabletit{
     display: none;
   }
@@ -124,6 +125,16 @@
 
       .pagersel{
         margin-top: 13px;
+
+        ul{
+          position: absolute;
+          bottom: 36px;
+          right: 225px;
+          width: 40px;
+          li{
+            margin:0;
+          }
+        }
       }
 
 

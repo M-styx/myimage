@@ -1,5 +1,6 @@
 .listcontent{
   width: 100%;
+
   .tabletit{
     border-bottom: 1px solid #D2D2D2;
     margin:0 20px;
@@ -12,11 +13,11 @@
       font-size: $fontsmall;
       span.checked{
         background: url("../images/checkbox2.png") center right no-repeat;
-        background-size:22%;
+        background-size:14px;
       }
       span.unchecked{
         background: url("../images/checkbox1.png") center right no-repeat;
-        background-size:22%;
+        background-size:14px;
       }
 
       &:hover{
@@ -116,6 +117,12 @@
 
       .pagersel{
         margin-top: 13px;
+
+        ul{
+          position: absolute;
+          bottom: 36px;
+          right: 225px;
+        }
       }
 
 
