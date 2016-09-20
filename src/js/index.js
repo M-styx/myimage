@@ -1,4 +1,13 @@
 require(["/component/base/mmRequest","/component/base/normalThings","/component/pager/avalon.pager","/component/dialog/avalon.dialog","/component/textbox/avalon.textbox","/component/dropdowncheckbox/avalon.dropdowncheckbox"],function (req) {
+    function getTreeArr(_pid) {
+        var arr = [];
+        for(var i=0,j=vm.alltreeinfo.$model.length;i<j;i++){
+            if(vm.alltreeinfo[i].pId == _pid){
+                arr.push(vm.alltreeinfo.$model[i]);
+            }
+        }
+        return arr;
+    }
     var vm = avalon.define({
         $id:"aoyouimage",
         filtertoggle:false,  //筛选框是否出现
@@ -262,12 +271,72 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         uploadfile:function () {
             vm.isshowmask = true;
             vm.showdia('imgupload');
+        },
+        getTreeJson:function(url,bgidx){
+            req.ajax({
+                type: 'GET',
+                url: url,
+                data: '',
+                headers: {},
+                dataType:"json",
+                success: function(dat, status, xhr) {
+                    if(dat){
+                        vm.alltreeinfo = dat;
+                        for(var i=0,j=vm.alltreeinfo.length;i<j;i++){
+                            if(vm.alltreeinfo[i].pId == bgidx){
+                                vm.temparr.push({name:vm.alltreeinfo[i].name,id:vm.alltreeinfo[i].id});
+                                vm.starttreearr.push({name:vm.alltreeinfo[i].name,id:vm.alltreeinfo[i].id});
+                            }
+                        }
+                    }
+                },
+                error: function(dat) {
+                    console.log('没有获取数据');
+                }
+            });
+        },
+        treelistnames:[{id:268,name:"总目录",pid:0}],
+        alltreeinfo:[],
+        temparr:[],
+        starttreearr:[],
+        clicktree:function(idx,name,pid){
+            if(vm.treelistnames.length>0){
+                var lastObj = vm.treelistnames[vm.treelistnames.length-1];
+                if(lastObj.id != idx){
+                    if(lastObj.pid == pid){
+                        vm.treelistnames.removeAt(vm.treelistnames.length-1);
+                        vm.treelistnames.ensure({id:idx,name:name,pid:pid});
+                    }else{
+                        vm.treelistnames.ensure({id:idx,name:name,pid:pid});
+                    }
+                    var resultarr =  getTreeArr(idx);
+                    if(resultarr && resultarr.length>0){
+                        vm.temparr = resultarr;
+                    }
+                }
+            }else{
+                vm.treelistnames.ensure({id:idx,name:name,pid:pid});
+                var resultarr =  getTreeArr(idx);
+                if(resultarr && resultarr.length>0){
+                    vm.temparr = resultarr;
+                }
+            }
+        },
+        changeTree:function(arrayidx){
+            if(vm.treelistnames.length>0 && vm.treelistnames[arrayidx] != undefined){
+                var _idx = vm.treelistnames[arrayidx].id;
+                vm.treelistnames.splice(arrayidx+1,vm.treelistnames.length);
+                var resultarr =  getTreeArr(_idx);
+                if(resultarr && resultarr.length>0){
+                    vm.temparr = resultarr;
+                }
+            }
         }
     });
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});
     vm.getImgType('../json/imgtype.json');
     vm.getImageEditInfo('../json/imgeditinfo.json');
-
+    vm.getTreeJson('../json/testtreejson.json',268);
     window.onscroll = function(){
         var t = document.documentElement.scrollTop || document.body.scrollTop;
         if( t >= 35 ) {
