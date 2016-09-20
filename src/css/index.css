@@ -624,6 +624,22 @@ input, textarea, keygen, select, button {
     width: 8%; }
   .listcontent span.list3 {
     width: 12%; }
+  .listcontent .pagerbottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 100;
+    background: white; }
+    .listcontent .pagerbottom .pagercontent {
+      margin-top: 0;
+      height: 50px;
+      width: 100%;
+      line-height: 50px; }
+      .listcontent .pagerbottom .pagercontent span.pagershow {
+        line-height: 50px; }
+      .listcontent .pagerbottom .pagercontent .pagersel {
+        margin-top: 13px; }
 
 .noresult {
   margin-top: 100px;
@@ -724,6 +740,15 @@ input, textarea, keygen, select, button {
     height: 50px;
     z-index: 100;
     background: white; }
+    .thumbnailcontent .pagerbottom .pagercontent {
+      margin-top: 0;
+      height: 50px;
+      width: 100%;
+      line-height: 50px; }
+      .thumbnailcontent .pagerbottom .pagercontent span.pagershow {
+        line-height: 50px; }
+      .thumbnailcontent .pagerbottom .pagercontent .pagersel {
+        margin-top: 13px; }
 
 .dlgulcontent span {
   font-weight: 400;
@@ -738,10 +763,12 @@ input, textarea, keygen, select, button {
   padding-left: 20px;
   font-style: normal;
   letter-spacing: 0.25px; }
-.dlgulcontent span.choose {
-  cursor: pointer;
-  width: 40px;
-  background: url("../images/filter.png") center right no-repeat; }
+.dlgulcontent .choosefilter {
+  height: 35px; }
+  .dlgulcontent .choosefilter span.choose {
+    cursor: pointer;
+    width: 40px;
+    background: url("../images/filter.png") center right no-repeat; }
 .dlgulcontent .dlgultarget {
   width: 540px;
   height: 100px;
@@ -790,3 +817,74 @@ input, textarea, keygen, select, button {
     color: #9B9B9B;
     letter-spacing: 0.25px;
     line-height: 18px; }
+.dlgulcontent .filtertree {
+  background: white;
+  border: 2px solid #DADADA;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  width: 400px;
+  height: 393px;
+  position: absolute;
+  top: 163px;
+  left: 39px; }
+  .dlgulcontent .filtertree span.sj {
+    display: none;
+    width: 10px;
+    height: 10px;
+    background: url("../images/sjg.png") center no-repeat;
+    position: absolute;
+    top: -10px;
+    left: 22px;
+    z-index: 2; }
+  .dlgulcontent .filtertree p {
+    color: black;
+    font-weight: bold;
+    letter-spacing: 0.29px;
+    line-height: 40px;
+    margin: 0 0 0 20px;
+    font-size: 14px; }
+  .dlgulcontent .filtertree .catalog {
+    width: 100%;
+    height: 40px;
+    background: #F7F8FA; }
+    .dlgulcontent .filtertree .catalog a {
+      display: inline-block;
+      line-height: 12px;
+      font-size: 12px;
+      color: #149AF1;
+      letter-spacing: 0.25px;
+      margin: 14px 5px;
+      height: 12px;
+      text-decoration: none;
+      cursor: pointer; }
+    .dlgulcontent .filtertree .catalog a.first {
+      margin-left: 18px;
+      margin-right: 5px;
+      padding-right: 5px;
+      border-right: 1px solid #D1D1D1; }
+    .dlgulcontent .filtertree .catalog a.current {
+      color: #666; }
+  .dlgulcontent .filtertree .list {
+    width: 100%;
+    height: 303px;
+    overflow: auto; }
+    .dlgulcontent .filtertree .list ul li {
+      height: 17px;
+      margin: 10px 0 10px 18px; }
+      .dlgulcontent .filtertree .list ul li span {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background: url("../images/checkbox1.png") no-repeat;
+        background-size: contain;
+        cursor: pointer; }
+      .dlgulcontent .filtertree .list ul li span.checked {
+        background: url("../images/checkbox2.png") no-repeat;
+        background-size: contain; }
+      .dlgulcontent .filtertree .list ul li i {
+        font-size: 12px;
+        color: #333;
+        font-style: normal;
+        background: url("../images/folder.png") no-repeat center left;
+        background-size: 16px;
+        vertical-align: text-top; }

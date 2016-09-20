@@ -92,6 +92,35 @@
   span.list3{
     width: 12%;
   }
+
+
+  .pagerbottom{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    z-index:100;
+    background: white;
+
+    .pagercontent{
+      margin-top: 0;
+      height: 50px;
+      width: 100%;
+      line-height: 50px;
+
+
+
+      span.pagershow{
+        line-height: 50px;
+      }
+
+      .pagersel{
+        margin-top: 13px;
+      }
+
+
+    }
+  }
 }
 
 .noresult{

@@ -42,7 +42,33 @@
     <aoyou:dialog config="$imguploadopt" class="upload" $id="imgupload" $slot="content">
       <div class="dlgulcontent">
         <div class="dlgultarget"><span>目标位置</span><i>制定要存储文档的目标地理位置标签</i>
-          <p>../</p><span class="choose">选择</span>
+          <p>../</p>
+          <div ms-on-mouseenter="filterchooseon($event)" ms-on-mouseleave="filterchooseout" class="choosefilter"><span class="choose">选择</span>
+            <div ms-visible="filterchoosetoggle" class="filtertree"><span ms-css-display="filterchoosesjcss" class="sj"></span>
+              <p>全部</p>
+              <div class="catalog"><a href="#" class="first">返回上一级</a><a href="#">总目录</a><b>></b><a href="#">欧洲</a><b>></b><a href="#">东欧</a><b>></b><a href="#" class="current">斯洛伐克</a></div>
+              <div class="list">
+                <ul>
+                  <li><span></span><i>俄罗斯</i></li>
+                  <li><span></span><i>匈牙利</i></li>
+                  <li><span class="checked"></span><i>捷克</i></li>
+                  <li><span></span><i>斯洛伐克</i></li>
+                  <li><span></span><i>波兰</i></li>
+                  <li><span></span><i>爱沙尼亚</i></li>
+                  <li><span></span><i>拉脱尾牙</i></li>
+                  <li><span></span><i>立陶宛</i></li>
+                  <li><span></span><i>俄罗斯</i></li>
+                  <li><span></span><i>匈牙利</i></li>
+                  <li><span></span><i>捷克</i></li>
+                  <li><span></span><i>斯洛伐克</i></li>
+                  <li><span></span><i>波兰</i></li>
+                  <li><span></span><i>爱沙尼亚</i></li>
+                  <li><span></span><i>拉脱尾牙</i></li>
+                  <li><span></span><i>立陶宛</i></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="dlgulchoose"><span>上传图片</span><i>浏览要上载的图片,支持多选</i><br>
           <button class="choosebtn">选择文件</button><b>未选择任何文件</b>
@@ -61,7 +87,6 @@
             <li>罗马斗兽场.jpg</li>
           </ul>
         </div>
-        <div class="dlgulbtn"></div>
       </div>
     </aoyou:dialog>
     <div class="header fixed">

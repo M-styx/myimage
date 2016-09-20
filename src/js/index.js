@@ -26,6 +26,8 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
         enlargewidth:'', //放大图片的宽度
         enlargesrc:'',//放大图片的路径
         showpagerb:true,//是否显示底部分页
+        filterchoosesjcss:false, //是否显示目录三角
+        filterchoosetoggle:false, //是否显示目录
         showdia: function (id) {
             avalon.vmodels[id].toggle = true;
         },
@@ -148,6 +150,17 @@ require(["/component/base/mmRequest","/component/pager/avalon.pager","/component
             setTimeout(function () {
                 vm.filtertoggle = false;
                 vm.filtersjcss = 'none';
+            },100);
+        },
+        filterchooseon:function (e) {
+            vm.filterchoosetoggle = true;
+            vm.filterchoosesjcss = "inline-block";
+            e.stopPropagation();
+        },
+        filterchooseout:function () {
+            setTimeout(function () {
+                vm.filterchoosetoggle = false;
+                vm.filterchoosesjcss = 'none';
             },100);
         },
         changetab:function (val) {
