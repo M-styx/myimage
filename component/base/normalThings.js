@@ -126,7 +126,7 @@ define(["avalon"], function(avalon) {
                     cur = parseInt(parseFloat(obj.clientHeight));
                 }else if(attr=='scrollTop')
                 {
-                    cur = parseInt(parseFloat(obj.scrollTop))
+                    cur = parseInt(parseFloat(obj.scrollTop || document.documentElement.scrollTop))
                 }
                 else{
                     cur = parseInt(avalon.getstyle(obj,attr));
@@ -134,7 +134,7 @@ define(["avalon"], function(avalon) {
             }
             var speed = (target-cur)/outspeed;
             speed = speed>0?Math.ceil(speed):Math.floor(speed);
-            
+
             if(cur == target){
                 clearInterval(obj.timer);
                 if(fn){
@@ -146,6 +146,7 @@ define(["avalon"], function(avalon) {
                     obj.style.opacity = (cur+speed)/100;
                 }else if(attr=='scrollTop') {
                     obj.scrollTop = cur+speed;
+                    document.documentElement.scrollTop = cur+speed;
                 }else
                 {
                     obj.style[attr] = cur + speed + "px";

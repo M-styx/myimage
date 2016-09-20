@@ -55,9 +55,11 @@
       background: url("../images/search1.png") no-repeat;
       display: inline-block;
       height: 69px;
-      vertical-align: -27px;
+      vertical-align: middle;
       width: 70px;
       cursor: pointer;
+      position: relative;
+      bottom: 2px;
 
       &:hover{
         background: url("../images/search2.png") no-repeat;

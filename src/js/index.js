@@ -231,7 +231,8 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
             }
         },
         enlarge:function (type,idx) {
-            vm.enlargesrc = "url("+this.currentSrc+")";
+            var src  = this.currentSrc || this.src;
+            vm.enlargesrc = "url("+src+")";
             var left = this.parentElement.offsetLeft + 170 + this.parentElement.parentElement.offsetLeft;
             var top = this.offsetTop + this.parentElement.parentElement.offsetTop - this.clientHeight * 1.5;
             vm.enlargeheight = this.clientHeight * 2.5;
