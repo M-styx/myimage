@@ -4,71 +4,20 @@ aoyou:dialog.upload(config="$imguploadopt")&attributes({'$id':'imgupload','$slot
             span 目标位置
             i 制定要存储文档的目标地理位置标签
             p ../
+                a(ms-repeat="treelistnames",ms-visible="$index>0") {{el.name}}
             .choosefilter(ms-on-mouseenter="filterchooseon($event)" ms-on-mouseleave="filterchooseout")
                 span.choose 选择
                 .filtertree(ms-visible="filterchoosetoggle")
                     span.sj(ms-css-display="filterchoosesjcss")
                     p 全部
                     .catalog
-                        a(href="#").first 返回上一级
-                        a(href="#") 总目录
-                        b >
-                        a(href="#") 欧洲
-                        b >
-                        a(href="#") 东欧
-                        b >
-                        a(href="#").current 斯洛伐克
+                        a(href="#",ms-click="changeTree(treelistnames.length-2)").first 返回上一级
+                        a(ms-repeat="treelistnames",ms-click="changeTree($index)",ms-class="current:$index==treelistnames.length-1",href="#") <b ms-if="$index>0">>&nbsp;</b>  {{el.name}}
                     .list
                         ul
-                            li
+                            li(ms-repeat="temparr",class="checked")
                                 span
-                                i 俄罗斯
-                            li
-                                span
-                                i 匈牙利
-                            li
-                                span.checked
-                                i 捷克
-                            li
-                                span
-                                i 斯洛伐克
-                            li
-                                span
-                                i 波兰
-                            li
-                                span
-                                i 爱沙尼亚
-                            li
-                                span
-                                i 拉脱尾牙
-                            li
-                                span
-                                i 立陶宛
-
-                            li
-                                span
-                                i 俄罗斯
-                            li
-                                span
-                                i 匈牙利
-                            li
-                                span
-                                i 捷克
-                            li
-                                span
-                                i 斯洛伐克
-                            li
-                                span
-                                i 波兰
-                            li
-                                span
-                                i 爱沙尼亚
-                            li
-                                span
-                                i 拉脱尾牙
-                            li
-                                span
-                                i 立陶宛
+                                i(ms-click="clicktree(el.id,el.name,el.pId)") {{el.name}}
         .dlgulchoose
             span 上传图片
             i 浏览要上载的图片,支持多选

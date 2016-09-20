@@ -142,6 +142,8 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
             cancelText: "取消",
             onClose:function () {
                 vm.isshowmask = false;
+                vm.treelistnames = [{id:268,name:"总目录",pid:0}];
+                vm.temparr = vm.starttreearr.$model;
             }
         },
         $copyrightsrc:{
