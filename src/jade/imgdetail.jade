@@ -23,11 +23,11 @@
             i.icon-down-white
             |下载图片
     .basic-infor
-        h3.active
+        h3(ms-class="active:baseinfodetail" ms-click="togglebaseinfo")
             i.floatRight.icon-arrow
             i.icon-lists
             |基本信息
-        div.img-feature
+        div.img-feature(ms-visible="baseinfodetail")
             ul.list
                 li.clearfix
                     label.labelname.floatLeft 图片所属
@@ -49,7 +49,7 @@
                     span 永久使用
 .detail-content
     .detail-top
-        a.btn-default.floatRight
+        a.btn-default.floatRight(ms-click="edit('imgedit')")
             i.icon-edit
             | 编辑
         a.return.floatLeft

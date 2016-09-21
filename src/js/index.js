@@ -39,6 +39,7 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         filterchoosetoggle:false, //是否显示目录
         settimeoutname:'',//设置延时名称
         alreadycheck:0, //已选中多少项
+        baseinfodetail:false,//基本信息页面 是否展开详情
         showdia: function (id) {
             avalon.vmodels[id].toggle = true;
         },
@@ -345,6 +346,9 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
                     vm.temparr = resultarr;
                 }
             }
+        },
+        togglebaseinfo:function () {
+            vm.baseinfodetail = !vm.baseinfodetail;
         }
     });
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});
