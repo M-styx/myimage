@@ -36,6 +36,18 @@
 
   }
 
+  .backtop{
+    position: fixed;
+    bottom: 72px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: url('../images/backtop.jpg');
+    background-size:contain;
+    z-index:100;
+    cursor: pointer;
+  }
+
   .back{
     display: inline-block;
     width: 62.4%;

@@ -37,11 +37,20 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         showpagerb:false,//是否显示底部分页
         filterchoosesjcss:false, //是否显示目录三角
         filterchoosetoggle:false, //是否显示目录
+        settimeoutname:'',//设置延时名称
+        alreadycheck:0, //已选中多少项
         showdia: function (id) {
             avalon.vmodels[id].toggle = true;
         },
         checkimg:function(idx){
-            vm.imagedata[idx]['check'] = (vm.imagedata[idx]['check'] == "unchecked"?"checked":"unchecked");
+            if(vm.imagedata[idx]['check'] == "unchecked"){
+                vm.imagedata[idx]['check'] = "checked";
+                vm.alreadycheck++;
+            }else{
+                vm.imagedata[idx]['check'] = "unchecked";
+                vm.alreadycheck--;
+                vm.alreadycheck = vm.alreadycheck<0?0:vm.alreadycheck;
+            }
         },
         checkenlarge:function () {
             vm.enlargeenable = !vm.enlargeenable;
@@ -53,11 +62,13 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
                 for(var i=0,j=vm.imagedata.length;i<j;i++){
                     vm.imagedata[i]['check'] = 'checked';
                 }
+                vm.alreadycheck = vm.imagedata.length;
             }else{
                 vm.checkallclass = 'unchecked'
                 for(var i=0,j=vm.imagedata.length;i<j;i++){
                     vm.imagedata[i]['check'] = 'unchecked';
                 }
+                vm.alreadycheck = 0;
             }
         },
         getImageEditInfo:function(url){
@@ -242,34 +253,34 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
             }
         },
         enlarge:function (type,idx) {
-            var src  = this.currentSrc || this.src;
-            vm.enlargesrc = "url("+src+")";
-            var left = this.parentElement.offsetLeft + 170 + this.parentElement.parentElement.offsetLeft;
-            var top = this.offsetTop + this.parentElement.parentElement.offsetTop - this.clientHeight * 1.5;
-            vm.enlargeheight = this.clientHeight * 2.5;
-            vm.enlargewidth = this.clientWidth * 2.5;
-            if(left + this.clientWidth * 2.5 >window.innerWidth){
-                left = left-170-this.clientWidth * 2.5
-            }
-            if(top<window.pageYOffset){
-                top = window.pageYOffset
-            }
+            if(type==1){
+                var src  = this.currentSrc || this.src;
+                vm.enlargesrc = "url("+src+")";
+                var left = this.parentElement.offsetLeft + 170 + this.parentElement.parentElement.offsetLeft;
+                var top = this.offsetTop + this.parentElement.parentElement.offsetTop - this.clientHeight * 1.5;
+                vm.enlargeheight = this.clientHeight * 2.5;
+                vm.enlargewidth = this.clientWidth * 2.5;
+                if(left + this.clientWidth * 2.5 >window.innerWidth){
+                    left = left-170-this.clientWidth * 2.5
+                }
+                if(top<window.pageYOffset){
+                    top = window.pageYOffset
+                }
 
-            vm.enlargeleft = left;
-            vm.enlargetop = top>0?top:0;
-
-            if(type == 1){
-                setTimeout(function () {
+                vm.enlargeleft = left;
+                vm.enlargetop = top>0?top:0;
+                vm.settimeoutname = setTimeout(function () {
                     vm.showenlarge = true;
-                }, 200);
+                },1000)
             }else{
+                clearTimeout(vm.settimeoutname);
                 vm.showenlarge = false;
             }
         },
         backtop:function () {  //回到顶部
             //document.documentElement.scrollTop = document.body.scrollTop =0;
             //document.body.scrollTop =0;
-            avalon.startrun(document.body,"scrollTop",0,10,null) ;
+            avalon.startrun(document.body,"scrollTop",0,4,null) ;
         },
         uploadfile:function () {
             vm.isshowmask = true;

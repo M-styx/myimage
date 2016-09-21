@@ -322,7 +322,8 @@ input, textarea, keygen, select, button {
     cursor: default; }
 
 .header {
-  background: white; }
+  background: white;
+  min-width: 1000px; }
   .header .title {
     height: 30px;
     padding: 8px 20px;
@@ -495,11 +496,27 @@ input, textarea, keygen, select, button {
       height: 20px;
       width: 83px;
       cursor: pointer; }
+    .header .tab .delete {
+      background: url("../images/deleteb.png") center left no-repeat;
+      margin: 15px 0px 15px 20px;
+      height: 20px;
+      width: 48px;
+      cursor: pointer; }
+    .header .tab .checknum {
+      margin: 15px 0px 15px 20px;
+      height: 20px;
+      width: 71px;
+      cursor: pointer;
+      color: #999; }
+      .header .tab .checknum b.blue {
+        color: #149AF1;
+        margin: 0 5px; }
     .header .tab .checked {
       background: url("../images/checkbox2.png") center left no-repeat; }
   .header .filterresult {
     height: 36px;
-    background: #F5F5F5; }
+    background: #F5F5F5;
+    overflow: hidden; }
     .header .filterresult > span {
       line-height: 36px;
       margin-left: 20px;
@@ -510,14 +527,16 @@ input, textarea, keygen, select, button {
       border-radius: 3px;
       margin-left: 10px;
       padding: 0 5px;
-      color: white; }
+      color: white;
+      cursor: pointer; }
+      .header .filterresult a:hover {
+        background: #149AF1; }
       .header .filterresult a i {
         margin-left: 8px;
         display: inline-block;
         height: 8px;
         width: 10px;
-        background: url("../images/delicon.png") no-repeat;
-        cursor: pointer; }
+        background: url("../images/delicon.png") no-repeat; }
 
 .panel {
   background: #F7F8FA;
@@ -561,7 +580,7 @@ input, textarea, keygen, select, button {
       background: #F2F2F2;
       height: 24px;
       line-height: 24px;
-      width: 39px;
+      width: 40px;
       cursor: pointer;
       position: relative;
       z-index: 3; }
@@ -593,6 +612,16 @@ input, textarea, keygen, select, button {
         background: #F0F8FD; }
         .listcontent ul li:hover i {
           display: block; }
+  .listcontent .backtop {
+    position: fixed;
+    bottom: 72px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: url("../images/backtop.jpg");
+    background-size: contain;
+    z-index: 100;
+    cursor: pointer; }
   .listcontent .back {
     display: inline-block;
     width: 62.4%; }
@@ -781,7 +810,8 @@ input, textarea, keygen, select, button {
   font-style: normal;
   letter-spacing: 0.25px; }
 .dlgulcontent .choosefilter {
-  height: 35px; }
+  height: 35px;
+  width: 50px; }
   .dlgulcontent .choosefilter span.choose {
     cursor: pointer;
     width: 40px;
@@ -904,4 +934,5 @@ input, textarea, keygen, select, button {
         font-style: normal;
         background: url("../images/folder.png") no-repeat center left;
         background-size: 16px;
-        vertical-align: text-top; }
+        vertical-align: text-top;
+        cursor: pointer; }

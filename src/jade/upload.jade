@@ -4,7 +4,7 @@ aoyou:dialog.upload(config="$imguploadopt")&attributes({'$id':'imgupload','$slot
             span 目标位置
             i 制定要存储文档的目标地理位置标签
             p ../
-                a(ms-repeat="treelistnames",ms-visible="$index>0") {{el.name}}
+                a(ms-repeat="treelistnames",ms-visible="$index>0") {{el.name}}/
             .choosefilter(ms-on-mouseenter="filterchooseon($event)" ms-on-mouseleave="filterchooseout")
                 span.choose 选择
                 .filtertree(ms-visible="filterchoosetoggle")

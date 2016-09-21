@@ -35,4 +35,9 @@ case pages
                 span.tabimg.lista(ms-click="changetab(true)" ms-class="{{tablist?'lista':'listd'}}")
                 button.uploadbtn.floatRight(ms-click="uploadfile") 上传
                 span.download.floatRight.alignRight 打包下载
+                span.delete.floatRight.alignRight 删除
+                span.checknum.floatRight.alignRight(ms-visible="alreadycheck")
+                    b 选中
+                    b.blue {{alreadycheck}}
+                    b 张
                 span.preview.floatRight.alignRight(ms-class="checked:enlargeenable" ms-click="checkenlarge") 图片预览

@@ -42,7 +42,7 @@
     <aoyou:dialog config="$imguploadopt" class="upload" $id="imgupload" $slot="content">
       <div class="dlgulcontent">
         <div class="dlgultarget"><span>目标位置</span><i>制定要存储文档的目标地理位置标签</i>
-          <p>../<a ms-repeat="treelistnames" ms-visible="$index&gt;0">{{el.name}}</a></p>
+          <p>../<a ms-repeat="treelistnames" ms-visible="$index&gt;0">{{el.name}}/</a></p>
           <div ms-on-mouseenter="filterchooseon($event)" ms-on-mouseleave="filterchooseout" class="choosefilter"><span class="choose">选择</span>
             <div ms-visible="filterchoosetoggle" class="filtertree"><span ms-css-display="filterchoosesjcss" class="sj"></span>
               <p>全部</p>
@@ -92,7 +92,7 @@
       </div>
       <div ms-visible="showfilter" class="filterresult"><span ms-click="removefilterall">清空筛选</span><a ms-repeat="currentfilter"><span>{{el.name}}</span><i ms-click="removefilter(el.name,el.index,el.outer)" class="menudel"></i></a></div>
       <div class="tab"><span ms-click="checkallimg()" ms-class-1="{{checkallclass}}" class="checkall alignRight">全选</span><span ms-click="changetab(false)" ms-class="{{tablist?'thumbnaild':'thumbnaila'}}" class="tabimg thumbnaild"></span><span ms-click="changetab(true)" ms-class="{{tablist?'lista':'listd'}}" class="tabimg lista"></span>
-        <button ms-click="uploadfile" class="uploadbtn floatRight">上传</button><span class="download floatRight alignRight">打包下载</span><span ms-class="checked:enlargeenable" ms-click="checkenlarge" class="preview floatRight alignRight">图片预览</span>
+        <button ms-click="uploadfile" class="uploadbtn floatRight">上传</button><span class="download floatRight alignRight">打包下载</span><span class="delete floatRight alignRight">删除</span><span ms-visible="alreadycheck" class="checknum floatRight alignRight"><b>选中</b><b class="blue">{{alreadycheck}}</b><b>张</b></span><span ms-class="checked:enlargeenable" ms-click="checkenlarge" class="preview floatRight alignRight">图片预览</span>
       </div>
     </div>
     <div class="panel">

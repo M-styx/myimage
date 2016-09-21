@@ -1,5 +1,6 @@
 .header{
   background: white;
+  min-width: 1000px;
 
   .title{
     height:30px;
@@ -238,6 +239,26 @@
       cursor: pointer;
     }
 
+    .delete{
+      background: url("../images/deleteb.png") center left no-repeat;
+      margin:15px 0px 15px 20px;
+      height: 20px;
+      width: 48px;
+      cursor: pointer;
+    }
+
+    .checknum {
+      margin: 15px 0px 15px 20px;
+      height: 20px;
+      width: 71px;
+      cursor: pointer;
+      color:#999;
+      b.blue{
+        color:$blue;
+        margin: 0 5px;
+      }
+    }
+
     .checked{
       background: url("../images/checkbox2.png") center left no-repeat;
     }
@@ -248,6 +269,7 @@
   .filterresult{
     height: 36px;
     background: #F5F5F5;
+    overflow: hidden;
 
     >span{
       line-height: 36px;
@@ -262,7 +284,10 @@
       margin-left: 10px;
       padding:0 5px;
       color:white;
-
+      cursor: pointer;
+      &:hover{
+        background:#149AF1;
+      }
 
       i{
         margin-left: 8px;
@@ -270,7 +295,6 @@
         height: 8px;
         width: 10px;
         background: url("../images/delicon.png") no-repeat;
-        cursor: pointer;
       }
     }
   }
