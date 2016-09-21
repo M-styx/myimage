@@ -1,11 +1,8 @@
 .detail-content{
-  float: left;
-  width: 70%;
   background-color: #fff;
-  .content{
-    padding: 10px 20px;
-    border-right: 1px solid #EEEFF2;
-  }
+  margin-right: 361px;
+  padding: 10px 20px;
+  border-right: 1px solid #EEEFF2;
   .content-foot{
     background: $lightgray;
     padding: 10px 20px;
@@ -27,8 +24,8 @@
   }
 }
 .detail-infor{
-  float: left;
-  width: 30%;
+  width: 360px;
+  float: right;
   background-color: #fff;
   .labelname{
     display:inline-block;
@@ -41,6 +38,7 @@
 }
 .detail-top{
   margin-bottom: 20px;
+  overflow: hidden;
 }
 .img-box{
   img{
@@ -80,6 +78,7 @@ h3.active{
 }
 .img-feature{
   padding: 0 20px;
+  margin-bottom: 20px;
   .list{
     padding: 20px 0;
     li{
@@ -196,4 +195,7 @@ h3.active{
   display: block;
   height:40px;
   line-height: 40px;
+}
+.w220{
+  width: 220px;
 }
