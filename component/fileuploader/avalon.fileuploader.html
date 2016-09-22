@@ -1,4 +1,4 @@
-<div class="aoyou-fileuploader" ms-on-drop="onDrop" ms-on-dragover="onDragOver">
+<div ms-visible="fileuploadershow" class="aoyou-fileuploader" ms-on-drop="onDrop" ms-on-dragover="onDragOver">
     <div class="aoyou-fileuploader-preview-stage" ms-if="showPreview">
         <div class="aoyou-fileuploader-preview-image-wrapper" ms-repeat="previews" ms-css-width="previewWidth" ms-css-height="previewHeight">
             <div class="aoyou-fileuploader-preview-menu">
@@ -12,7 +12,7 @@
     </div>
     <button type="button" class="aoyou-fileuploader-uploader-button-add aoyou-fileuploader-uploader-button" ms-click="addFileClicked"> {{addButtonText}}
         <input type="file" ms-if="useHtml5Runtime" ms-attr-accept="getInputAcceptTypes(false)" ms-attr-multiple="multipleFileAllowed" style="display:none" /> </button>
-    <button type="button" class="aoyou-fileuploader-uploader-button-upload aoyou-fileuploader-uploader-button" ms-click="uploadClicked"> {{uploadButtonText}} </button>
+    <button ms-if="uploadallbuttonshow" type="button" class="aoyou-fileuploader-uploader-button-upload aoyou-fileuploader-uploader-button" ms-click="uploadClicked"> {{uploadButtonText}} </button>
     <div class="aoyou-fileuploader-flash-wrapper" ms-if="useFlashRuntime">
         <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="100%" align="middle" height="100%" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" id="##VM_ID##_flash">
             <param name="allowScriptAccess" value="sameDomain" />

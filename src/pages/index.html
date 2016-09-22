@@ -49,27 +49,18 @@
               <div class="catalog"><a href="#" ms-click="changeTree(treelistnames.length-2)" class="first">返回上一级</a><a ms-repeat="treelistnames" ms-click="changeTree($index)" ms-class="current:$index==treelistnames.length-1" href="#"><b ms-if="$index>0">>&nbsp;</b>  {{el.name}}</a></div>
               <div class="list">
                 <ul>
-                  <li ms-repeat="temparr"><span class="checked"></span><i ms-click="clicktree(el.id,el.name,el.pId)">{{el.name}}</i></li>
+                  <li ms-repeat="temparr"><span ms-class="checked:el.checked"></span><i ms-click="clicktree(el.id,el.name,el.pId,$index)">{{el.name}}</i></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <div class="dlgulchoose"><span>上传图片</span><i>浏览要上载的图片,支持多选</i><br>
-          <button class="choosebtn">选择文件</button><b>未选择任何文件</b>
+          <aoyou:fileuploader config="$fileuploaderconfig" $id="uploader1"></aoyou:fileuploader><b>{{uploadingfiles.length>0?'选中'+uploadingfiles.length+'张':'未选择任何文件'}}</b>
         </div>
         <div class="dlguldetail">
           <ul>
-            <li>米兰大教堂.jpg</li>
-            <li>意大利胶凝冰糕.jpg</li>
-            <li>科莫湖.jpg</li>
-            <li>皇冠假日罗马圣彼得酒店.jpg</li>
-            <li>罗马斗兽场.jpg</li>
-            <li>米兰大教堂.jpg</li>
-            <li>意大利胶凝冰糕.jpg</li>
-            <li>科莫湖.jpg</li>
-            <li>皇冠假日罗马圣彼得酒店.jpg</li>
-            <li>罗马斗兽场.jpg</li>
+            <li ms-repeat="uploadingfiles">{{el.name}}</li>
           </ul>
         </div>
       </div>

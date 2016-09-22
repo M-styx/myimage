@@ -1,9 +1,11 @@
-require(["/component/base/mmRequest","/component/base/normalThings","/component/pager/avalon.pager","/component/dialog/avalon.dialog","/component/textbox/avalon.textbox","/component/dropdowncheckbox/avalon.dropdowncheckbox"],function (req) {
+require(["/component/base/mmRequest","/component/base/normalThings","/component/pager/avalon.pager","/component/dialog/avalon.dialog","/component/textbox/avalon.textbox","/component/dropdowncheckbox/avalon.dropdowncheckbox","/component/fileuploader/avalon.fileuploader"],function (req) {
     function getTreeArr(_pid) {
         var arr = [];
         for(var i=0,j=vm.alltreeinfo.$model.length;i<j;i++){
             if(vm.alltreeinfo[i].pId == _pid){
-                arr.push(vm.alltreeinfo.$model[i]);
+                var _obj = vm.alltreeinfo.$model[i];
+                _obj.checked=false
+                arr.push(_obj);
             }
         }
         return arr;
@@ -162,6 +164,7 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
                 vm.isshowmask = false;
                 vm.treelistnames = [{id:268,name:"总目录",pid:0}];
                 vm.temparr = vm.starttreearr.$model;
+                vm.uploadingfiles = [];
             }
         },
         $copyrightsrc:{
@@ -318,7 +321,7 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
                         vm.alltreeinfo = dat;
                         for(var i=0,j=vm.alltreeinfo.length;i<j;i++){
                             if(vm.alltreeinfo[i].pId == bgidx){
-                                vm.temparr.push({name:vm.alltreeinfo[i].name,id:vm.alltreeinfo[i].id});
+                                vm.temparr.push({name:vm.alltreeinfo[i].name,id:vm.alltreeinfo[i].id,checked:false});
                                 vm.starttreearr.push({name:vm.alltreeinfo[i].name,id:vm.alltreeinfo[i].id});
                             }
                         }
@@ -333,9 +336,16 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         alltreeinfo:[],
         temparr:[],
         starttreearr:[],
-        clicktree:function(idx,name,pid){
+        clicktree:function(idx,name,pid,arridx){
             if(vm.treelistnames.length>0){
                 var lastObj = vm.treelistnames[vm.treelistnames.length-1];
+                for(var p=0,q=vm.temparr.length;p<q;p++){
+                    if(vm.temparr[p].checked == true){
+                        vm.temparr[p].checked = false;
+                        break;
+                    }
+                }
+                vm.temparr[arridx].checked = true;
                 if(lastObj.id != idx){
                     if(lastObj.pid == pid){
                         vm.treelistnames.removeAt(vm.treelistnames.length-1);
@@ -389,6 +399,35 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         },
         downloadmany:function () {
             alert("打包下载")
+        },
+        uploadingfiles:[],
+        $fileuploaderconfig:{
+            uploadallbuttonshow:false,
+            addButtonText:'选择文件',
+            acceptFileTypes: "image.*,*.txt,*.js",
+//                        serverConfig: {
+//                            url: "../../Handler1.ashx",
+//                            userName: undefined,
+//                            password: undefined,
+//                            keyGenUrl: "../../getFileKey.ashx"
+//                        },
+            onFileOverSize: function (fileObj) {
+                alert(fileObj.name+"超出了文件尺寸限制")
+            },
+            onFilePoolOverSize: function (fileObj, poolSize) {
+                alert("文件缓存池达已满，不能继续添加文件。")
+            },
+            onSameFileAdded: function () {
+                alert("不能添加相同的文件");
+            },
+            showPreview:false,
+            enableRemoteKeyGen: false,
+            chunked: true,
+            chunkSize: 1024*1024,
+            getFileMessageText:function(fileObj){
+                vm.uploadingfiles.push({name:fileObj.name});
+                console.log(fileObj);
+            }
         }
     });
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});

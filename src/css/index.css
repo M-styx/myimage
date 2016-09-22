@@ -849,24 +849,34 @@ input, textarea, keygen, select, button {
   padding: 10px;
   background: #F3F4F5;
   border-radius: 6px; }
-  .dlgulcontent .dlgulchoose button.choosebtn {
-    width: 90px;
-    height: 30px;
-    background: #149AF1;
-    border-radius: 3px;
-    cursor: pointer;
-    color: white;
-    font-size: 14px;
-    line-height: 25px;
-    margin-top: 20px;
-    margin-right: 10px;
-    letter-spacing: 0.29px; }
-    .dlgulcontent .dlgulchoose button.choosebtn:hover {
-      background: #00A8FF; }
   .dlgulcontent .dlgulchoose b {
     color: #999;
     font-size: 12px;
     letter-spacing: 0.25px; }
+  .dlgulcontent .dlgulchoose .aoyou-fileuploader {
+    width: 105px;
+    display: inline-block;
+    position: relative;
+    border: none;
+    text-align: left;
+    background-color: inherit;
+    padding: 0px;
+    border-radius: inherit; }
+    .dlgulcontent .dlgulchoose .aoyou-fileuploader .aoyou-fileuploader-uploader-button-add {
+      box-shadow: none;
+      width: 90px;
+      height: 30px;
+      background: #149AF1;
+      border-radius: 3px;
+      cursor: pointer;
+      color: white;
+      font-size: 14px;
+      line-height: 25px;
+      margin-top: 20px;
+      margin-right: 10px;
+      letter-spacing: 0.29px; }
+      .dlgulcontent .dlgulchoose .aoyou-fileuploader .aoyou-fileuploader-uploader-button-add:hover {
+        background: #00A8FF; }
 .dlgulcontent .dlguldetail {
   width: 540px;
   height: 100px;

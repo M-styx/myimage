@@ -10,7 +10,8 @@ define(['avalon','text!./avalon.fileuploader.html', "../base/avalon.browser", ".
         version = avalon.browser.version;
     avalon.component("aoyou:fileuploader", {
         //外部标签属性
-
+    fileuploadershow:true,//是否显示组件
+    uploadallbuttonshow:true,//是否显示全部上传按钮
     maxFileSize: 1024*1024*10, //@config {Number} 单个文件的大小限制
     filePoolSize: 1024*1024*200,    //@config {Number} 未上传文件的总大小限制。
     chunkSize: 1024 * 1024, //@config {Number} 分块上传时的分块大小。

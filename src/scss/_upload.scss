@@ -50,28 +50,39 @@
     background: #F3F4F5;
     border-radius: 6px;
 
-    button.choosebtn{
-      width: 90px;
-      height: 30px;
-      background: #149AF1;
-      border-radius: 3px;
-      cursor: pointer;
-      color:white;
-      font-size: $fontnormal;
-      line-height: 25px;
-      margin-top: 20px;
-      margin-right: 10px;
-      letter-spacing: 0.29px;
-
-      &:hover{
-        background: #00A8FF;
-      }
-    }
-
     b{
       color:#999;
       font-size: $fontsmall;
       letter-spacing: 0.25px;
+    }
+
+    .aoyou-fileuploader{
+      width: 105px;
+      display: inline-block;
+      position: relative;
+      border: none;
+      text-align: left;
+      background-color: inherit;
+      padding: 0px;
+      border-radius: inherit;
+      .aoyou-fileuploader-uploader-button-add{
+        box-shadow:none;
+        width: 90px;
+        height: 30px;
+        background: #149AF1;
+        border-radius: 3px;
+        cursor: pointer;
+        color:white;
+        font-size: $fontnormal;
+        line-height: 25px;
+        margin-top: 20px;
+        margin-right: 10px;
+        letter-spacing: 0.29px;
+
+        &:hover{
+          background: #00A8FF;
+        }
+      }
     }
   }
 

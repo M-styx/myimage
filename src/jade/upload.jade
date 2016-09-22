@@ -16,26 +16,17 @@ aoyou:dialog.upload(config="$imguploadopt")&attributes({'$id':'imgupload','$slot
                     .list
                         ul
                             li(ms-repeat="temparr")
-                                span.checked
-                                i(ms-click="clicktree(el.id,el.name,el.pId)") {{el.name}}
+                                span(ms-class="checked:el.checked")
+                                i(ms-click="clicktree(el.id,el.name,el.pId,$index)") {{el.name}}
         .dlgulchoose
             span 上传图片
             i 浏览要上载的图片,支持多选
             br
-            button.choosebtn 选择文件
-            b 未选择任何文件
+            aoyou:fileuploader(config="$fileuploaderconfig")&attributes({'$id': 'uploader1'})
+            b {{uploadingfiles.length>0?'选中'+uploadingfiles.length+'张':'未选择任何文件'}}
         .dlguldetail
             ul
-                li 米兰大教堂.jpg
-                li 意大利胶凝冰糕.jpg
-                li 科莫湖.jpg
-                li 皇冠假日罗马圣彼得酒店.jpg
-                li 罗马斗兽场.jpg
-                li 米兰大教堂.jpg
-                li 意大利胶凝冰糕.jpg
-                li 科莫湖.jpg
-                li 皇冠假日罗马圣彼得酒店.jpg
-                li 罗马斗兽场.jpg
+                li(ms-repeat="uploadingfiles") {{el.name}}
 
 
 
