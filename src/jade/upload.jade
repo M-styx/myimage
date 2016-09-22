@@ -15,8 +15,8 @@ aoyou:dialog.upload(config="$imguploadopt")&attributes({'$id':'imgupload','$slot
                         a(ms-repeat="treelistnames",ms-click="changeTree($index)",ms-class="current:$index==treelistnames.length-1",href="#") <b ms-if="$index>0">>&nbsp;</b>  {{el.name}}
                     .list
                         ul
-                            li(ms-repeat="temparr",class="checked")
-                                span
+                            li(ms-repeat="temparr")
+                                span.checked
                                 i(ms-click="clicktree(el.id,el.name,el.pId)") {{el.name}}
         .dlgulchoose
             span 上传图片

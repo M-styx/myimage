@@ -63,22 +63,30 @@
         }
 
         i.downloadl{
-          background: url('../images/download-black.png') center no-repeat;
+          background: url('../images/icons1.png') -22px -42px no-repeat;
         }
 
         i.deletel{
-          background: url('../images/delete-black.png') center no-repeat;
+          background: url('../images/icons1.png') -75px -2px no-repeat;
         }
 
         i.editl{
-          background: url('../images/edit-black.png') center no-repeat;
+          background: url('../images/icons1.png') -22px -23px no-repeat;
         }
 
-        span.checked{
-          background: url("../images/checkbox2.png") center right no-repeat;
+        i.checkbox{
+          display: inline-block;
+          width:20px;
+          height: 20px;
+          margin:0;
         }
-        span.unchecked{
-          background: url("../images/checkbox1.png") center right no-repeat;
+
+        i.checked{
+          background: url("../images/icons1.png") no-repeat -145px -165px;
+
+        }
+        i.unchecked{
+          background: url("../images/icons1.png") no-repeat -145px -194px;
         }
 
       }
@@ -97,8 +105,7 @@
     right: 20px;
     width: 30px;
     height: 30px;
-    background: url('../images/backtop.jpg');
-    background-size:contain;
+    background: url('../images/icons1.png') no-repeat 0 -110px;
     z-index:100;
     cursor: pointer;
   }

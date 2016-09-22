@@ -354,6 +354,10 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         },
         togglebaseinfo:function () {
             vm.baseinfodetail = !vm.baseinfodetail;
+        },
+        download:function (url) {
+            
+
         }
     });
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});

@@ -29,7 +29,7 @@
           <p>名称</p>
           <aoyou:textbox width="360px" value="imageeditinfo[0].name"></aoyou:textbox>
           <p class="keywords">关键词</p>
-          <aoyou:textbox width="360px" type="textarea" height="50px" value="imageeditinfo[0].keywords" class="textarea"></aoyou:textbox><span>例如：景色、大海、山脉、自然</span>
+          <aoyou:textbox width="360px" type="textarea" height="50px" value="imageeditinfo[0].keywords" class="textarea"></aoyou:textbox><span class="exinfo">例如：景色、大海、山脉、自然</span>
           <aoyou:dropdowncheckbox config="$copyrightsrc" fronttitle="版权来源:" value="imageeditinfo[0].copyrightsrc"></aoyou:dropdowncheckbox>
           <div class="copyrighttime"><b>版权有效期:</b><i>永久使用</i></div>
           <aoyou:textbox fronttitle="摄影师:" width="265px" value="imageeditinfo[0].camerist"></aoyou:textbox>
@@ -49,7 +49,7 @@
               <div class="catalog"><a href="#" ms-click="changeTree(treelistnames.length-2)" class="first">返回上一级</a><a ms-repeat="treelistnames" ms-click="changeTree($index)" ms-class="current:$index==treelistnames.length-1" href="#"><b ms-if="$index>0">>&nbsp;</b>  {{el.name}}</a></div>
               <div class="list">
                 <ul>
-                  <li ms-repeat="temparr" class="checked"><span></span><i ms-click="clicktree(el.id,el.name,el.pId)">{{el.name}}</i></li>
+                  <li ms-repeat="temparr"><span class="checked"></span><i ms-click="clicktree(el.id,el.name,el.pId)">{{el.name}}</i></li>
                 </ul>
               </div>
             </div>
@@ -109,7 +109,7 @@
         </div>
         <ul class="clearfix">
           <li ms-repeat="imagedata">
-            <div class="back"><span ms-class-1="{{el.check}}" ms-click="checkimg($index)" class="listcheck"></span><span class="list1"><span ms-visible="tablist">{{el.name}}</span><i class="downloadl floatRight"></i><i ms-click="del($index)" class="deletel floatRight"></i><i ms-click="edit($index)" class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">{{el.name}}</span><span ms-visible="tablist" class="list2">{{el.type}}</span><span ms-visible="tablist" class="list2">{{el.size}}</span><span ms-visible="tablist" class="list2">{{el.space}}</span><span ms-visible="tablist" class="list3">{{el.lastupdate}}</span><span ms-visible="!tablist" class="list3"><img ms-attr-src="el.img" ms-attr-width="el.width" ms-attr-height="el.height" ms-css-margin_Left="{{(170-el.width)/2}}" ms-on-mouseenter="enlarge(1,$index)" ms-on-mouseleave="enlarge(2,$index)"></span>
+            <div class="back"><span ms-click="checkimg($index)" class="listcheck"><i ms-class-1="{{el.check}}" class="checkbox"></i></span><span class="list1"><span ms-visible="tablist">{{el.name}}</span><i ms-click="download('http://localhost:3342/aoyouImage/src/images/img.png')" class="downloadl floatRight"></i><i ms-click="del($index)" class="deletel floatRight"></i><i ms-click="edit($index)" class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">{{el.name}}</span><span ms-visible="tablist" class="list2">{{el.type}}</span><span ms-visible="tablist" class="list2">{{el.size}}</span><span ms-visible="tablist" class="list2">{{el.space}}</span><span ms-visible="tablist" class="list3">{{el.lastupdate}}</span><span ms-visible="!tablist" class="list3"><img ms-attr-src="el.img" ms-attr-width="el.width" ms-attr-height="el.height" ms-css-margin_Left="{{(170-el.width)/2}}" ms-on-mouseenter="enlarge(1,$index)" ms-on-mouseleave="enlarge(2,$index)"></span>
           </li>
         </ul>
         <div ms-visible="showenlarge &amp;&amp; enlargeenable" ms-css-top="enlargetop" ms-css-left="enlargeleft" ms-css-height="enlargeheight" ms-css-width="enlargewidth" ms-css-background_image="enlargesrc" class="enlarge"></div>
@@ -117,7 +117,7 @@
         <div ms-visible="showpagerb" class="pagerbottom">
           <div ms-visible="showpager" class="pagercontent">
             <div class="pagerdiv floatRight">
-              <aoyou:pager config="$pageropt" $id="pager01"></aoyou:pager>
+              <aoyou:pager config="$pageropt" $id="pager02"></aoyou:pager>
             </div>
           </div>
         </div>
@@ -126,5 +126,6 @@
         <div class="searchicon"></div><span>无结果 {{noresulttxt}}</span><i>检查您的输入是否正确or修改您的搜索</i>
       </div>
     </div>
+
   </body>
 </html>

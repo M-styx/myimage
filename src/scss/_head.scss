@@ -53,7 +53,7 @@
     }
 
     .searchbtn{
-      background: url("../images/search1.png") no-repeat;
+      background: url("../images/icons1.png") -65px -247px no-repeat;
       display: inline-block;
       height: 69px;
       vertical-align: middle;
@@ -63,12 +63,12 @@
       bottom: 2px;
 
       &:hover{
-        background: url("../images/search2.png") no-repeat;
+        background: url("../images/icons1.png") -65px -172px no-repeat;
       }
     }
 
     .filter{
-      background: url("../images/filter.png") center right no-repeat;
+      background: url("../images/icons1.png") -101px -103px no-repeat;
       display: inline-block;
       font-size: $fontnormal;
       line-height: 29px;
@@ -84,7 +84,7 @@
         display: none;
         width: 10px;
         height: 10px;
-        background: url("../images/sj.png") center no-repeat;
+        background: url("../images/icons1.png") -97px -25px no-repeat;
         position: absolute;
         top: 22px;
         right: 5px;
@@ -129,8 +129,8 @@
               width: 95px;
 
               em{
-                background: url("../images/checkbox1.png") no-repeat center left;
-                background-size: 75%;
+                background: url("../images/icons1.png") no-repeat -145px -216px;
+                //background-size: 75%;
                 width: 20px;
                 height: 25px;
                 display: inline-block;
@@ -138,12 +138,12 @@
                 cursor: pointer;
               }
               em.checked{
-                background: url("../images/checkbox2.png") no-repeat center left;
-                background-size: 75%;
+                background: url("../images/icons1.png") no-repeat -145px -237px;
+                //background-size: 75%;
               }
               em.unchecked{
-                background: url("../images/checkbox1.png") no-repeat center left;
-                background-size: 75%;
+                background: url("../images/icons1.png") no-repeat -145px -216px;
+                //background-size: 75%;
               }
 
             }
@@ -163,7 +163,7 @@
     height: 50px;
 
     .checkall{
-      background: url('../images/checkbox1.png') center left no-repeat;
+      background: url('../images/icons1.png') -145px -194px;
       display: inline-block;
       line-height: 20px;
       margin: 15px 20px;
@@ -173,17 +173,17 @@
     }
 
     .checked{
-      background: url('../images/checkbox2.png') center left no-repeat;
+      background: url('../images/icons1.png') -145px -165px no-repeat;
       cursor: pointer;
     }
 
     .unchecked{
-      background: url('../images/checkbox1.png') center left no-repeat;
+      background: url('../images/icons1.png') -145px -194px;
       cursor: pointer;
     }
 
     .tabimg{
-      background: url('../images/thumbnail-a.png') center no-repeat;
+      background: url('../images/icons1.png') -66px -119px no-repeat;
       border-right: 1px solid rgba(0,0,0,0.10);
       display: inline-block;
       height: 49px;
@@ -193,21 +193,21 @@
     }
 
     .thumbnaila{
-      background: url('../images/thumbnail-a.png') center no-repeat;
+      background: url('../images/icons1.png') -65px -119px no-repeat;
       border-left: 1px solid rgba(0,0,0,0.10);
     }
 
     .thumbnaild{
-      background: url('../images/thumbnail-d.png') center no-repeat;
+      background: url('../images/icons1.png') -65px -64px no-repeat;
       border-left: 1px solid rgba(0,0,0,0.10);
     }
 
     .listd{
-      background: url('../images/list-d.png') center no-repeat;
+      background: url('../images/icons1.png') -1px -205px no-repeat;
     }
 
     .lista{
-      background: url('../images/list-a.png') center no-repeat;
+      background: url('../images/icons1.png') -1px -145px no-repeat;
     }
 
     .uploadbtn{
@@ -225,14 +225,14 @@
     }
 
     .download{
-      background: url("../images/download.png") center left no-repeat;
+      background: url("../images/icons1.png") -146px -261px no-repeat;
       margin:15px 0px 15px 20px;
       height: 20px;
       width: 83px;
     }
 
     .preview{
-      background: url("../images/checkbox1.png") center left no-repeat;
+      background: url('../images/icons1.png') -145px -194px;
       margin:15px 0px 15px 20px;
       height: 20px;
       width: 83px;
@@ -240,10 +240,10 @@
     }
 
     .delete{
-      background: url("../images/deleteb.png") center left no-repeat;
+      background: url("../images/icons1.png") -118px 1px no-repeat;
       margin:15px 0px 15px 20px;
       height: 20px;
-      width: 48px;
+      width: 50px;
       cursor: pointer;
     }
 
@@ -260,7 +260,7 @@
     }
 
     .checked{
-      background: url("../images/checkbox2.png") center left no-repeat;
+      background: url('../images/icons1.png') -145px -165px no-repeat;
     }
 
   }
@@ -294,7 +294,7 @@
         display: inline-block;
         height: 8px;
         width: 10px;
-        background: url("../images/delicon.png") no-repeat;
+        background: url("../images/icons1.png") -20px -4px no-repeat;
       }
     }
   }

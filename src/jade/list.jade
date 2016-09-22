@@ -10,10 +10,11 @@
     ul.clearfix
         li(ms-repeat='imagedata')
             .back
-                span(ms-class-1='{{el.check}}' ms-click='checkimg($index)').listcheck
+                span(ms-click='checkimg($index)').listcheck
+                    i.checkbox(ms-class-1='{{el.check}}' )
                 span.list1
                     span(ms-visible="tablist") {{el.name}}
-                    i.downloadl.floatRight
+                    i.downloadl.floatRight(ms-click="download('http://localhost:3342/aoyouImage/src/images/img.png')")
                     i.deletel.floatRight(ms-click="del($index)")
                     i.editl.floatRight(ms-click="edit($index)")
             span.list2(ms-visible="!tablist") {{el.name}}
