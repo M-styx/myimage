@@ -31,11 +31,11 @@
           <p class="keywords">关键词</p>
           <aoyou:textbox width="360px" type="textarea" height="50px" value="imageeditinfo[0].keywords" class="textarea"></aoyou:textbox><span class="exinfo">例如：景色、大海、山脉、自然</span>
           <aoyou:dropdowncheckbox config="$copyrightsrc" fronttitle="版权来源:" value="imageeditinfo[0].copyrightsrc"></aoyou:dropdowncheckbox>
-          <div class="copyrighttime"><b>版权有效期:</b><i>永久使用</i></div>
+          <div class="copyrighttime"><b>版权有效期:</b><i ms-class="checked:imageeditinfo[0].copyrighttime" ms-click="copyrightforever">永久使用</i></div>
           <aoyou:textbox fronttitle="摄影师:" width="265px" value="imageeditinfo[0].camerist"></aoyou:textbox>
         </div>
         <div class="dlgbtn">
-          <button class="savebtn">保 存</button><span>保存并关闭</span><span class="uploader">上传者：白雪</span>
+          <button class="savebtn">保 存</button><span ms-click="saveclosefun" ms-class="checked:saveclose">保存并关闭</span><span class="uploader">上传者：白雪</span>
         </div>
       </aoyou:dialog>
     </div>
@@ -126,6 +126,5 @@
         <div class="searchicon"></div><span>无结果 {{noresulttxt}}</span><i>检查您的输入是否正确or修改您的搜索</i>
       </div>
     </div>
-
   </body>
 </html>

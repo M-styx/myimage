@@ -9,7 +9,7 @@
 
   i{
     display: inline-block;
-    background: url("../images/icons1.png") -146px -301px no-repeat;
+    background: url("../images/icons.png") -146px -301px no-repeat;
     color:$infocolor;
     font-size: $fontsmall;
     padding-left:20px;
@@ -23,7 +23,7 @@
     span.choose{
       cursor: pointer;
       width: 40px;
-      background: url("../images/icons1.png") -131px -108px no-repeat;
+      background: url("../images/icons.png") -131px -108px no-repeat;
     }
   }
 
@@ -111,7 +111,7 @@
       display: none;
       width: 10px;
       height: 10px;
-      background: url("../images/icons1.png") -122px -25px no-repeat;
+      background: url("../images/icons.png") -122px -25px no-repeat;
       position: absolute;
       top: -10px;
       left: 22px;
@@ -167,19 +167,19 @@
             display: inline-block;
             width: 15px;
             height: 15px;
-            background: url("../images/icons1.png") no-repeat -145px -220px;
+            background: url("../images/icons.png") no-repeat -145px -220px;
             cursor: pointer;
           }
 
           span.checked{
-            background: url("../images/icons1.png") no-repeat -145px -241px;
+            background: url("../images/icons.png") no-repeat -145px -241px;
           }
 
           i{
             font-size: $fontsmall;
             color:#333;
             font-style:normal;
-            background: url("../images/icons1.png") -145px -283px no-repeat;
+            background: url("../images/icons.png") -145px -283px no-repeat;
             vertical-align: text-top;
             cursor: pointer;
           }

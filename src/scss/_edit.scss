@@ -53,7 +53,7 @@
     margin-top:9px;
     padding: 1px 24px 1px 9px;
     .aoyou-dialog-icon{
-      background: url("../images/icons1.png") 0px -2px no-repeat;
+      background: url("../images/icons.png") 0px -2px no-repeat;
     }
   }
 
@@ -162,7 +162,7 @@
     display: block;
     font-size: 12px;
     color: #959DA2;
-    background: url("../images/icons1.png") no-repeat  -146px -297px;
+    background: url("../images/icons.png") no-repeat  -146px -297px;
     padding-left: 18px;
     line-height: 27px;
     margin-left: 12px;
@@ -183,13 +183,18 @@
     }
 
     i{
+      cursor: pointer;
       font-style:normal;
       display: inline-block;
       line-height: 30px;
       height: 30px;
       padding-left: 30px;
       color:$blue;
-      background: url("../images/icons1.png") no-repeat  -145px -189px;
+      background: url("../images/icons.png") no-repeat  -145px -188px;
+    }
+
+    i.checked{
+      background: url("../images/icons.png") no-repeat  -145px -160px;
     }
   }
 
@@ -271,7 +276,7 @@
           border: 0;
 
           .aoyou-dropdowncheckbox-downbtn,.aoyou-dropdowncheckbox-upbtn{
-            background: url("../images/icons1.png") -136px -18px no-repeat ;
+            background: url("../images/icons.png") -136px -18px no-repeat ;
             height: 20px;
           }
         }
@@ -331,7 +336,7 @@
   }
 
   span{
-    background: url("../images/icons1.png") no-repeat -145px -240px;
+    background: url("../images/icons.png") no-repeat -145px -240px;
     display: inline-block;
     width: 100px;
     height: 17px;
@@ -339,6 +344,10 @@
     padding-left: 20px;
     margin-left: 16px;
     cursor: pointer;
+  }
+
+  span.checked{
+    background: url("../images/icons.png") no-repeat -145px -219px;
   }
 
   span.uploader{

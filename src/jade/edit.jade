@@ -21,11 +21,11 @@
             aoyou:dropdowncheckbox(config="$copyrightsrc" fronttitle="版权来源:" value="imageeditinfo[0].copyrightsrc")
             .copyrighttime
                 b 版权有效期:
-                i 永久使用
+                i(ms-class="checked:imageeditinfo[0].copyrighttime" ms-click="copyrightforever") 永久使用
             aoyou:textbox(fronttitle="摄影师:" width="265px" value="imageeditinfo[0].camerist")
         .dlgbtn
             button.savebtn 保 存
-            span 保存并关闭
+            span(ms-click="saveclosefun" ms-class="checked:saveclose") 保存并关闭
             span.uploader 上传者：白雪
 
 

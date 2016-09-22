@@ -41,6 +41,7 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         settimeoutname:'',//设置延时名称
         alreadycheck:0, //已选中多少项
         baseinfodetail:false,//基本信息页面 是否展开详情
+        saveclose:true,//是否允许保存并关闭
         showdia: function (id) {
             avalon.vmodels[id].toggle = true;
         },
@@ -357,7 +358,12 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         },
         download:function (url) {
             
-
+        },
+        copyrightforever:function () {
+            vm.imageeditinfo[0].copyrighttime = !vm.imageeditinfo[0].copyrighttime;
+        },
+        saveclosefun:function () {
+            vm.saveclose = !vm.saveclose;
         }
     });
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});
