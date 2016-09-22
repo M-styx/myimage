@@ -74,6 +74,9 @@ define(['avalon','component/base/normalThings',"../checkboxlist/avalon.checkboxl
                         }
                         vm.checkedNames.push(vm.usedata[index].text);
                         vm.checkeditems.push(vm.usedata[index].value);
+                        if(vm.singleselect == true){
+                            vm.dropdownCheckboxShow = false;
+                        }
                     } else {
                     vm.checkedNames.remove(vm.usedata[index].text);
                     vm.checkeditems.remove(vm.usedata[index].value);
