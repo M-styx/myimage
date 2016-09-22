@@ -153,7 +153,7 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
             }
         },
         $imguploadopt:{
-            width:'600px',
+            width:600,
             height:'500px',
             title:"选择图片",
             confirmText: "确定",
@@ -260,6 +260,20 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
             }
         },
         enlarge:function (type,idx) {
+            //console.log(document.documentElement.scrollTop+"-----"+document.body.scrollTop);
+            var pageWidth = window.innerWidth;
+            var pageHeight = window.innerHeight;
+            if(typeof pageWidth != "number"){
+                if(document.compatMode == "number"){
+                    pageWidth = document.documentElement.clientWidth;
+                    pageHeight = document.documentElement.clientHeight;
+                }else{
+                    pageWidth = document.body.clientWidth;
+                    pageHeight = document.body.clientHeight;
+                }
+            }
+            var scrollTop=window.pageYoffset || (document.body.scrollTop+document.documentElement.scrollTop)
+
             if(type==1){
                 var src  = this.currentSrc || this.src;
                 vm.enlargesrc = "url("+src+")";
@@ -267,13 +281,12 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
                 var top = this.offsetTop + this.parentElement.parentElement.offsetTop - this.clientHeight * 1.5;
                 vm.enlargeheight = this.clientHeight * 2.5;
                 vm.enlargewidth = this.clientWidth * 2.5;
-                if(left + this.clientWidth * 2.5 >window.innerWidth){
+                if(left + this.clientWidth * 2.5 >pageWidth){
                     left = left-170-this.clientWidth * 2.5
                 }
-                if(top<window.pageYOffset){
-                    top = window.pageYOffset
+                if(top<scrollTop){
+                    top = scrollTop
                 }
-
                 vm.enlargeleft = left;
                 vm.enlargetop = top>0?top:0;
                 vm.settimeoutname = setTimeout(function () {
@@ -364,6 +377,18 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         },
         saveclosefun:function () {
             vm.saveclose = !vm.saveclose;
+        },
+        deletemany:function () {
+            for(var i=vm.imagedata.length-1;i>=0;i--){
+                if(vm.imagedata.length>i){
+                    if(vm.imagedata[i].check=="checked"){
+                        vm.imagedata.removeAt(i);
+                    }
+                }
+            }
+        },
+        downloadmany:function () {
+            alert("打包下载")
         }
     });
     vm.getImgInfo('../json/imginfo.json',{'pagenum':0});
@@ -371,6 +396,7 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
     vm.getImageEditInfo('../json/imgeditinfo.json');
     vm.getTreeJson('../json/testtreejson.json',268);
     window.onscroll = function(){
+
         var t = document.documentElement.scrollTop || document.body.scrollTop;
         if( t >= 35 ) {
             vm.showpagerb = true;

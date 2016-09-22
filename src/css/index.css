@@ -364,7 +364,8 @@ input, textarea, keygen, select, button {
       outline: none;
       padding: 0;
       vertical-align: top;
-      width: 76%; }
+      width: 76%;
+      line-height: 68px; }
     .header .search .searchbtn {
       background: url("../images/icons.png") -65px -247px no-repeat;
       display: inline-block;
@@ -490,7 +491,8 @@ input, textarea, keygen, select, button {
       background: url("../images/icons.png") -146px -261px no-repeat;
       margin: 15px 0px 15px 20px;
       height: 20px;
-      width: 83px; }
+      width: 83px;
+      cursor: pointer; }
     .header .tab .preview {
       background: url("../images/icons.png") -145px -194px;
       margin: 15px 0px 15px 20px;
@@ -635,6 +637,10 @@ input, textarea, keygen, select, button {
       cursor: pointer; }
     .listcontent .back span.list1 {
       width: 87%; }
+      .listcontent .back span.list1 span.imgicon {
+        width: 22px;
+        height: 16px;
+        background: url("../images/icons.png") -68px -24px no-repeat; }
     .listcontent .back i {
       display: none;
       margin-top: 12px;
