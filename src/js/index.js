@@ -15,7 +15,8 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         tablist:true, //是否是列表样式
         isshowmask:false, //是否显示黑色浮层
         changeperPage:function(p){//切换每页显示多少条
-          avalon.vmodels['pager01'].perPages = p;
+            avalon.vmodels['pager01'].perPages = p;
+            avalon.vmodels['pager02'].perPages = p;
         },
         imagedata:[],  //图片数据
         imagetype:[],  //筛选数据
@@ -118,6 +119,7 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
                     if(dat){
                         vm.imagedata = dat.data;
                         avalon.vmodels['pager01'].totalItems = dat.total;
+                        avalon.vmodels['pager02'].totalItems = dat.total;
                     }
                 },
                 error: function(dat) {
@@ -127,6 +129,7 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         },
         $pageropt:{
             showPages:0,
+            perPages:12,
             showJumper:true,
             showPageNumButtons:false,
             prevText:'<img src="../images/prebtn.png"/>',
@@ -137,6 +140,8 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
             options:[20,50,100],
             onJump:function(ev,pg){
                 vm.getImgInfo('../json/imginfo.json',{'pagenum':pg._currentPage});
+                avalon.vmodels['pager01'].currentPage = pg._currentPage;
+                avalon.vmodels['pager02'].currentPage = pg._currentPage;
             }
         },
         $imgeditopt:{
