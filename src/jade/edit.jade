@@ -1,7 +1,7 @@
 .mask(ms-visible="isshowmask")
 .maskcon(ms-visible="isshowmask")
     aoyou:dialog(config="$imgeditopt")&attributes({'$id':'imgedit'})
-        .dlgmaininfo.clearfix
+        //.dlgmaininfo.clearfix
             .dlgimg
                 img(src="../images/img4-3.png" width="160px" height="120px")
                 span 编号: 93487532
@@ -12,7 +12,7 @@
                 aoyou:textbox(fronttitle="类型:" width="270px" value="imageeditinfo[0].type")
                 aoyou:textbox(fronttitle="尺寸:" width="270px" value="imageeditinfo[0].size")
                 aoyou:textbox(fronttitle="大小:" width="270px" value="imageeditinfo[0].space")
-        .dlgother
+        //.dlgother
             p 名称
             aoyou:textbox( width="360px" value="imageeditinfo[0].name")
             p.keywords 关键词
@@ -23,7 +23,7 @@
                 b 版权有效期:
                 i(ms-class="checked:imageeditinfo[0].copyrighttime" ms-click="copyrightforever") 永久使用
             aoyou:textbox(fronttitle="摄影师:" width="265px" value="imageeditinfo[0].camerist")
-        .dlgbtn
+        //.dlgbtn
             button.savebtn 保 存
             span(ms-click="saveclosefun" ms-class="checked:saveclose") 保存并关闭
             span.uploader 上传者：白雪
