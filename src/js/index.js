@@ -1,14 +1,3 @@
-function getTreeArr(_pid) {
-    var arr = [];
-    for(var i=0,j=vm.alltreeinfo.$model.length;i<j;i++){
-        if(vm.alltreeinfo[i].pId == _pid){
-            var _obj = vm.alltreeinfo.$model[i];
-            _obj.checked=false
-            arr.push(_obj);
-        }
-    }
-    return arr;
-}
 var imgeditstr = '<div class="dlgmaininfo clearfix">'+
     '          <div class="dlgimg"><img src="../images/img4-3.png" width="160px" height="120px"><span>编号: 93487532</span></div>'+
     '          <div class="dlginfo">'+
@@ -62,6 +51,17 @@ avalon.library("aoyou", {
     }
 });
 require(["/component/base/mmRequest","/component/base/normalThings","/component/pager/avalon.pager","/component/dialog/avalon.dialog","/component/textbox/avalon.textbox","/component/dropdowncheckbox/avalon.dropdowncheckbox","/component/fileuploader/avalon.fileuploader"],function (req) {
+    function getTreeArr(_pid) {
+        var arr = [];
+        for(var i=0,j=vm.alltreeinfo.$model.length;i<j;i++){
+            if(vm.alltreeinfo[i].pId == _pid){
+                var _obj = vm.alltreeinfo.$model[i];
+                _obj.checked=false
+                arr.push(_obj);
+            }
+        }
+        return arr;
+    }
     var vm = avalon.define({
         $id:"aoyouimage",
         filtertoggle:false,  //筛选框是否出现
