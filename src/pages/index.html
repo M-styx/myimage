@@ -10,10 +10,10 @@
     <script src="../../avalon.js"></script>
     <script src="../js/index.js"></script>
   </head>
-  <body ms-controller="aoyouimage" ms-class="showmask:isshowmask" class="gray">
+  <body ms-controller="aoyouimage" ms-class="showmask:isshowmask" class="gray ms-controller">
     <div ms-visible="isshowmask" class="mask"></div>
     <div ms-visible="isshowmask" class="maskcon">
-      <aoyou:dialog config="$imgeditopt" $id="imgedit" $slot="content">
+      <aoyou:dialog config="$imgeditopt" $id="imgedit">
         <div class="dlgmaininfo clearfix">
           <div class="dlgimg"><img src="../images/img4-3.png" width="160px" height="120px"><span>编号: 93487532</span></div>
           <div class="dlginfo">

@@ -72,6 +72,9 @@ input, textarea, keygen, select, button {
   color: #333;
   font-family: "Microsoft yahei", Tahoma, Helvetica, "SimSun", sans-serif; }
 
+.ms-controller {
+  display: none; }
+
 .showmask {
   height: 100%;
   overflow: hidden; }
@@ -899,7 +902,8 @@ input, textarea, keygen, select, button {
   height: 393px;
   position: absolute;
   top: 163px;
-  left: 39px; }
+  left: 39px;
+  z-index: 1; }
   .dlgulcontent .filtertree span.sj {
     display: none;
     width: 10px;
