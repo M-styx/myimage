@@ -144,10 +144,10 @@ input, textarea, keygen, select, button {
 
 .dlgmaininfo {
   width: 560px;
-  height: 190px;
   background: #F3F4F5;
   border-radius: 6px;
-  padding: 10px; }
+  padding: 10px 10px 8px;
+  *padding: 5px; }
   .dlgmaininfo .dlgimg {
     float: left;
     width: 180px;
@@ -157,8 +157,7 @@ input, textarea, keygen, select, button {
       margin-top: 2px; }
   .dlgmaininfo .dlginfo {
     float: left;
-    width: 380px;
-    height: 190px; }
+    width: 380px; }
     .dlgmaininfo .dlginfo .aoyou-textbox {
       float: right;
       background: white;
@@ -188,10 +187,11 @@ input, textarea, keygen, select, button {
   width: 560px;
   height: 290px;
   margin-top: 20px;
+  margin-top: 10px\9;
   background: #F3F4F5;
   border-radius: 6px;
   padding: 10px 10px 0 10px; }
-  .dlgother span {
+  .dlgother span.exinfo {
     display: block;
     font-size: 12px;
     color: #959DA2;
@@ -239,7 +239,8 @@ input, textarea, keygen, select, button {
         font-size: 14px;
         vertical-align: middle;
         outline: medium none;
-        border: 0; }
+        border: 0;
+        overflow: auto; }
   .dlgother .aoyou-dropdowncheckbox {
     border-radius: 3px;
     height: 30px;
@@ -279,6 +280,7 @@ input, textarea, keygen, select, button {
   .dlgother .aoyou-textbox {
     border-radius: 3px;
     padding: 5px 0;
+    *padding: 4px 0;
     height: 20px;
     margin-bottom: 6px; }
     .dlgother .aoyou-textbox .aoyou-textbox-fronttitle {
@@ -299,7 +301,8 @@ input, textarea, keygen, select, button {
         border: 0; }
 
 .dlgbtn {
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-top: 10px\9; }
   .dlgbtn .savebtn {
     width: 90px;
     height: 30px;
@@ -381,7 +384,7 @@ input, textarea, keygen, select, button {
       .header .search .searchbtn:hover {
         background: url("../images/icons.png") -65px -172px no-repeat; }
     .header .search .filter {
-      background: url("../images/icons.png") -101px -103px no-repeat;
+      background: url("../images/icons.png") -102px -40px no-repeat;
       display: inline-block;
       font-size: 14px;
       line-height: 29px;
@@ -834,7 +837,7 @@ input, textarea, keygen, select, button {
   .dlgulcontent .choosefilter span.choose {
     cursor: pointer;
     width: 40px;
-    background: url("../images/icons.png") -131px -108px no-repeat; }
+    background: url("../images/icons.png") -133px -45px no-repeat; }
 .dlgulcontent .dlgultarget {
   width: 540px;
   height: 100px;

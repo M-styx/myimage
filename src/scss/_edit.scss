@@ -92,11 +92,11 @@
 
 .dlgmaininfo{
   width: 560px;
-  height: 190px;
+  //height: 190px;
   background: #F3F4F5;
   border-radius: 6px;
-  padding:10px;
-
+  padding:10px 10px 8px;
+  *padding:5px;
   .dlgimg{
     float: left;
     width: 180px;
@@ -112,7 +112,7 @@
   .dlginfo{
     float: left;
     width: 380px;
-    height: 190px;
+    //height: 190px;
     .aoyou-textbox{
       float: right;
       background: white;
@@ -152,6 +152,7 @@
   width: 560px;
   height: 290px;
   margin-top: 20px;
+  margin-top: 10px\9;
   background: #F3F4F5;
   border-radius: 6px;
   padding:  10px 10px 0 10px;
@@ -225,6 +226,7 @@
           vertical-align: middle;
           outline: medium none;
           border: 0;
+          overflow: auto;
         }
       }
     }
@@ -292,6 +294,7 @@
   .aoyou-textbox {
     border-radius: 3px;
     padding: 5px 0;
+    *padding:4px 0;
     height: 20px;
     margin-bottom: 6px;
 
@@ -321,6 +324,7 @@
 
 .dlgbtn{
   margin-top: 20px;
+  margin-top: 10px\9;
   .savebtn{
     width: 90px;
     height: 30px;

@@ -8,14 +8,13 @@
     <meta name="Description" content="">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <script src="../../avalon.js"></script>
-    <script type="text/javascript" src="../js/index.js"></script>
+    <script src="../js/index.js"></script>
   </head>
   <body ms-controller="aoyouimage" ms-class="showmask:isshowmask" class="gray ms-controller">
-    <div ms-visible="isshowmask" class="mask"></div>
-    <div ms-visible="isshowmask" class="maskcon">
-      <aoyou:dialog config="$imgeditopt" $id="imgedit"></aoyou:dialog>
-      <aoyou:dialog config="$imguploadopt" class="upload" $id="imgupload"></aoyou:dialog>
-    </div>
+    <!--.mask(ms-visible="isshowmask")-->
+    <!--.maskcon(ms-visible="isshowmask")-->
+    <aoyou:dialog config="$imgeditopt" $id="imgedit"></aoyou:dialog>
+    <aoyou:dialog config="$imguploadopt" class="upload" $id="imgupload"></aoyou:dialog>
     <!--include upload-->
     <div class="header fixed">
       <div class="title">
@@ -52,7 +51,7 @@
         </div>
         <ul class="clearfix">
           <li ms-repeat="imagedata">
-            <div class="back"><span ms-click="checkimg($index)" class="listcheck"><i ms-class-1="{{el.check}}" class="checkbox"></i></span><span class="list1"><span class="imgicon"></span><span ms-visible="tablist">{{el.name}}</span><i ms-click="download('http://localhost:3342/aoyouImage/src/images/img.png')" class="downloadl floatRight"></i><i ms-click="del($index)" class="deletel floatRight"></i><i ms-click="edit($index)" class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">{{el.name}}</span><span ms-visible="tablist" class="list2">{{el.type}}</span><span ms-visible="tablist" class="list2">{{el.size}}</span><span ms-visible="tablist" class="list2">{{el.space}}</span><span ms-visible="tablist" class="list3">{{el.lastupdate}}</span><span ms-visible="!tablist" class="list3"><img ms-attr-src="el.img" ms-attr-width="el.width" ms-attr-height="el.height" ms-css-margin_Left="{{(170-el.width)/2}}" ms-on-mouseenter="enlarge(1,$index)" ms-on-mouseleave="enlarge(2,$index)"></span>
+            <div class="back"><span ms-click="checkimg($index)" class="listcheck"><i ms-class-1="{{el.check}}" class="checkbox"></i></span><span class="list1"><span class="imgicon"></span><span ms-visible="tablist">{{el.name}}</span><a target="_blank" ms-attr-href="el.img" download=""><i class="downloadl floatRight"></i></a><i ms-click="del($index)" class="deletel floatRight"></i><i ms-click="edit($index)" class="editl floatRight"></i></span></div><span ms-visible="!tablist" class="list2">{{el.name}}</span><span ms-visible="tablist" class="list2">{{el.type}}</span><span ms-visible="tablist" class="list2">{{el.size}}</span><span ms-visible="tablist" class="list2">{{el.space}}</span><span ms-visible="tablist" class="list3">{{el.lastupdate}}</span><span ms-visible="!tablist" class="list3"><img ms-attr-src="el.img" ms-attr-width="el.width" ms-attr-height="el.height" ms-css-margin_Left="{{(170-el.width)/2}}" ms-on-mouseenter="enlarge(1,$index)" ms-on-mouseleave="enlarge(2,$index)"></span>
           </li>
         </ul>
         <div ms-visible="showenlarge &amp;&amp; enlargeenable" ms-css-top="enlargetop" ms-css-left="enlargeleft" ms-css-height="enlargeheight" ms-css-width="enlargewidth" ms-css-background_image="enlargesrc" class="enlarge"></div>
