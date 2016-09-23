@@ -1,32 +1,4 @@
-aoyou:dialog.upload(config="$imguploadopt")&attributes({'$id':'imgupload','$slot':'content'})
-    //.dlgulcontent
-        .dlgultarget
-            span 目标位置
-            i 制定要存储文档的目标地理位置标签
-            p ../
-                a(ms-repeat="treelistnames",ms-visible="$index>0") {{el.name}}/
-            .choosefilter(ms-on-mouseenter="filterchooseon($event)" ms-on-mouseleave="filterchooseout")
-                span.choose 选择
-                .filtertree(ms-visible="filterchoosetoggle")
-                    span.sj(ms-css-display="filterchoosesjcss")
-                    p 全部
-                    .catalog
-                        a(href="#",ms-click="changeTree(treelistnames.length-2)").first 返回上一级
-                        a(ms-repeat="treelistnames",ms-click="changeTree($index)",ms-class="current:$index==treelistnames.length-1",href="#") <b ms-if="$index>0">>&nbsp;</b>  {{el.name}}
-                    .list
-                        ul
-                            li(ms-repeat="temparr")
-                                span(ms-class="checked:el.checked")
-                                i(ms-click="clicktree(el.id,el.name,el.pId,$index)") {{el.name}}
-        .dlgulchoose
-            span 上传图片
-            i 浏览要上载的图片,支持多选
-            br
-            aoyou:fileuploader(config="$fileuploaderconfig")&attributes({'$id': 'uploader1'})
-            b {{uploadingfiles.length>0?'选中'+uploadingfiles.length+'张':'未选择任何文件'}}
-        .dlguldetail
-            ul
-                li(ms-repeat="uploadingfiles") {{el.name}}
+aoyou:dialog.upload(config="$imguploadopt")&attributes({'$id':'imgupload'})
 
 
 

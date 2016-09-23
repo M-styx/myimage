@@ -1,62 +1,67 @@
-require(["/component/base/mmRequest","/component/base/normalThings","/component/pager/avalon.pager","/component/dialog/avalon.dialog","/component/textbox/avalon.textbox","/component/dropdowncheckbox/avalon.dropdowncheckbox","/component/fileuploader/avalon.fileuploader"],function (req) {
-    function getTreeArr(_pid) {
-        var arr = [];
-        for(var i=0,j=vm.alltreeinfo.$model.length;i<j;i++){
-            if(vm.alltreeinfo[i].pId == _pid){
-                var _obj = vm.alltreeinfo.$model[i];
-                _obj.checked=false
-                arr.push(_obj);
-            }
+function getTreeArr(_pid) {
+    var arr = [];
+    for(var i=0,j=vm.alltreeinfo.$model.length;i<j;i++){
+        if(vm.alltreeinfo[i].pId == _pid){
+            var _obj = vm.alltreeinfo.$model[i];
+            _obj.checked=false
+            arr.push(_obj);
         }
-        return arr;
     }
-    var imgeditstr = '<div class="dlgmaininfo clearfix">'+
-        '          <div class="dlgimg"><img src="../images/img4-3.png" width="160px" height="120px"><span>编号: 93487532</span></div>'+
-        '          <div class="dlginfo">'+
-        '            <aoyou:textbox fronttitle="名称:" width="270px" value="imageeditinfo[0].name"></aoyou:textbox>'+
-        '            <aoyou:textbox fronttitle="上传时间:" width="270px" value="imageeditinfo[0].time"></aoyou:textbox>'+
-        '            <aoyou:textbox fronttitle="图片所属:" width="270px" value="imageeditinfo[0].imgsource"></aoyou:textbox>'+
-        '            <aoyou:textbox fronttitle="类型:" width="270px" value="imageeditinfo[0].type"></aoyou:textbox>'+
-        '            <aoyou:textbox fronttitle="尺寸:" width="270px" value="imageeditinfo[0].size"></aoyou:textbox>'+
-        '            <aoyou:textbox fronttitle="大小:" width="270px" value="imageeditinfo[0].space"></aoyou:textbox>'+
-        '          </div>'+
-        '        </div>'+
-        '        <div class="dlgother">'+
-        '          <p>名称</p>'+
-        '          <aoyou:textbox width="360px" value="imageeditinfo[0].name"></aoyou:textbox>'+
-        '          <p class="keywords">关键词</p>'+
-        '          <aoyou:textbox width="360px" type="textarea" height="50px" value="imageeditinfo[0].keywords" class="textarea"></aoyou:textbox><span class="exinfo">例如：景色、大海、山脉、自然</span>'+
-        '          <aoyou:dropdowncheckbox config="$copyrightsrc" fronttitle="版权来源:" value="imageeditinfo[0].copyrightsrc"></aoyou:dropdowncheckbox>'+
-        '          <div class="copyrighttime"><b>版权有效期:</b><i ms-class="checked:imageeditinfo[0].copyrighttime" ms-click="copyrightforever">永久使用</i></div>'+
-        '          <aoyou:textbox fronttitle="摄影师:" width="265px" value="imageeditinfo[0].camerist"></aoyou:textbox>'+
-        '        </div>'+
-        '        <div class="dlgbtn">'+
-        '          <button class="savebtn">保 存</button><span ms-click="saveclosefun" ms-class="checked:saveclose">保存并关闭</span><span class="uploader">上传者：白雪</span>'+
-        '        </div>';;
-    var uploadcontentstr = '<div class="dlgulcontent">'+
-        '        <div class="dlgultarget"><span>目标位置</span><i>制定要存储文档的目标地理位置标签</i>'+
-        '          <p>../<a ms-repeat="treelistnames" ms-visible="$index&gt;0">{{el.name}}/</a></p>'+
-        '          <div ms-on-mouseenter="filterchooseon($event)" ms-on-mouseleave="filterchooseout" class="choosefilter"><span class="choose">选择</span>'+
-        '            <div ms-visible="filterchoosetoggle" class="filtertree"><span ms-css-display="filterchoosesjcss" class="sj"></span>'+
-        '              <p>全部</p>'+
-        '              <div class="catalog"><a href="#" ms-click="changeTree(treelistnames.length-2)" class="first">返回上一级</a><a ms-repeat="treelistnames" ms-click="changeTree($index)" ms-class="current:$index==treelistnames.length-1" href="#"><b ms-if="$index>0">>&nbsp;</b>  {{el.name}}</a></div>'+
-        '              <div class="list">'+
-        '                <ul>'+
-        '                  <li ms-repeat="temparr"><span ms-class="checked:el.checked"></span><i ms-click="clicktree(el.id,el.name,el.pId,$index)">{{el.name}}</i></li>'+
-        '                </ul>'+
-        '              </div>'+
-        '            </div>'+
-        '          </div>'+
-        '        </div>'+
-        '        <div class="dlgulchoose"><span>上传图片</span><i>浏览要上载的图片,支持多选</i><br>'+
-        '          <aoyou:fileuploader config="$fileuploaderconfig" $id="uploader1"></aoyou:fileuploader><b>{{uploadingfiles.length>0?\'选中\'+uploadingfiles.length+\'张\':\'未选择任何文件\'}}</b>'+
-        '        </div>'+
-        '        <div class="dlguldetail">'+
-        '          <ul>'+
-        '            <li ms-repeat="uploadingfiles">{{el.name}}</li>'+
-        '          </ul>'+
-        '        </div>'+
-        '      </div>';
+    return arr;
+}
+var imgeditstr = '<div class="dlgmaininfo clearfix">'+
+    '          <div class="dlgimg"><img src="../images/img4-3.png" width="160px" height="120px"><span>编号: 93487532</span></div>'+
+    '          <div class="dlginfo">'+
+    '            <aoyou:textbox fronttitle="名称:" width="270px" value="imageeditinfo[0].name"></aoyou:textbox>'+
+    '            <aoyou:textbox fronttitle="上传时间:" width="270px" value="imageeditinfo[0].time"></aoyou:textbox>'+
+    '            <aoyou:textbox fronttitle="图片所属:" width="270px" value="imageeditinfo[0].imgsource"></aoyou:textbox>'+
+    '            <aoyou:textbox fronttitle="类型:" width="270px" value="imageeditinfo[0].type"></aoyou:textbox>'+
+    '            <aoyou:textbox fronttitle="尺寸:" width="270px" value="imageeditinfo[0].size"></aoyou:textbox>'+
+    '            <aoyou:textbox fronttitle="大小:" width="270px" value="imageeditinfo[0].space"></aoyou:textbox>'+
+    '          </div>'+
+    '        </div>'+
+    '        <div class="dlgother">'+
+    '          <p>名称</p>'+
+    '          <aoyou:textbox width="360px" value="imageeditinfo[0].name"></aoyou:textbox>'+
+    '          <p class="keywords">关键词</p>'+
+    '          <aoyou:textbox width="360px" type="textarea" height="50px" value="imageeditinfo[0].keywords" class="textarea"></aoyou:textbox><span class="exinfo">例如：景色、大海、山脉、自然</span>'+
+    '          <aoyou:dropdowncheckbox config="$copyrightsrc" fronttitle="版权来源:" value="imageeditinfo[0].copyrightsrc"></aoyou:dropdowncheckbox>'+
+    '          <div class="copyrighttime"><b>版权有效期:</b><i ms-class="checked:imageeditinfo[0].copyrighttime" ms-click="copyrightforever">永久使用</i></div>'+
+    '          <aoyou:textbox fronttitle="摄影师:" width="265px" value="imageeditinfo[0].camerist"></aoyou:textbox>'+
+    '        </div>'+
+    '        <div class="dlgbtn">'+
+    '          <button class="savebtn">保 存</button><span ms-click="saveclosefun" ms-class="checked:saveclose">保存并关闭</span><span class="uploader">上传者：白雪</span>'+
+    '        </div>';
+var uploadcontentstr = '<div class="dlgulcontent">'+
+    '        <div class="dlgultarget"><span>目标位置</span><i>制定要存储文档的目标地理位置标签</i>'+
+    '          <p>../<a ms-repeat="treelistnames" ms-visible="$index&gt;0">{{el.name}}/</a></p>'+
+    '          <div ms-on-mouseenter="filterchooseon($event)" ms-on-mouseleave="filterchooseout" class="choosefilter"><span class="choose">选择</span>'+
+    '            <div ms-visible="filterchoosetoggle" class="filtertree"><span ms-css-display="filterchoosesjcss" class="sj"></span>'+
+    '              <p>全部</p>'+
+    '              <div class="catalog"><a href="#" ms-click="changeTree(treelistnames.length-2)" class="first">返回上一级</a><a ms-repeat="treelistnames" ms-click="changeTree($index)" ms-class="current:$index==treelistnames.length-1" href="#"><b ms-if="$index>0">>&nbsp;</b>  {{el.name}}</a></div>'+
+    '              <div class="list">'+
+    '                <ul>'+
+    '                  <li ms-repeat="temparr"><span ms-class="checked:el.checked"></span><i ms-click="clicktree(el.id,el.name,el.pId,$index)">{{el.name}}</i></li>'+
+    '                </ul>'+
+    '              </div>'+
+    '            </div>'+
+    '          </div>'+
+    '        </div>'+
+    '        <div class="dlgulchoose"><span>上传图片</span><i>浏览要上载的图片,支持多选</i><br>'+
+    '          <aoyou:fileuploader config="$fileuploaderconfig" $id="uploader1"></aoyou:fileuploader><b>{{uploadingfiles.length>0?\'选中\'+uploadingfiles.length+\'张\':\'未选择任何文件\'}}</b>'+
+    '        </div>'+
+    '        <div class="dlguldetail">'+
+    '          <ul>'+
+    '            <li ms-repeat="uploadingfiles">{{el.name}}</li>'+
+    '          </ul>'+
+    '        </div>'+
+    '      </div>';
+avalon.library("aoyou", {
+    $ready: function () {
+        avalon.log("控件已经构建完毕")
+    }
+});
+require(["/component/base/mmRequest","/component/base/normalThings","/component/pager/avalon.pager","/component/dialog/avalon.dialog","/component/textbox/avalon.textbox","/component/dropdowncheckbox/avalon.dropdowncheckbox","/component/fileuploader/avalon.fileuploader"],function (req) {
     var vm = avalon.define({
         $id:"aoyouimage",
         filtertoggle:false,  //筛选框是否出现
@@ -492,7 +497,7 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
             vm.showpagerb = false;
         }
     }
-    avalon.scan(document.body,vm);
+    avalon.scan();
 });
 
 
