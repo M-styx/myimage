@@ -205,6 +205,7 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
             title:"编辑图片",
             onClose:function () {
                 vm.isshowmask = false;
+                document.body.style.overflow = 'auto';
             }
         },
         $imguploadopt:{
@@ -303,6 +304,7 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         edit:function (idx) {
             vm.isshowmask = true;
             vm.showdia('imgedit');
+            document.body.style.overflow = 'hidden';
         },
         del:function (idx) {
             vm.imagedata.removeAt(idx);

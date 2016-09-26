@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>遨游图库</title>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <link rel="stylesheet" type="text/css" href="../css/detail.css">
+    <script src="../../avalon.js"></script>
+    <script src="../js/index.js"></script>
+  </head>
+  <body ms-controller="aoyouimage">
+    <!--.mask(ms-visible="isshowmask")-->
+    <!--.maskcon(ms-visible="isshowmask")-->
+    <aoyou:dialog config="$imgeditopt" $id="imgedit"></aoyou:dialog>
+    <aoyou:dialog config="$imguploadopt" class="upload" $id="imgupload"></aoyou:dialog>
+    <div class="header">
+      <div class="title">
+        <h2>遨游图库</h2><span class="tit1">V2.0</span><span class="tit2">打造正版旅游图库</span>
+      </div>
+    </div>
+    <div class="panel clearfix">
+      <div class="detail-infor">
+        <div class="line"><span class="count floatRight">共上传5983张</span>
+          <label class="labelname">上传者</label><span> 白雪</span>
+        </div>
+        <div class="line">
+          <h3 class="imgname">皇冠假日罗马圣彼得酒店</h3>
+        </div>
+        <div class="img-feature">
+          <ul class="list">
+            <li>
+              <label class="labelname">图片编号</label><span class="text-blue">643227743</span>
+            </li>
+            <li>
+              <label class="labelname">类型</label><span>JPG</span>
+            </li>
+            <li>
+              <label class="labelname">尺寸</label><span>1920*1280</span>
+            </li>
+            <li>
+              <label class="labelname">大小</label><span>1.6MB</span>
+            </li>
+          </ul><a class="btn-blue btn-big"><i class="icon-down-white"></i>下载图片</a>
+        </div>
+        <div class="basic-infor">
+          <h3 ms-class="active:baseinfodetail" ms-click="togglebaseinfo"><i class="floatRight icon-arrow"></i><i class="icon-lists"></i>基本信息</h3>
+          <div ms-visible="baseinfodetail" class="img-feature">
+            <ul class="list">
+              <li class="clearfix">
+                <label class="labelname floatLeft">图片所属</label><span class="w220 floatLeft">欧洲>意大利>罗马>佛罗伦萨</span>
+              </li>
+              <li>
+                <label class="labelname">修改日期</label><span>2016-03-08 12:07</span>
+              </li>
+              <li>
+                <label class="labelname">上传日期</label><span>2016-03-07 16:45</span>
+              </li>
+              <li>
+                <label class="labelname">摄影师</label><span>暂无</span>
+              </li>
+              <li>
+                <label class="labelname">版权来源</label><span>壹图</span>
+              </li>
+              <li>
+                <label class="labelname">版权有效期</label><span>永久使用</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="detail-content">
+        <div class="detail-top"><a ms-click="edit('imgedit')" class="btn-default floatRight"><i class="icon-edit"></i>编辑</a><a ms-click="returnmain()" class="return floatLeft"><i class="icon-arrleft"></i>返回</a></div>
+        <div class="img-box"><img src="../images/img.png"></div>
+        <div class="content-foot">
+          <h3 class="title"><i class="icon-keyword"></i>关键字</h3>
+          <p class="article">教堂，欧洲，广场，酒店，梵蒂冈，罗马，意大利</p>
+          <h3 class="title"><i class="icon-shield"></i>版权申明</h3>
+          <p class="article">本图库所有图片，均由中青旅遨游或版权所有人授权发布，我们的图片来源均为正规渠道购买或授权得到。所有图片若未经中青旅遨游或图片所有人同意，不得进行转载或以盈利为目的的使用。如果您侵犯了图片的知识产权，公司有权对其索要侵权赔偿。</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
