@@ -140,8 +140,9 @@
     }
 
     .catalog{
-      width: 100%;
-      height: 40px;
+      /*width: 100%;
+      height: 40px;*/
+      padding:9px 13px;
       background: #F7F8FA;
       a{
         display: inline-block;
@@ -149,13 +150,14 @@
         font-size:$fontsmall;
         color: $blue;
         letter-spacing: 0.25px;
-        margin: 14px 5px;
+        margin: 5px 5px;
         height: 12px;
         text-decoration: none;
         cursor: pointer;
+
       }
       a.first{
-        margin-left: 18px;
+        //margin-left: 18px;
         margin-right: 5px;
         padding-right: 5px;
         border-right: 1px solid #D1D1D1;

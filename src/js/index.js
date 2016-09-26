@@ -454,6 +454,18 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         downloadmany:function () {
             alert("打包下载")
         },
+        tzedit:function (idx) {
+            var url = window.location.href;
+            if(url.indexOf('index')>0)
+                url = url.replace('index','detail');
+            window.location.href = url;
+        },
+        returnmain:function () {
+            var url = window.location.href;
+            if(url.indexOf('detail')>0)
+                url = url.replace('detail','index');
+            window.location.href = url;
+        },
         uploadingfiles:[],
         $fileuploaderconfig:{
             uploadallbuttonshow:false,
