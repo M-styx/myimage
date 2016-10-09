@@ -470,6 +470,8 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         },
         uploadingfiles:[],
         $fileuploaderconfig:{
+            swfstr:'../../component/fileuploader/Uploader.swf',
+            severstr:"http://webuploader.duapp.com/server/fileupload.php",
             fileinfolist:false,//文件列表不要
             progress:false,//不要进度条
             thumb:false,//不要缩略图
