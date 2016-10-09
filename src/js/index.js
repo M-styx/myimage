@@ -470,31 +470,18 @@ require(["/component/base/mmRequest","/component/base/normalThings","/component/
         },
         uploadingfiles:[],
         $fileuploaderconfig:{
-            uploadallbuttonshow:false,
-            addButtonText:'选择文件',
-            acceptFileTypes: "image.*,*.txt,*.js",
-//                        serverConfig: {
-//                            url: "../../Handler1.ashx",
-//                            userName: undefined,
-//                            password: undefined,
-//                            keyGenUrl: "../../getFileKey.ashx"
-//                        },
-            onFileOverSize: function (fileObj) {
-                alert(fileObj.name+"超出了文件尺寸限制")
+            fileinfolist:false,//文件列表不要
+            progress:false,//不要进度条
+            thumb:false,//不要缩略图
+            //只允许图片
+            acceptobj:{
+                title: 'Images',
+                extensions: 'gif,jpg,jpeg,bmp,png',
+                mimeTypes: 'image/*'
             },
-            onFilePoolOverSize: function (fileObj, poolSize) {
-                alert("文件缓存池达已满，不能继续添加文件。")
-            },
-            onSameFileAdded: function () {
-                alert("不能添加相同的文件");
-            },
-            showPreview:false,
-            enableRemoteKeyGen: false,
-            chunked: true,
-            chunkSize: 1024*1024,
-            getFileMessageText:function(fileObj){
-                vm.uploadingfiles.push({name:fileObj.name});
-                console.log(fileObj);
+            afterpickfile:function(dd){
+                console.log(dd);
+                vm.uploadingfiles.push({name:dd.fileName})  ;
             }
         }
     });

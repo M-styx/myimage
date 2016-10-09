@@ -859,6 +859,8 @@ input, textarea, keygen, select, button {
     color: #999;
     font-size: 12px;
     letter-spacing: 0.25px; }
+  .dlgulcontent .dlgulchoose .aoyou-fileuploader-picker {
+    margin-top: 20px; }
   .dlgulcontent .dlgulchoose .aoyou-fileuploader {
     width: 105px;
     display: inline-block;
@@ -868,7 +870,8 @@ input, textarea, keygen, select, button {
     background-color: inherit;
     padding: 0px;
     border-radius: inherit; }
-    .dlgulcontent .dlgulchoose .aoyou-fileuploader .aoyou-fileuploader-uploader-button-add {
+    .dlgulcontent .dlgulchoose .aoyou-fileuploader .webuploader-pick {
+      padding: 0px;
       box-shadow: none;
       width: 90px;
       height: 30px;
@@ -878,11 +881,15 @@ input, textarea, keygen, select, button {
       color: white;
       font-size: 14px;
       line-height: 25px;
-      margin-top: 20px;
       margin-right: 10px;
       letter-spacing: 0.29px; }
-      .dlgulcontent .dlgulchoose .aoyou-fileuploader .aoyou-fileuploader-uploader-button-add:hover {
+      .dlgulcontent .dlgulchoose .aoyou-fileuploader .webuploader-pick:hover {
         background: #00A8FF; }
+    .dlgulcontent .dlgulchoose .aoyou-fileuploader input, .dlgulcontent .dlgulchoose .aoyou-fileuploader label {
+      width: 90px;
+      height: 30px; }
+    .dlgulcontent .dlgulchoose .aoyou-fileuploader .aoyou-fileuploader-uploadstartbtn {
+      display: none; }
 .dlgulcontent .dlguldetail {
   width: 540px;
   height: 100px;

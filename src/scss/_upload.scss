@@ -56,6 +56,9 @@
       letter-spacing: 0.25px;
     }
 
+    .aoyou-fileuploader-picker{
+      margin-top: 20px;
+    }
     .aoyou-fileuploader{
       width: 105px;
       display: inline-block;
@@ -65,7 +68,8 @@
       background-color: inherit;
       padding: 0px;
       border-radius: inherit;
-      .aoyou-fileuploader-uploader-button-add{
+      .webuploader-pick{
+        padding: 0px;
         box-shadow:none;
         width: 90px;
         height: 30px;
@@ -75,13 +79,19 @@
         color:white;
         font-size: $fontnormal;
         line-height: 25px;
-        margin-top: 20px;
         margin-right: 10px;
         letter-spacing: 0.29px;
 
         &:hover{
           background: #00A8FF;
         }
+      }
+      input,label{
+        width: 90px;
+        height: 30px;
+      }
+      .aoyou-fileuploader-uploadstartbtn{
+        display: none;
       }
     }
   }
